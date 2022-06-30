@@ -139,11 +139,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Administrator.cpp" />
+    <ClCompile Include="Auth.cpp" />
     <ClCompile Include="BWS Purchase Order.cpp" />
     <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="SalesOrderExecutive.cpp" />
+    <ClCompile Include="TextDataReader.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserRepository.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Administrator.h" />
+    <ClInclude Include="Auth.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="UserRepository.h" />
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="IRepository.h" />
+    <ClInclude Include="SalesOrderExecutive.h" />
+    <ClInclude Include="TextDataReader.h" />
+    <ClInclude Include="User.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="User.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
