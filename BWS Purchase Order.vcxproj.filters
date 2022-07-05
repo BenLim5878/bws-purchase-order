@@ -22,6 +22,9 @@
     <Filter Include="Source Files\Repository">
       <UniqueIdentifier>{d73537ee-7273-4c76-ae96-594aa9191876}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Data Structure">
+      <UniqueIdentifier>{d2d3cfc2-9cd6-495f-a537-65857ffc40b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BWS Purchase Order.cpp">
@@ -54,6 +57,9 @@
     <ClCompile Include="BubbleSort.cpp">
       <Filter>Source Files\Class</Filter>
     </ClCompile>
+    <ClCompile Include="LinkedList.cpp">
+      <Filter>Source Files\Data Structure</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Helper.h">
@@ -81,12 +87,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserRepository.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="QuickSort.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BubbleSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
