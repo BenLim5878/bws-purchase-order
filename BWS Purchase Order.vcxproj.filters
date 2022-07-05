@@ -48,6 +48,12 @@
     <ClCompile Include="UserRepository.cpp">
       <Filter>Source Files\Repository</Filter>
     </ClCompile>
+    <ClCompile Include="QuickSort.cpp">
+      <Filter>Source Files\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="BubbleSort.cpp">
+      <Filter>Source Files\Class</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Helper.h">
@@ -75,6 +81,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserRepository.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QuickSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BubbleSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -36,4 +36,5 @@ TextDataReader::TextDataReader(std::string textfilePath)
 
 TextDataReader::~TextDataReader()
 {
+	delete this->context;
 }
