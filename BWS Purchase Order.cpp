@@ -4,17 +4,26 @@
 #include <string>
 #include <iostream>
 #include "Helper.h"
-#include "BubbleSort.h"
+#include "PriorityQueue.h"
+#include "User.h"
+#include "PriorityClass.h"
 
 int main()
 {
-    hidecursor();
-    int arr[] = { 5,546,36,86,25,886,235,34 };
-    int len = sizeof(arr) / sizeof(arr[0]);
-    BubbleSort sortalgo;
-    sortalgo.sort(arr, len);
-    int i;
-    for (i = 0; i < len; i++)
-        std::cout << arr[i] << " ";
-    std::cout << std::endl;
+    PririorityQueue<User>* queue = new PririorityQueue<User>();
+    User user1;
+    user1.emailAddress= "mfasd";
+    PriorityClass<User> priority;
+    priority.priority = 324;
+    priority.content = user1;
+    queue->enqueue(priority);
+    priority.priority = 54;
+    queue->enqueue(priority);
+    priority.priority = 67;
+    queue->enqueue(priority);
+    priority.priority = 107;
+    queue->enqueue(priority);
+    DoublyNode<PriorityClass<User>>* res = queue->getNode(priority);
+
+    std::cout << typeid(User::emailAddress).name();
 }

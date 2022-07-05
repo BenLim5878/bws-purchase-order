@@ -2,6 +2,8 @@
 #include "User.h"
 #include <ctime>
 #include <string>
+#include "UserRepository.h"
+#include <memory>
 
 struct AuthResult {
 	bool isSuccessful;
@@ -17,9 +19,13 @@ struct AuthInputForm {
 class Auth
 {
 public:
-	AuthResult* authenticateUser(AuthInputForm);
+	std::unique_ptr<AuthResult> authenticateUser(AuthInputForm form);
 private:
-	std::string pwdEncrypt(std::string pwd);
-	std::string pwdDecrypt(std::string encryptedPwd);
+	unsigned long pwdEncrypt(std::string pwd);
+private: 
+	UserRepository* repository;
+public:
+	Auth();
+	~Auth();
 };
 

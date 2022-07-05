@@ -1,16 +1,22 @@
 #pragma once
 
-template <class T> class Node{
+template <class T> class SinglyNode{
 public:
 	T data;
-	Node<T>* next;
+	SinglyNode<T>* next;
 };
 
+template <class T> class DoublyNode {
+public:
+	T data;
+	DoublyNode<T>* next;
+	DoublyNode<T>* prev;
+};
 
 template <class T> class LinkedList
 {
 private:
-	Node<T>* head = nullptr;
+	SinglyNode<T>* head = nullptr;
 public:
 	int length;
 public:
@@ -26,9 +32,9 @@ public:
 template<class T>
 void LinkedList<T>::push(T newData)
 {
-	Node<T>* newNode = new Node<T>();
+	SinglyNode<T>* newNode = new SinglyNode<T>();
 	newNode->data = newData;
-	Node<T>* currentNode = this->head;
+	SinglyNode<T>* currentNode = this->head;
 	while (currentNode->next != nullptr) {
 		currentNode = currentNode->next;
 	}
@@ -42,7 +48,7 @@ T* LinkedList<T>::get(int i)
 	if (i >= this->length) return nullptr;
 	int target = i;
 	int curr = 0;
-	Node<T>* currentNode = this->head;
+	SinglyNode<T>* currentNode = this->head;
 	while (curr < this->length) {
 		if (curr == target) {
 			return &currentNode->data;
@@ -56,7 +62,7 @@ T* LinkedList<T>::get(int i)
 template<class T>
 bool LinkedList<T>::contain(T* data)
 {
-	Node<T>* currentNode = this->head;
+	SinglyNode<T>* currentNode = this->head;
 	int curr = 0;
 	while (curr < this->length) {
 		if (currentNode->data == data) {
@@ -72,7 +78,7 @@ template<class T>
 int LinkedList<T>::find(T* node)
 {
 	int mid = (this->length / 2) - 1;
-	Node* currentNode = this->get(mid);
+	SinglyNode* currentNode = this->get(mid);
 	//binarySearch(mid,currentNode, node);
 	return false;
 }
@@ -80,7 +86,7 @@ int LinkedList<T>::find(T* node)
 
 template<class T>
 LinkedList<T>::LinkedList(T initData) {
-	Node<T>* initNode = new Node<T>();
+	SinglyNode<T>* initNode = new SinglyNode<T>();
 	initNode->data = initData;
 	this->head = initNode;
 	this->length = 1;

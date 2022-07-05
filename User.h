@@ -1,6 +1,5 @@
-#include <string>
-
 #pragma once
+#include <string>
 
 enum UserRole
 {
@@ -23,5 +22,7 @@ public:
 public:
 	int getUserID();
 	void setUserID(int userID);
+	std::string getPwd();
+	void setPwd(std::string password);
 };
 
