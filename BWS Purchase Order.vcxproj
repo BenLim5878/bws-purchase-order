@@ -143,6 +143,7 @@
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="BWS Purchase Order.cpp" />
     <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="SalesOrderExecutive.cpp" />
     <ClCompile Include="TextDataReader.cpp" />
     <ClCompile Include="User.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Administrator.h" />
     <ClInclude Include="Auth.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="UserRepository.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="IRepository.h" />
