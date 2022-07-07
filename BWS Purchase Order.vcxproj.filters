@@ -54,6 +54,9 @@
     <ClCompile Include="BubbleSort.cpp">
       <Filter>Source Files\Class</Filter>
     </ClCompile>
+    <ClCompile Include="testcpp.cpp">
+      <Filter>Source Files\Class</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Helper.h">

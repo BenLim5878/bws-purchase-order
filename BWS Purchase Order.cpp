@@ -7,9 +7,12 @@
 #include "PriorityQueue.h"
 #include "User.h"
 #include "PriorityClass.h"
+#include "SalesOrderExecutive.h"
+
 
 int main()
 {
+
     PririorityQueue<User>* queue = new PririorityQueue<User>();
     User user1;
     user1.emailAddress= "mfasd";
@@ -26,4 +29,7 @@ int main()
     DoublyNode<PriorityClass<User>>* res = queue->getNode(priority);
 
     std::cout << typeid(User::emailAddress).name();
+
+    SalesOrderExecutive* soe = new SalesOrderExecutive;
+    soe->menu();
 }
