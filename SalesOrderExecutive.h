@@ -7,5 +7,6 @@ private:
 public:
 	int getExecutiveID();
 	void setExecutiveID(int executiveID);
+	int menu();
 };
 

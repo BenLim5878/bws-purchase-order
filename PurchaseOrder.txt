@@ -1,0 +1,3 @@
+OrderID, ProductName, Date, Qty, Price, PaymentMethod, Status
+12345, Book, 4/7/2022, 2, 10, Maybank, Pending
+67890, tshirt, 1/7/2011, 1, 20, CIMB Bank, Pending

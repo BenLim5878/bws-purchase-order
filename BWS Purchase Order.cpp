@@ -7,6 +7,7 @@
 #include <memory>
 using namespace std;
 
+
 int main()
 {
 	Auth auth;
