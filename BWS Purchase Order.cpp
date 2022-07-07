@@ -16,7 +16,7 @@ int main()
     PriorityClass<User> priority;
     priority.content = user1;
     //
-    priority.priority = 324;
+    priority.priority = 35432;
     queue->enqueue(priority);
     //
     priority.priority = 67;
