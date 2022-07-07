@@ -54,6 +54,9 @@
     <ClCompile Include="BubbleSort.cpp">
       <Filter>Source Files\Class</Filter>
     </ClCompile>
+    <ClCompile Include="Form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Helper.h">
@@ -96,6 +99,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PriorityQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Form.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

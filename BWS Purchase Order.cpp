@@ -3,33 +3,24 @@
 
 #include <string>
 #include <iostream>
-#include "Helper.h"
-#include "PriorityQueue.h"
-#include "User.h"
-#include "PriorityClass.h"
+#include "Auth.h"
+#include <memory>
+using namespace std;
 
 int main()
 {
-    PririorityQueue<User>* queue = new PririorityQueue<User>();
-    User user1;
-    user1.emailAddress= "mfasd";
-    PriorityClass<User> priority;
-    priority.content = user1;
-    //
-    priority.priority = 35432;
-    queue->enqueue(priority);
-    //
-    priority.priority = 67;
-    queue->enqueue(priority);
-    //
-    priority.priority = 107;
-    queue->enqueue(priority);
-    //
-    PriorityClass<User> test;
-    test.content = user1;
-    test.priority = 78;
-    PriorityClass<User>* sample =  queue->enqueue(test);
-    queue->dequeue(sample);
+	Auth auth;
+	string emailAddress;
+	string password;
+	cout << "Please enter your email address:" << endl;
+	cin >> emailAddress;
+	cout << "Please enter your password:" << endl;
+	cin >> password;
+	AuthInputForm form;
+	form.emailAddress = emailAddress;
+	form.password = password;
+	std::unique_ptr<AuthResult> result = auth.authenticateUser(form);
 
-    std::cout << typeid(User::emailAddress).name();
+	cout << result->isSuccessful;
+
 }

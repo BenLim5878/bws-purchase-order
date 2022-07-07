@@ -1,5 +1,6 @@
 #pragma once
-class SalesOrderExecutive
+#include "User.h"
+class SalesOrderExecutive: public User
 {
 private:
 	int executivesID;

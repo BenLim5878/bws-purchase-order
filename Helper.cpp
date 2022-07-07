@@ -7,3 +7,7 @@ void hidecursor() {
     info.bVisible = FALSE;
     SetConsoleCursorInfo(consoleHandle, &info);
 }
+
+int add(int a, int b) {
+    return a + b;
+}

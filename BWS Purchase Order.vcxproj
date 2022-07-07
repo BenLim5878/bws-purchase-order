@@ -143,6 +143,7 @@
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="BWS Purchase Order.cpp" />
+    <ClCompile Include="Form.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="SalesOrderExecutive.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="UserRepository.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Form.h" />
     <ClInclude Include="PriorityClass.h" />
     <ClInclude Include="Administrator.h" />
     <ClInclude Include="Auth.h" />
