@@ -17,16 +17,22 @@ int main()
     User user1;
     user1.emailAddress= "mfasd";
     PriorityClass<User> priority;
-    priority.priority = 324;
     priority.content = user1;
+    //
+    priority.priority = 35432;
     queue->enqueue(priority);
-    priority.priority = 54;
-    queue->enqueue(priority);
+    //
     priority.priority = 67;
     queue->enqueue(priority);
+    //
     priority.priority = 107;
     queue->enqueue(priority);
-    DoublyNode<PriorityClass<User>>* res = queue->getNode(priority);
+    //
+    PriorityClass<User> test;
+    test.content = user1;
+    test.priority = 78;
+    PriorityClass<User>* sample =  queue->enqueue(test);
+    queue->dequeue(sample);
 
     std::cout << typeid(User::emailAddress).name();
 
