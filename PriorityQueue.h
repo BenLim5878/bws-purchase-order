@@ -8,7 +8,7 @@ private:
 	DoublyNode<PriorityClass<T>>* head;
 public:
 	DoublyNode<PriorityClass<T>>* peek();
-	void enqueue(PriorityClass<T> newData);
+	PriorityClass<T>* enqueue(PriorityClass<T> newData);
 	void dequeue(PriorityClass<T>* data);
 	bool isEmpty();
 	PriorityClass<T>* get(int i);
@@ -36,20 +36,28 @@ void swap(DoublyNode<PriorityClass<T>>* leftNode, DoublyNode<PriorityClass<T>>* 
 }
 
 template <class T>
-void PririorityQueue<T>::enqueue(PriorityClass<T> newData)
+PriorityClass<T>* PririorityQueue<T>::enqueue(PriorityClass<T> newData)
 {
 	DoublyNode<PriorityClass<T>>* newNode = new DoublyNode<PriorityClass<T>>();
 	newNode->data = newData;
 	newNode->data.referenceAddress = newNode;
+	this->head = newNode;
+	this->len++;
+	// If the list is empty then point the head to the new node
 	if (isEmpty()) {
-		this->head = newNode;
-		this->len++;
-		return;
+		return &(newNode->data);
+	}
+	else {
+		newNode->next = this->head;
 	}
 	newNode->next = this->head;
-	this->head = newNode;
+
 	for (int i = 0; i < this->len; i++) {
-		if (!newNode->next) return;
+		// The node is placed at last
+		if (!newNode->next) {
+			return &(newNode->data);
+		}
+		// Sort the node
 		if (newNode->data.priority < newNode->next->data.priority) {
 			swap(newNode, newNode->next);
 			if (i == 0) {
@@ -57,17 +65,37 @@ void PririorityQueue<T>::enqueue(PriorityClass<T> newData)
 			}
 		}
 		else {
-			this->len++;
-			return;
+			return &(newNode->data);
 		}
 	}
-
 }
 
 template <class T>
 void PririorityQueue<T>::dequeue(PriorityClass<T>* data)
 {
+	DoublyNode<PriorityClass<T>>* tarrNode =  getNode(*data);
+	if (tarrNode) {
+		DoublyNode<PriorityClass<T>>* prevNode = nullptr;
+		DoublyNode<PriorityClass<T>>* nextNode = nullptr;
+		// Get left and right nodes
+		if (tarrNode->prev) {
+			prevNode = tarrNode->prev;
+		}
+		if (tarrNode->next) {
+			nextNode = tarrNode->prev;
+		}
 
+		if (tarrNode->prev && tarrNode->next) {
+			prevNode->next = nextNode;
+			nextNode->next = prevNode;
+		}
+		if (tarrNode->next) {
+			nextNode = tarrNode->prev;
+		}
+
+
+		free(tarrNode);
+	}
 }
 
 template <class T>
