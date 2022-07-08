@@ -7,6 +7,9 @@ using namespace std;
 void AddRecord();
 void Update();
 
+//string OrderID[maxrow] = {};
+//string ProductName[maxrow] = {};
+
 
 int SalesOrderExecutive::getExecutiveID() {
     return this->executiveID;

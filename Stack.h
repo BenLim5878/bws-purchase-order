@@ -4,10 +4,17 @@
 template <class T> class Stack
 {
 public:
+	int length = 0;
+public:
 	void push(T data);
 	bool isEmpty();
 	T pop();
 	T* peek();
+	T* top(int i);
+	void update(int topIndex, T data);
+	void update(T* tarrData, T data);
+private:
+	SinglyNode<T>* getNode(int i);
 private:
 	SinglyNode<T>* root;
 };
@@ -18,6 +25,7 @@ void Stack<T>::push(T data) {
 	node->data = data;
 	node->next = root;
 	this->root = node;
+	this->length++;
 }
 
 template <class T>
@@ -30,7 +38,8 @@ T Stack<T>::pop() {
 	SinglyNode<T>* temp = this->root;
 	this->root = temp->next;
 	T popped = temp->data;
-	free(temp);
+	delete temp;
+	this->length--;
 	return popped;
 }
 
@@ -38,5 +47,58 @@ template <class T>
 T* Stack<T>::peek() {
 	T* temp = &(this->root->data);
 	return temp;
+}
+
+template<class T>
+T* Stack<T>::top(int i)
+{
+	if (i <= 0) return nullptr;
+	if (i > this->length) return nullptr;
+	int target = i;
+	int curr = 1;
+	SinglyNode<T>* currentNode = this->root;
+	while (curr <= this->length) {
+		if (curr == target) {
+			return &currentNode->data;
+		}
+		currentNode = currentNode->next;
+		curr++;
+	}
+	return nullptr;
+}
+
+template<class T>
+void Stack<T>::update(int topIndex, T data)
+{
+	SinglyNode<T>* tarrData = getNode(topIndex);
+	if (!tarrData) return;
+	tarrData->data = data;
+}
+
+template<class T>
+inline void Stack<T>::update(T* tarrData, T data)
+{
+	SinglyNode<T>* currNode = this->root;
+	if (currNode) {
+		while (&currNode->data == tarrData)
+	}
+}
+
+template<class T>
+SinglyNode<T>* Stack<T>::getNode(int i)
+{
+	if (i <= 0) return nullptr;
+	if (i > this->length) return nullptr;
+	int target = i;
+	int curr = 1;
+	SinglyNode<T>* currentNode = this->root;
+	while (curr <= this->length) {
+		if (curr == target) {
+			return currentNode;
+		}
+		currentNode = currentNode->next;
+		curr++;
+	}
+	return nullptr;
 }
 

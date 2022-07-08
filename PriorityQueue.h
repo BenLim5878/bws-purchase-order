@@ -7,6 +7,7 @@ template <class T>class PririorityQueue
 private:
 	DoublyNode<PriorityClass<T>>* head;
 public:
+	int search(int l, int r, PriorityClass<T>* x);
 	DoublyNode<PriorityClass<T>>* peek();
 	PriorityClass<T>* enqueue(PriorityClass<T> newData);
 	void dequeue(PriorityClass<T>* data);
@@ -32,6 +33,24 @@ void swap(DoublyNode<PriorityClass<T>>* leftNode, DoublyNode<PriorityClass<T>>* 
 	}
 	if (Y) {
 		Y->prev = leftNode;
+	}
+}
+
+template <class T>
+int PririorityQueue<T>::search(int l, int r, PriorityClass<T>* x)
+{
+	if (l > r) {
+		return -1;
+	}
+	int mid = (l + r) / 2;
+	if (*get(mid) == *x) {
+		return mid;
+	}
+	else if (*x < *get(mid)) {
+		search(l, mid - 1, x);
+	}
+	else {
+		search(mid + 1, r, x);
 	}
 }
 

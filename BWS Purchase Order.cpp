@@ -6,25 +6,22 @@
 #include "Auth.h"
 #include <memory>
 #include "SalesOrderExecutive.h"
+#include "Stack.h"
 
 using namespace std;
 
 
 int main()
 {
-	Auth auth;
-	string emailAddress;
-	string password;
-	cout << "Please enter your email address:" << endl;
-	cin >> emailAddress;
-	cout << "Please enter your password:" << endl;
-	cin >> password;
-	AuthInputForm form;
-	form.emailAddress = emailAddress;
-	form.password = password;
-	std::unique_ptr<AuthResult> result = auth.authenticateUser(form);
-
-	cout << result->isSuccessful;
+	User user;
+	user.emailAddress = "hfads";
+	Stack<User> list;
+	list.push(user);
+	list.push(user);
+	list.push(user);
+	user.emailAddress = "fuck";
+	list.update(0, user);
+	cout << "fasd";
 
 	SalesOrderExecutive* SOE = new SalesOrderExecutive;
 	SOE->menu();
