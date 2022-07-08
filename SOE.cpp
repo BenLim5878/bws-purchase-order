@@ -94,11 +94,11 @@ void Logout() {
 }
 
 void mainmenu() {
-    system("CLS");
+    
     cin.ignore();
     std::cout << "\n=================== MENU ===================" << endl;
     int selection;
-
+    system("CLS");
     do {
         std::cout << "1-Purchase Order" << endl;
         std::cout << "2-Vendor Order" << endl;
@@ -110,15 +110,14 @@ void mainmenu() {
 
         std::cout << "Select Option >>" << endl;
         cin >> selection;
-        system("CLS");
 
-        switch (selection) {
-        case 1: PurchaseOrder(); system("CLS"); break;
-        case 2: VendorOrder(); system("CLS"); break;
-        case 3: Report(); system("CLS"); break;
-        case 4: DeliveryOrder(); system("CLS"); break;
-        case 5: Logout(); system("CLS"); break;
-        }
+        //switch (selection) {
+        //case 1: PurchaseOrder(); system("CLS"); break;
+        //case 2: VendorOrder(); system("CLS"); break;
+        //case 3: Report(); system("CLS"); break;
+        //case 4: DeliveryOrder(); system("CLS"); break;
+        //case 5: Logout(); system("CLS"); break;
+        //}
 
 
     } while (selection != 6);
