@@ -16,12 +16,9 @@ void SalesOrderExecutive::setExecutiveID(int executiveID) {
 void PurchaseOrder() {
     system("CLS");
     cin.ignore();
-    //string ProductName, PaymentMethod, Status, Date;
-    //int OrderID{},
-    //double Qty{}, Price{};
     string line;
     ifstream myFile;
-    myFile.open("PurchaseOrder.txt", true);
+    myFile.open("C:\\Users\\sheay\\source\\repos\\System\\PurchaseOrder.txt", true);
     if (myFile.is_open()) {
         while (getline(myFile, line))
         {
@@ -30,7 +27,7 @@ void PurchaseOrder() {
         myFile.close();
     }
     else cout << "Unable to open file";
-    int selection;
+    int option;
     do {
         std::cout << "1-Add Order" << endl;
         std::cout << "2-Update Order" << endl;
@@ -40,41 +37,16 @@ void PurchaseOrder() {
         std::cout << "********************************************" << endl;
 
         std::cout << "Select Option >>" << endl;
-        cin >> selection;
+        cin >> option;
         system("CLS");
 
-        switch (selection) {
-        case 1: add(); system("CLS"); break;
-        case 2: update(); system("CLS"); break;
-        case 3: search(); system("CLS"); break;
-        case 4: sort(); system("CLS"); break;
-        }
-    } while (selection != 5);
-    mainmenu();
-}
-
-void add() {
-    system("CLS");
-    cin.ignore();
-    std::cout << "Are you sure you want to add order? (Y/N)" << endl;
-}
-
-void update() {
-    system("CLS");
-    cin.ignore();
-    std::cout << "Please enter the Order ID that you want to update: " << endl;
-}
-
-void search() {
-    system("CLS");
-    cin.ignore();
-    std::cout << "Please enter the Order ID that you want to search: " << endl;
-}
-
-void sort() {
-    system("CLS");
-    cin.ignore();
-    std::cout << "Are you sure you want to sort? (Y/N): " << endl;
+        //switch (option) {
+        //case 1: add(); system("CLS"); break;
+        //case 2: update(); system("CLS"); break;
+        //case 3: search(); system("CLS"); break;
+        //case 4: sort(); system("CLS"); break;
+        //}
+    } while (option != 5);
 }
 
 void VendorOrder() {
@@ -93,43 +65,12 @@ void Logout() {
     std::cout << "Are you sure you wanna Logout? (Y/N)" << endl;
 }
 
-void mainmenu() {
-    
-    cin.ignore();
-    std::cout << "\n=================== MENU ===================" << endl;
-    int selection;
-    system("CLS");
-    do {
-        std::cout << "1-Purchase Order" << endl;
-        std::cout << "2-Vendor Order" << endl;
-        std::cout << "3-Report" << endl;
-        std::cout << "4-Delivery Order" << endl;
-        std::cout << "5-Logout" << endl;
-        std::cout << "6-Exit Program" << endl;
-        std::cout << "********************************************" << endl;
-
-        std::cout << "Select Option >>" << endl;
-        cin >> selection;
-
-        //switch (selection) {
-        //case 1: PurchaseOrder(); system("CLS"); break;
-        //case 2: VendorOrder(); system("CLS"); break;
-        //case 3: Report(); system("CLS"); break;
-        //case 4: DeliveryOrder(); system("CLS"); break;
-        //case 5: Logout(); system("CLS"); break;
-        //}
-
-
-    } while (selection != 6);
-}
-
 
 int main() {
-    
+
     std::cout << "\n=================== MENU ===================" << endl;
     int selection;
     system("CLS");
-
     do {
         std::cout << "1-Purchase Order" << endl;
         std::cout << "2-Vendor Order" << endl;
@@ -141,7 +82,6 @@ int main() {
 
         std::cout << "Select Option >>" << endl;
         cin >> selection;
-        system("CLS");
 
         switch (selection) {
         case 1: PurchaseOrder(); system("CLS"); break;

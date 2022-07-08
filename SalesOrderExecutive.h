@@ -3,10 +3,10 @@
 class SalesOrderExecutive : public User
 {
 private:
-	int executivesID;
+	int executiveID;
 public:
 	int getExecutiveID();
-	void setExecutiveID(int executivesID);
+	void setExecutiveID(int executiveID);
 	int menu();
 };
 

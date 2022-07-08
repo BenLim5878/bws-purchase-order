@@ -10,7 +10,7 @@
 using namespace std;
 
 
-int testing()
+int main()
 {
 	Auth auth;
 	string emailAddress;
