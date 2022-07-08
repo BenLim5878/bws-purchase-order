@@ -6,12 +6,11 @@
 #include "Auth.h"
 #include <memory>
 #include "SalesOrderExecutive.h"
-#include <string>
-#include <fstream>
+
 using namespace std;
 
 
-int main()
+int testing()
 {
 	Auth auth;
 	string emailAddress;

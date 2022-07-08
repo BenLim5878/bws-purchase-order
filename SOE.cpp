@@ -4,17 +4,6 @@
 #include <fstream>
 #include <iomanip>
 using namespace std;
-const int maxrow = 50;
-
-//string OrderID[maxrow] = {};
-//string ProductName[maxrow] = {};
-//string Date[maxrow] = {};
-//string Qty[maxrow] = {};
-//string Amount[maxrow] = {};
-//string PaymentMethod[maxrow] = {};
-//string CustomerID[maxrow] = {};
-//string CusName[maxrow] = {};
-//string Status[maxrow] = {};
 
 int SalesOrderExecutive::getExecutiveID() {
     return this->executivesID;
@@ -23,24 +12,6 @@ int SalesOrderExecutive::getExecutiveID() {
 void SalesOrderExecutive::setExecutiveID(int executiveID) {
     this->executivesID = executivesID;
 }
-
-//void SearchRec(string search) {
-//    system("CLS");
-//    cout << "********************************************" << endl;
-//    int counter = 0;
-//    for (int x = 0; x < maxrow; x++) {
-//        
-//        if (OrderID[x] == search) {
-//            counter++;
-//            //PurchaseOrder();
-//            break;
-//        }
-//    }
-//
-//    if (counter == 0) {
-//        cout << "Sorry, No Record Found!" << endl;
-//    }
-//}
 
 void PurchaseOrder() {
     system("CLS");
@@ -154,10 +125,11 @@ void mainmenu() {
 }
 
 
-int SalesOrderExecutive::menu() {
-
+int main() {
+    
     std::cout << "\n=================== MENU ===================" << endl;
     int selection;
+    system("CLS");
 
     do {
         std::cout << "1-Purchase Order" << endl;
@@ -183,5 +155,3 @@ int SalesOrderExecutive::menu() {
 
     } while (selection != 6);
 }
-
-

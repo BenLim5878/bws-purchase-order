@@ -147,6 +147,7 @@
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="SalesOrderExecutive.cpp" />
+    <ClCompile Include="SOE.cpp" />
     <ClCompile Include="TextDataReader.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UserRepository.cpp" />
