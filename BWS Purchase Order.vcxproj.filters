@@ -1,113 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\Class">
-      <UniqueIdentifier>{98ae58fe-ffc4-4937-b774-9eca2259e38a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Dummy Data">
-      <UniqueIdentifier>{00512251-52e6-40d5-8878-abfb61e6304d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Repository">
-      <UniqueIdentifier>{d73537ee-7273-4c76-ae96-594aa9191876}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="Administrator.cpp" />
+    <ClCompile Include="Auth.cpp" />
+    <ClCompile Include="BubbleSort.cpp" />
+    <ClCompile Include="BWS Purchase Order.cpp" />
+    <ClCompile Include="Form.cpp" />
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="QuickSort.cpp" />
+    <ClCompile Include="SalesOrderExecutive.cpp" />
+    <ClCompile Include="testcpp.cpp" />
+    <ClCompile Include="TextDataReader.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserRepository.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BWS Purchase Order.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Helper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="User.cpp">
-      <Filter>Source Files\Class</Filter>
-    </ClCompile>
-    <ClCompile Include="Administrator.cpp">
-      <Filter>Source Files\Class</Filter>
-    </ClCompile>
-    <ClCompile Include="SalesOrderExecutive.cpp">
-      <Filter>Source Files\Class</Filter>
-    </ClCompile>
-    <ClCompile Include="TextDataReader.cpp">
-      <Filter>Source Files\Class</Filter>
-    </ClCompile>
-    <ClCompile Include="Auth.cpp">
-      <Filter>Source Files\Class</Filter>
-    </ClCompile>
-    <ClCompile Include="UserRepository.cpp">
-      <Filter>Source Files\Repository</Filter>
-    </ClCompile>
-    <ClCompile Include="QuickSort.cpp">
-      <Filter>Source Files\Class</Filter>
-    </ClCompile>
-    <ClCompile Include="BubbleSort.cpp">
-      <Filter>Source Files\Class</Filter>
-    </ClCompile>
-    <ClCompile Include="Form.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="Form.h" />
+    <ClInclude Include="PriorityClass.h" />
+    <ClInclude Include="Administrator.h" />
+    <ClInclude Include="Auth.h" />
+    <ClInclude Include="BubbleSort.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="PriorityQueue.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="UserRepository.h" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="IRepository.h" />
+    <ClInclude Include="SalesOrderExecutive.h" />
+    <ClInclude Include="TextDataReader.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Helper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="User.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Administrator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SalesOrderExecutive.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Auth.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TextDataReader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IRepository.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UserRepository.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BubbleSort.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LinkedList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Stack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PriorityClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PriorityQueue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Form.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="User.txt">
-      <Filter>Dummy Data</Filter>
-    </Text>
+    <Text Include="User.txt" />
   </ItemGroup>
 </Project>

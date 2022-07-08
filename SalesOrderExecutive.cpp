@@ -6,16 +6,6 @@
 using namespace std;
 const int maxrow = 50;
 
-//string OrderID[maxrow] = {};
-//string ProductName[maxrow] = {};
-//string Date[maxrow] = {};
-//string Qty[maxrow] = {};
-//string Amount[maxrow] = {};
-//string PaymentMethod[maxrow] = {};
-//string CustomerID[maxrow] = {};
-//string CusName[maxrow] = {};
-//string Status[maxrow] = {};
-
 int SalesOrderExecutive::getExecutiveID() {
     return this->executivesID;
 }
@@ -24,66 +14,7 @@ void SalesOrderExecutive::setExecutiveID(int executiveID) {
     this->executivesID = executiveID;
 }
 
-//void SearchRec(string search) {
-//    system("CLS");
-//    cout << "********************************************" << endl;
-//    int counter = 0;
-//    for (int x = 0; x < maxrow; x++) {
-//        
-//        if (OrderID[x] == search) {
-//            counter++;
-//            //PurchaseOrder();
-//            break;
-//        }
-//    }
-//
-//    if (counter == 0) {
-//        cout << "Sorry, No Record Found!" << endl;
-//    }
-//}
-
 void PurchaseOrder() {
-    //system("CLS");
-    //cin.ignore();
-
-    string line;
-    ifstream myFile;
-    myFile.open("C:\\Users\\sheay\\source\\repos\\System\\PurchaseOrder.txt", true);
-    if (myFile.is_open()) {
-        while (getline(myFile, line))
-        {
-            cout << line << '\n';
-        }
-        myFile.close();
-    }
-    else cout << "Unable to open file";
-
-    cout << "0-Back to Menu" << endl;
-    cout << "Please Enter the Purchase Order ID" << endl;
-    cout << "Please Enter: ";
-    string search;
-    cin >> search;
-    
-    string ProductName, PaymentMethod, Status, Date;
-    int OrderID{},
-    double Qty{}, Price{};
-    string line;
-    int found = 0;
-
-    if (myFile.is_open()) {
-
-        while (getline(myFile, line)) {
-
-            if (line.find(search) != string::npos) {
-                cout << search << endl;
-                cout << "OrderID   ProductName   Qty   Price   PaymentMethod   Status" << endl;
-                cout << OrderID << setw(6) << ProductName << setw(15) << Qty << setw(3) << Price << setw(5) << PaymentMethod << setw(10) << Status << setw(8) << endl;
-                
-                break;
-            }
-        }
-    }
-    myFile.close();
 }
 
 void VendorOrder() {
