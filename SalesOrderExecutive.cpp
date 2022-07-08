@@ -123,7 +123,7 @@ int SalesOrderExecutive::menu() {
 
 
     } while (selection != 6);
-    return;
+    return 0;
 }
 
 

@@ -57,9 +57,6 @@
     <ClCompile Include="Form.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SOE.cpp">
-      <Filter>Source Files\Class</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Helper.h">
