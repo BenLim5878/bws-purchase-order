@@ -7,10 +7,10 @@ using namespace std;
 void AddRecord();
 void Update();
 
-//string OrderID[maxrow] = {};
-//string ProductName[maxrow] = {};
+//<<<<<<< HEAD
 
-
+//=======
+//>>>>>>> 76e7fe9d1d332708cdb6047e5d8d7260554c6d9c
 int SalesOrderExecutive::getExecutiveID() {
     return this->executiveID;
 }
