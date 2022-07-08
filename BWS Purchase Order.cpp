@@ -5,6 +5,7 @@
 #include <iostream>
 #include "Auth.h"
 #include <memory>
+#include "SalesOrderExecutive.h"
 using namespace std;
 
 
@@ -23,5 +24,8 @@ int main()
 	std::unique_ptr<AuthResult> result = auth.authenticateUser(form);
 
 	cout << result->isSuccessful;
+
+	SalesOrderExecutive* SOE = new SalesOrderExecutive;
+	SOE->menu();
 
 }
