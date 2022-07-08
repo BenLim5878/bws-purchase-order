@@ -1,37 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Administrator.cpp" />
-    <ClCompile Include="Auth.cpp" />
-    <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="BWS Purchase Order.cpp" />
-    <ClCompile Include="Form.cpp" />
-    <ClCompile Include="Helper.cpp" />
-    <ClCompile Include="QuickSort.cpp" />
-    <ClCompile Include="SalesOrderExecutive.cpp" />
-    <ClCompile Include="testcpp.cpp" />
-    <ClCompile Include="TextDataReader.cpp" />
-    <ClCompile Include="User.cpp" />
-    <ClCompile Include="UserRepository.cpp" />
+    <ClCompile Include="Administrator.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Auth.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="BubbleSort.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Form.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="QuickSort.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="SalesOrderExecutive.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="UserRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="TextDataReader.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Form.h" />
-    <ClInclude Include="PriorityClass.h" />
-    <ClInclude Include="Administrator.h" />
-    <ClInclude Include="Auth.h" />
-    <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="Config.h" />
-    <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="PriorityQueue.h" />
-    <ClInclude Include="Stack.h" />
-    <ClInclude Include="UserRepository.h" />
-    <ClInclude Include="Helper.h" />
-    <ClInclude Include="IRepository.h" />
-    <ClInclude Include="SalesOrderExecutive.h" />
-    <ClInclude Include="TextDataReader.h" />
-    <ClInclude Include="User.h" />
+    <ClInclude Include="Administrator.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Auth.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="BubbleSort.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Form.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="IRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>Data Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityClass.h">
+      <Filter>Data Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityQueue.h">
+      <Filter>Data Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="SalesOrderExecutive.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="UserRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Data Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="TextDataReader.h">
+      <Filter>Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="User.txt" />
+    <Filter Include="Model">
+      <UniqueIdentifier>{7a041ae5-acc1-4ce7-b6d2-2b9b1f1bfc37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Repository">
+      <UniqueIdentifier>{b21ae61c-e31f-41a9-94e5-ce2c5b6de3f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Structure">
+      <UniqueIdentifier>{9936efef-7753-4898-acaf-e21d49b19d09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithm">
+      <UniqueIdentifier>{af0ada89-9ddb-432d-bbd5-cdcfee2f9785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{74768f44-728a-4bd2-a028-ff1735830be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{32dfba1e-a6f6-4e96-b7c6-6b07720f38db}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="User.txt">
+      <Filter>Data</Filter>
+    </Text>
   </ItemGroup>
 </Project>

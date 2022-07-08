@@ -6,6 +6,7 @@
 #include "Auth.h"
 #include <memory>
 #include "SalesOrderExecutive.h"
+#include "Stack.h"
 
 using namespace std;
 
