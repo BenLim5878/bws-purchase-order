@@ -6,6 +6,8 @@
 #include "Auth.h"
 #include <memory>
 #include "SalesOrderExecutive.h"
+#include <string>
+#include <fstream>
 using namespace std;
 
 
@@ -27,5 +29,4 @@ int main()
 
 	SalesOrderExecutive* SOE = new SalesOrderExecutive;
 	SOE->menu();
-
 }

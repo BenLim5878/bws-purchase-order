@@ -21,7 +21,7 @@ int SalesOrderExecutive::getExecutiveID() {
 }
 
 void SalesOrderExecutive::setExecutiveID(int executiveID) {
-    this->executivesID = executiveID;
+    this->executivesID = executivesID;
 }
 
 //void SearchRec(string search) {
@@ -79,7 +79,7 @@ void PurchaseOrder() {
         case 4: sort(); system("CLS"); break;
         }
     } while (selection != 5);
-    menu();
+    mainmenu();
 }
 
 void add() {
