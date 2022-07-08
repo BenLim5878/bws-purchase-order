@@ -3,8 +3,10 @@
 
 #include <string>
 #include <iostream>
-#include "Stack.h"
-#include "User.h"
+#include "Auth.h"
+#include <memory>
+#include "SalesOrderExecutive.h"
+
 using namespace std;
 
 
@@ -20,4 +22,6 @@ int main()
 	list.update(0, user);
 	cout << "fasd";
 
+	SalesOrderExecutive* SOE = new SalesOrderExecutive;
+	SOE->menu();
 }
