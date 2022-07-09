@@ -78,9 +78,16 @@ void Stack<T>::update(int topIndex, T data)
 template<class T>
 inline void Stack<T>::update(T* tarrData, T data)
 {
+	// If nullptr, then return
+	if (!tarrData) return;
+
 	SinglyNode<T>* currNode = this->root;
 	if (currNode) {
-		while (&currNode->data == tarrData)
+		while (&currNode->data != tarrData) {
+			currNode = currNode->next;
+			if (!currNode)return;
+		}
+		currNode->data = data;
 	}
 }
 

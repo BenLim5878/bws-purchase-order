@@ -13,9 +13,11 @@ public:
 	void dequeue(PriorityClass<T>* data);
 	bool isEmpty();
 	PriorityClass<T>* get(int i);
-	DoublyNode<PriorityClass<T>>* getNode(PriorityClass<T> data);
+	DoublyNode<PriorityClass<T>>* getNode(PriorityClass<T>* data);
+	PriorityClass<T>* update(PriorityClass<T>* tarrData, PriorityClass<T> data);
+	PriorityClass<T>* update(int i, PriorityClass<T> data);
 public:
-	int len;
+	int length;
 public:
 	PririorityQueue();
 	~PririorityQueue();
@@ -59,19 +61,17 @@ PriorityClass<T>* PririorityQueue<T>::enqueue(PriorityClass<T> newData)
 {
 	DoublyNode<PriorityClass<T>>* newNode = new DoublyNode<PriorityClass<T>>();
 	newNode->data = newData;
-	newNode->data.referenceAddress = newNode;
-	this->head = newNode;
-	this->len++;
-	// If the list is empty then point the head to the new node
-	if (isEmpty()) {
-		return &(newNode->data);
+	this->length++;
+	if (this->head) {
+		newNode->next = this->head;
+		this->head = newNode;
 	}
 	else {
-		newNode->next = this->head;
+		this->head = newNode;
+		return &(newNode->data);
 	}
-	newNode->next = this->head;
 
-	for (int i = 0; i < this->len; i++) {
+	for (int i = 0; i < this->length; i++) {
 		// The node is placed at last
 		if (!newNode->next) {
 			return &(newNode->data);
@@ -92,7 +92,7 @@ PriorityClass<T>* PririorityQueue<T>::enqueue(PriorityClass<T> newData)
 template <class T>
 void PririorityQueue<T>::dequeue(PriorityClass<T>* data)
 {
-	DoublyNode<PriorityClass<T>>* tarrNode =  getNode(*data);
+	DoublyNode<PriorityClass<T>>* tarrNode =  getNode(data);
 	if (tarrNode) {
 		DoublyNode<PriorityClass<T>>* prevNode = nullptr;
 		DoublyNode<PriorityClass<T>>* nextNode = nullptr;
@@ -101,18 +101,21 @@ void PririorityQueue<T>::dequeue(PriorityClass<T>* data)
 			prevNode = tarrNode->prev;
 		}
 		if (tarrNode->next) {
-			nextNode = tarrNode->prev;
+			nextNode = tarrNode->next;
 		}
 
 		if (tarrNode->prev && tarrNode->next) {
 			prevNode->next = nextNode;
-			nextNode->next = prevNode;
+			nextNode->prev = prevNode;
 		}
-		if (tarrNode->next) {
-			nextNode = tarrNode->prev;
+		else if (!tarrNode->prev && tarrNode->next) {
+			this->head = nextNode;
+			nextNode->prev = nullptr;
 		}
-
-
+		else {
+			prevNode->next = nullptr;
+		}
+		this->length--;
 		free(tarrNode);
 	}
 }
@@ -120,7 +123,7 @@ void PririorityQueue<T>::dequeue(PriorityClass<T>* data)
 template <class T>
 bool PririorityQueue<T>::isEmpty()
 {
-	if (this->len == 0) {
+	if (this->length == 0) {
 		return true;
 	}
 	return false;
@@ -131,7 +134,7 @@ PriorityClass<T>* PririorityQueue<T>::get(int i)
 {
 	int curr = 0;
 	DoublyNode<PriorityClass<T>>* currNode = this->head;
-	for (int j = 0; j < this->len; j++) {
+	for (int j = 0; j < this->length; j++) {
 		if (i == curr) {
 			return &currNode->data;
 		}
@@ -145,12 +148,12 @@ PriorityClass<T>* PririorityQueue<T>::get(int i)
 
 
 template <class T>
-DoublyNode<PriorityClass<T>>* PririorityQueue<T>::getNode(PriorityClass<T> data)
+DoublyNode<PriorityClass<T>>* PririorityQueue<T>::getNode(PriorityClass<T>* data)
 {
 	int curr = 0;
 	DoublyNode<PriorityClass<T>>* currNode = this->head;
-	for (int j = 0; j < this->len; j++) {
-		if (currNode->data.referenceAddress == data.referenceAddress) {
+	for (int j = 0; j < this->length; j++) {
+		if (&(currNode->data) == data) {
 			return currNode;
 		}
 		else {
@@ -161,9 +164,26 @@ DoublyNode<PriorityClass<T>>* PririorityQueue<T>::getNode(PriorityClass<T> data)
 	return nullptr;
 }
 
+template<class T>
+PriorityClass<T>* PririorityQueue<T>::update(PriorityClass<T>* tarrData, PriorityClass<T> data)
+{
+	dequeue(tarrData);
+	return enqueue(data);
+}
+
+template<class T>
+PriorityClass<T>* PririorityQueue<T>::update(int i, PriorityClass<T> data)
+{
+	PriorityClass<T>* tarrData = get(i);
+	if (tarrData) {
+		return update(tarrData, data);
+	}
+	return nullptr;
+}
+
 
 template <class T>
-PririorityQueue<T>::PririorityQueue() :len(0)
+PririorityQueue<T>::PririorityQueue() :length(0)
 {
 }
 
