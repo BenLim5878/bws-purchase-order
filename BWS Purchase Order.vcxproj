@@ -169,6 +169,7 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="PurchaseOrder.txt" />
     <Text Include="User.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

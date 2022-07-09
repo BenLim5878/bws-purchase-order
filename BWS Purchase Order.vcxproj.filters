@@ -102,5 +102,8 @@
     <Text Include="User.txt">
       <Filter>Data</Filter>
     </Text>
+    <Text Include="PurchaseOrder.txt">
+      <Filter>Dummy Data</Filter>
+    </Text>
   </ItemGroup>
 </Project>

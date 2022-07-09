@@ -1,3 +1,5 @@
-OrderID, ProductName, Date, Qty, Price, PaymentMethod, Status
-12345, Book, 4/7/2022, 2, 10, Maybank, Pending
-67890, tshirt, 1/7/2011, 1, 20, CIMB Bank, Pending
+OrderID,ProductName,Date,Qty,Price,PaymentMethod,Status
+ 12345;Book;4/7/2022;2;10;Maybank;Pending
+ 67890;tshirt;1/7/2011;1;20;CIMB Bank;Pending
+ 11123;Teddy Bear;14/6/2022;2;30;Public Bank;Complete
+ 14151;Pen;9/7/2011;10;40;Hong Leong Bank;Complete
