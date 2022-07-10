@@ -10,6 +10,7 @@ namespace ViewComponent {
 	{
 	public:
 		void show() {
+            
             cout << "=============================================================================" << endl;
             cout
                 << left

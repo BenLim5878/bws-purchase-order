@@ -29,7 +29,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -151,6 +151,8 @@
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="SalesOrderExecutive.cpp" />
     <ClCompile Include="PurchaseOrderView.cpp" />
+    <ClCompile Include="SearchRecordView.cpp" />
+    <ClCompile Include="SortRecordView.cpp" />
     <ClCompile Include="TextDataReader.cpp" />
     <ClCompile Include="UpdateRecordView.cpp" />
     <ClCompile Include="User.cpp" />
@@ -170,6 +172,8 @@
     <ClInclude Include="PurchaseOrder.h" />
     <ClInclude Include="PurchaseOrderTable.h" />
     <ClInclude Include="PurchaseOrderView.h" />
+    <ClInclude Include="SearchRecordView.h" />
+    <ClInclude Include="SortRecordView.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="UpdateRecordView.h" />
     <ClInclude Include="UserRepository.h" />

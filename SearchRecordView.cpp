@@ -1,10 +1,10 @@
 #include <iostream>
 #include "PurchaseOrderTable.h"
-#include "UpdateRecordView.h"
+#include "SearchRecordView.h"
 
 using namespace std;
 
-void View::UpdateRecordView::show()
+void View::SearchRecordView::show()
 {
 	system("CLS");
 	cin.ignore();
@@ -15,7 +15,7 @@ void View::UpdateRecordView::show()
 
 	cout << "" << endl;
 	cout << "0-Back" << endl;
-	cout << "Please Enter the Order ID: " << endl;
+	cout << "Please Enter the Order ID that you want to search: " << endl;
 	int option;
 	cin >> option;
 	system("CLS");
