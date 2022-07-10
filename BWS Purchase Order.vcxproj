@@ -144,10 +144,14 @@
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="BWS Purchase Order.cpp" />
+    <ClCompile Include="Config.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Payment.cpp" />
     <ClCompile Include="Product.cpp" />
+    <ClCompile Include="ProductRepository.cpp" />
     <ClCompile Include="PurchaseOrder.cpp" />
+    <ClCompile Include="PurchaseOrderRepository.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="SalesOrderExecutive.cpp" />
     <ClCompile Include="PurchaseOrderView.cpp" />
@@ -159,6 +163,7 @@
   <ItemGroup>
     <ClInclude Include="AddRecordView.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Payment.h" />
     <ClInclude Include="PriorityClass.h" />
     <ClInclude Include="Administrator.h" />
     <ClInclude Include="Auth.h" />
@@ -167,10 +172,14 @@
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Product.h" />
+    <ClInclude Include="ProductOrderDescription.h" />
+    <ClInclude Include="ProductRepository.h" />
     <ClInclude Include="PurchaseOrder.h" />
+    <ClInclude Include="PurchaseOrderRepository.h" />
     <ClInclude Include="PurchaseOrderTable.h" />
     <ClInclude Include="PurchaseOrderView.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Tree.h" />
     <ClInclude Include="UpdateRecordView.h" />
     <ClInclude Include="UserRepository.h" />
     <ClInclude Include="Helper.h" />
@@ -180,6 +189,7 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Product.txt" />
     <Text Include="PurchaseOrder.txt" />
     <Text Include="User.txt" />
   </ItemGroup>

@@ -86,5 +86,9 @@ UserRepository::UserRepository(std::string fileLocation):users(new LinkedList<Us
 
 UserRepository::~UserRepository()
 {
+	delete this->dataReader;
+	delete this->users;
+	delete this->adminstrator;
+	delete this->salesOrderExecutive;
 }
 

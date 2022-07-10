@@ -9,11 +9,10 @@ void PurchaseOrder::setPOID(int id)
 {
 }
 
-PurchaseOrder::PurchaseOrder() {
-    this->orderedProducts = new Product[5];
+PurchaseOrder::PurchaseOrder():orderedProducts(new LinkedList<ProductOrderDescription>()) {
+    
 }
 
 PurchaseOrder::~PurchaseOrder() {
-
 }
 

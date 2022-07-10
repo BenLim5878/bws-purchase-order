@@ -47,6 +47,16 @@
     <ClCompile Include="Product.cpp">
       <Filter>Model</Filter>
     </ClCompile>
+    <ClCompile Include="PurchaseOrderRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="Payment.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="ProductRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
@@ -110,6 +120,21 @@
     <ClInclude Include="Product.h">
       <Filter>Model</Filter>
     </ClInclude>
+    <ClInclude Include="PurchaseOrderRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="Payment.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductOrderDescription.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>Data Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Model">
@@ -139,6 +164,9 @@
       <Filter>Data</Filter>
     </Text>
     <Text Include="PurchaseOrder.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="Product.txt">
       <Filter>Data</Filter>
     </Text>
   </ItemGroup>

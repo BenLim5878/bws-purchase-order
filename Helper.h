@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 void  hidecursor();
-int add(int a, int b);
+tm stringToTime(std::string timeString);
