@@ -6,6 +6,8 @@
 using namespace std;
 void AddRecord();
 void Update();
+void Search();
+void Sort();
 
 
 int SalesOrderExecutive::getExecutiveID() {
@@ -113,8 +115,8 @@ void PurchaseOrder() {
         switch (option) {
         case 1: AddRecord(); system("CLS"); break;
         case 2: Update(); system("CLS"); break;
-        //case 3: search(); system("CLS"); break;
-        //case 4: sort(); system("CLS"); break;
+        case 3: Search(); system("CLS"); break;
+        case 4: Sort(); system("CLS"); break;
         }
     } while (option != 5);
 }
@@ -398,8 +400,231 @@ void Update() {
     std::cout << "0-Back" << endl;
     std::cout << "Please Enter the Order ID: " << endl;
     int option2;
+    int updateopt;
     cin >> option2;
+    std::cout << "Please Select which one you want to update: " << endl;
+    do {
+        std::cout << "" << endl;
+        std::cout << "1-Product Name" << endl;
+        std::cout << "2-Date" << endl;
+        std::cout << "3-Quantity" << endl;
+        std::cout << "4-Price" << endl;
+        std::cout << "5-Payment Method" << endl;
+        std::cout << "6-Status" << endl;
+        std::cout << "7-Back to Main Menu" << endl;
+        std::cout << "" << endl;
+        std::cout << "=============================================================================" << endl;
+
+        std::cout << "Select Option >>" << endl;
+        
+        cin >> updateopt;
+
+        //switch (updateopt) {
+        //case 1: AddRecord(); system("CLS"); break;
+        //case 2: Update(); system("CLS"); break;
+        //}
+    } while (updateopt != 7);
+
+}
+
+void Search() {
     system("CLS");
+    cin.ignore();
+
+    ifstream myFile;
+    int i = 0;
+    myFile.open("C:\\Users\\sheay\\source\\repos\\System\\PurchaseOrder.txt", true);
+    string OrderID, ProductName, Date, Qty, Price, PaymentMethod, Status;
+    std::cout << "=============================================================================" << endl;
+    cout
+        << left
+        << setw(11)
+        << " OrderID"
+        << left
+        << setw(15)
+        << "ProductName"
+        << left
+        << setw(12)
+        << "Date"
+        << left
+        << setw(5)
+        << "Qty"
+        << left
+        << setw(8)
+        << "Price"
+        << left
+        << setw(18)
+        << "PaymentMethod"
+        << left
+        << setw(10)
+        << "Status"
+        << endl;
+    std::cout << "=============================================================================" << endl;
+    if (myFile.is_open()) {
+        string line;
+        getline(myFile, line);
+        while (!myFile.eof())
+        {
+
+            getline(myFile, OrderID, ';');
+            getline(myFile, ProductName, ';');
+            getline(myFile, Date, ';');
+            getline(myFile, Qty, ';');
+            getline(myFile, Price, ';');
+            getline(myFile, PaymentMethod, ';');
+            getline(myFile, Status);
+
+            i += 1;
+
+            for (int i = 0; i < 1; i++)
+            {
+                cout
+                    << left
+                    << setw(11)
+                    << OrderID
+                    << left
+                    << setw(15)
+                    << ProductName
+                    << left
+                    << setw(12)
+                    << Date
+                    << left
+                    << setw(5)
+                    << Qty
+                    << left
+                    << setw(8)
+                    << Price
+                    << left
+                    << setw(18)
+                    << PaymentMethod
+                    << left
+                    << setw(10)
+                    << Status
+                    << endl;
+            }
+        }
+
+        myFile.close();
+    }
+    else std::cout << "Unable to open file";
+    std::cout << "=============================================================================" << endl;
+    std::cout << "" << endl;
+    std::cout << "0-Back" << endl;
+    std::cout << "Please Enter the Order ID that you want to search: " << endl;
+    int search;
+    cin >> search;
+}
+
+void Sort() {
+    system("CLS");
+    cin.ignore();
+
+    ifstream myFile;
+    int i = 0;
+    myFile.open("C:\\Users\\sheay\\source\\repos\\System\\PurchaseOrder.txt", true);
+    string OrderID, ProductName, Date, Qty, Price, PaymentMethod, Status;
+    std::cout << "=============================================================================" << endl;
+    cout
+        << left
+        << setw(11)
+        << " OrderID"
+        << left
+        << setw(15)
+        << "ProductName"
+        << left
+        << setw(12)
+        << "Date"
+        << left
+        << setw(5)
+        << "Qty"
+        << left
+        << setw(8)
+        << "Price"
+        << left
+        << setw(18)
+        << "PaymentMethod"
+        << left
+        << setw(10)
+        << "Status"
+        << endl;
+    std::cout << "=============================================================================" << endl;
+    if (myFile.is_open()) {
+        string line;
+        getline(myFile, line);
+        while (!myFile.eof())
+        {
+
+            getline(myFile, OrderID, ';');
+            getline(myFile, ProductName, ';');
+            getline(myFile, Date, ';');
+            getline(myFile, Qty, ';');
+            getline(myFile, Price, ';');
+            getline(myFile, PaymentMethod, ';');
+            getline(myFile, Status);
+
+            i += 1;
+
+            for (int i = 0; i < 1; i++)
+            {
+                cout
+                    << left
+                    << setw(11)
+                    << OrderID
+                    << left
+                    << setw(15)
+                    << ProductName
+                    << left
+                    << setw(12)
+                    << Date
+                    << left
+                    << setw(5)
+                    << Qty
+                    << left
+                    << setw(8)
+                    << Price
+                    << left
+                    << setw(18)
+                    << PaymentMethod
+                    << left
+                    << setw(10)
+                    << Status
+                    << endl;
+            }
+        }
+
+        myFile.close();
+    }
+    else std::cout << "Unable to open file";
+    std::cout << "=============================================================================" << endl;
+    std::cout << "" << endl;
+    std::cout << "0-Back" << endl;
+    std::cout << "Please Enter the Order ID: " << endl;
+    int option2;
+    int updateopt;
+    cin >> option2;
+    std::cout << "Please Select which one you want to update: " << endl;
+    do {
+        std::cout << "" << endl;
+        std::cout << "1-Product Name" << endl;
+        std::cout << "2-Date" << endl;
+        std::cout << "3-Quantity" << endl;
+        std::cout << "4-Price" << endl;
+        std::cout << "5-Payment Method" << endl;
+        std::cout << "6-Status" << endl;
+        std::cout << "7-Back to Main Menu" << endl;
+        std::cout << "" << endl;
+        std::cout << "=============================================================================" << endl;
+
+        std::cout << "Select Option >>" << endl;
+
+        cin >> updateopt;
+
+        //switch (updateopt) {
+        //case 1: AddRecord(); system("CLS"); break;
+        //case 2: Update(); system("CLS"); break;
+        //}
+    } while (updateopt != 7);
+
 }
 
 void VendorOrder() {
