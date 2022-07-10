@@ -1,6 +1,8 @@
 #include "Menu.h"
 #include <iostream>
 #include "PurchaseOrderView.h"
+#include "VendorView.h"
+#include "DeliveryView.h"
 
 using namespace std;
 
@@ -11,7 +13,7 @@ void View::Menu::show()
     system("CLS");
     do {
         cout << "1-Purchase Order" << endl;
-        cout << "2-Vendor Order" << endl;
+        cout << "2-Vendor" << endl;
         cout << "3-Report" << endl;
         cout << "4-Delivery Order" << endl;
         cout << "5-Logout" << endl;
@@ -33,13 +35,15 @@ void View::Menu::processInput(int selection) {
         poView.show();
         break;
     case 2:
-        //VendorOrder();
+        VendorView venView;
+        venView.show();
         break;
     case 3:
         //Report();
         break;
     case 4:
-        //DeliveryOrder();
+        DeliveryView dView;
+        dView.show();
         break;
     case 5:
         //Logout();
