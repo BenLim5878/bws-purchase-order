@@ -11,9 +11,6 @@
     <ClCompile Include="BubbleSort.cpp">
       <Filter>Algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="Form.cpp">
-      <Filter>View</Filter>
-    </ClCompile>
     <ClCompile Include="Helper.cpp">
       <Filter>Model</Filter>
     </ClCompile>
@@ -32,6 +29,24 @@
     <ClCompile Include="TextDataReader.cpp">
       <Filter>Model</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="AddRecordView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="PurchaseOrderView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateRecordView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="PurchaseOrder.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Product.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
@@ -44,7 +59,7 @@
     <ClInclude Include="BubbleSort.h">
       <Filter>Algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="Form.h">
+    <ClInclude Include="Menu.h">
       <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="Helper.h">
@@ -77,6 +92,24 @@
     <ClInclude Include="TextDataReader.h">
       <Filter>Model</Filter>
     </ClInclude>
+    <ClInclude Include="PurchaseOrderTable.h">
+      <Filter>View\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PurchaseOrderView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="AddRecordView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateRecordView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="PurchaseOrder.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Model">
@@ -97,13 +130,16 @@
     <Filter Include="Data">
       <UniqueIdentifier>{32dfba1e-a6f6-4e96-b7c6-6b07720f38db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="View\Component">
+      <UniqueIdentifier>{3b68e939-060c-4339-b793-c12aea927248}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="User.txt">
       <Filter>Data</Filter>
     </Text>
     <Text Include="PurchaseOrder.txt">
-      <Filter>Dummy Data</Filter>
+      <Filter>Data</Filter>
     </Text>
   </ItemGroup>
 </Project>

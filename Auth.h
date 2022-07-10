@@ -3,7 +3,6 @@
 #include <ctime>
 #include <string>
 #include "UserRepository.h"
-#include <memory>
 
 struct AuthResult {
 	bool isSuccessful;
@@ -19,7 +18,7 @@ struct AuthInputForm {
 class Auth
 {
 public:
-	std::unique_ptr<AuthResult> authenticateUser(AuthInputForm form);
+	AuthResult authenticateUser(AuthInputForm form);
 private:
 	unsigned long pwdEncrypt(std::string pwd);
 private: 

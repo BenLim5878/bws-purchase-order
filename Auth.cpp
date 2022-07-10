@@ -7,19 +7,20 @@ char* toChar(std::string text) {
     return cstr;
 }
 
-std::unique_ptr<AuthResult> Auth::authenticateUser(AuthInputForm form)
+AuthResult Auth::authenticateUser(AuthInputForm form)
 {
     std::hash<std::string> hash;
-    std::unique_ptr<AuthResult> res(new AuthResult());
-    for (User user : repository->users) {
+    AuthResult res;
+    for (int i = 0; i < this->repository->users->length; i++) {
+        User* user = this->repository->users->get(i);
         unsigned long tarr = hash(form.password);
-        if (form.emailAddress == user.emailAddress && tarr == std::stoul(toChar(user.getPwd()))) {
-            res->authenticatedUser = user;
-            res->isSuccessful = true;
+        if (form.emailAddress == user->emailAddress && tarr == std::stoul(toChar(user->getPwd()))) {
+            res.authenticatedUser = *user;
+            res.isSuccessful = true;
             return res;
         }
     }
-    res->isSuccessful = false;
+    res.isSuccessful = false;
     return res;
 }
 

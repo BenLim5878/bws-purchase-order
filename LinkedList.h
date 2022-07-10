@@ -1,19 +1,19 @@
 #pragma once
 
-template <class T> class SinglyNode{
+template <typename T> class SinglyNode{
 public:
 	T data;
 	SinglyNode<T>* next;
 };
 
-template <class T> class DoublyNode {
+template <typename T> class DoublyNode {
 public:
 	T data;
 	DoublyNode<T>* next;
 	DoublyNode<T>* prev;
 };
 
-template <class T> class LinkedList
+template <typename T> class LinkedList
 {
 private:
 	SinglyNode<T>* head = nullptr;
@@ -36,7 +36,7 @@ public:
 	~LinkedList();
 };
 
-template<class T>
+template<typename T>
 int LinkedList<T>::search(T* x)
 {
 	SinglyNode<T>* currNode = this->head;
@@ -53,7 +53,7 @@ int LinkedList<T>::search(T* x)
 	return -1;
 }
 
-template<class T>
+template<typename T>
 SinglyNode<T>* LinkedList<T>::getNode(int i)
 {
 	if (i >= this->length) return nullptr;
@@ -70,7 +70,7 @@ SinglyNode<T>* LinkedList<T>::getNode(int i)
 	return nullptr;
 }
 
-template<class T>
+template<typename T>
 void LinkedList<T>::push(T newData)
 {
 	SinglyNode<T>* newNode = new SinglyNode<T>();
@@ -88,7 +88,7 @@ void LinkedList<T>::push(T newData)
 	this->length++;
 }
 
-template<class T>
+template<typename T>
 T* LinkedList<T>::get(int i)
 {
 	if (i >= this->length) return nullptr;
@@ -106,7 +106,7 @@ T* LinkedList<T>::get(int i)
 }
 
 
-template<class T>
+template<typename T>
 bool LinkedList<T>::contain(T* data)
 {
 	SinglyNode<T>* currentNode = this->head;
@@ -121,14 +121,14 @@ bool LinkedList<T>::contain(T* data)
 	return false;
 }
 
-template<class T>
+template<typename T>
 int LinkedList<T>::find(T* data)
 {
 	int index = search(data);
 	return index;
 }
 
-template<class T>
+template<typename T>
 T LinkedList<T>::remove(T* data)
 {
 	SinglyNode<T>* curr = this->head, *tarr = nullptr;
@@ -184,7 +184,7 @@ T LinkedList<T>::remove(T* data)
 	return temp;
 }
 
-template<class T>
+template<typename T>
 inline T LinkedList<T>::remove(int i)
 {
 	T tarrContent;
@@ -216,7 +216,7 @@ inline T LinkedList<T>::remove(int i)
 	return tarrContent;
 }
 
-template<class T>
+template<typename T>
 void LinkedList<T>::update(T* currData, T tarrData)
 {
 	int tarrIndex= find(currData);
@@ -225,7 +225,7 @@ void LinkedList<T>::update(T* currData, T tarrData)
 	tarrNode->data = tarrData;
 }
 
-template<class T>
+template<typename T>
 inline void LinkedList<T>::update(int i, T tarrData)
 {
 	SinglyNode<T>* tarrNode = getNode(i);
@@ -234,13 +234,13 @@ inline void LinkedList<T>::update(int i, T tarrData)
 }
 
 
-template<class T>
+template<typename T>
 LinkedList<T>::LinkedList() {
 
 
 }
 
-template<class T>
+template<typename T>
 LinkedList<T>::~LinkedList()
 {
 	SinglyNode<T>* currNode = this->head;

@@ -7,10 +7,7 @@ using namespace std;
 void AddRecord();
 void Update();
 
-//<<<<<<< HEAD
 
-//=======
-//>>>>>>> 76e7fe9d1d332708cdb6047e5d8d7260554c6d9c
 int SalesOrderExecutive::getExecutiveID() {
     return this->executiveID;
 }
@@ -21,7 +18,6 @@ void SalesOrderExecutive::setExecutiveID(int executiveID) {
 
 void PurchaseOrder() {
     system("CLS");
-    cin.ignore();
 
     ifstream myFile;
     int i = 0;
@@ -441,9 +437,9 @@ int SalesOrderExecutive::menu() {
         cin >> selection;
 
         switch (selection) {
-        case 1: PurchaseOrder(); system("CLS"); break;
-        case 2: VendorOrder(); system("CLS"); break;
-        case 3: Report(); system("CLS"); break;
+        case 1: PurchaseOrder(); break;
+        case 2: VendorOrder(); break;
+        case 3: Report(); break;
         case 4: DeliveryOrder(); system("CLS"); break;
         case 5: Logout(); system("CLS"); break;
         }

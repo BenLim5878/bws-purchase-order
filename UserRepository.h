@@ -1,8 +1,10 @@
 #pragma once
 #include "IRepository.h"
 #include "TextDataReader.h"
-#include <list>
+#include "LinkedList.h"
 #include "User.h"
+#include "Administrator.h"
+#include "SalesOrderExecutive.h"
 
 class UserRepository : public IRepository {
 private:
@@ -11,7 +13,14 @@ private:
 	std::string fileLocation;
 	TextDataReader *dataReader;
 public:
-	std::list<User> users;
+	LinkedList<User> *users;
+	LinkedList<Administrator> *adminstrator;
+	LinkedList<SalesOrderExecutive> *salesOrderExecutive;
+public:
+	int getTotalUser();
+	User* getUserByID(int userID);
+	Administrator* getAdminByID(int adminID);
+	SalesOrderExecutive* getSOEByID(int SOEID);
 public:
 	UserRepository(std::string fileLocation);
 	~UserRepository();
