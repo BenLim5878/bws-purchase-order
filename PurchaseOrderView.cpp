@@ -2,6 +2,8 @@
 #include "PurchaseOrderTable.h"
 #include "AddRecordView.h"
 #include "UpdateRecordView.h"
+#include "SearchRecordView.h"
+#include "SortRecordView.h"
 #include <iostream>
 #include "Menu.h"
 
@@ -41,8 +43,14 @@ void View::PurchaseOrderView::processInput(int option) {
         UpdateRecordView updateRecordView;
         updateRecordView.show();
         break;
-        //case 3: search(); system("CLS"); break;
-        //case 4: sort(); system("CLS"); break;
+    case 3: 
+        SearchRecordView searchRecordView;
+        searchRecordView.show();
+        break;
+    case 4: 
+        SortRecordView sortRecordView;
+        sortRecordView.show();
+        break;
     case 5:
         Menu menu;
         menu.show();

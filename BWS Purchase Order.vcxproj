@@ -29,7 +29,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -144,6 +144,7 @@
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="BWS Purchase Order.cpp" />
+    <ClCompile Include="DeliveryView.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="Menu.cpp" />
@@ -155,13 +156,18 @@
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="SalesOrderExecutive.cpp" />
     <ClCompile Include="PurchaseOrderView.cpp" />
+    <ClCompile Include="SearchRecordView.cpp" />
+    <ClCompile Include="SortRecordView.cpp" />
     <ClCompile Include="TextDataReader.cpp" />
     <ClCompile Include="UpdateRecordView.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UserRepository.cpp" />
+    <ClCompile Include="VendorView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddRecordView.h" />
+    <ClInclude Include="DeliveryTable.h" />
+    <ClInclude Include="DeliveryView.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Payment.h" />
     <ClInclude Include="PriorityClass.h" />
@@ -178,6 +184,8 @@
     <ClInclude Include="PurchaseOrderRepository.h" />
     <ClInclude Include="PurchaseOrderTable.h" />
     <ClInclude Include="PurchaseOrderView.h" />
+    <ClInclude Include="SearchRecordView.h" />
+    <ClInclude Include="SortRecordView.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="UpdateRecordView.h" />
@@ -187,6 +195,8 @@
     <ClInclude Include="SalesOrderExecutive.h" />
     <ClInclude Include="TextDataReader.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="VendorTable.h" />
+    <ClInclude Include="VendorView.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Product.txt" />

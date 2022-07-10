@@ -1,10 +1,10 @@
 #include <iostream>
 #include "PurchaseOrderTable.h"
-#include "UpdateRecordView.h"
+#include "SortRecordView.h"
 
 using namespace std;
 
-void View::UpdateRecordView::show()
+void View::SortRecordView::show()
 {
 	system("CLS");
 	cin.ignore();
@@ -15,7 +15,9 @@ void View::UpdateRecordView::show()
 
 	cout << "" << endl;
 	cout << "0-Back" << endl;
-	cout << "Please Enter the Order ID: " << endl;
+	cout << "Please select how to want to sort the Order Record:" << endl;
+	cout << "1-Ascending" << endl;
+	cout << "2-Descending" << endl;
 	int option;
 	cin >> option;
 	system("CLS");

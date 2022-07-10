@@ -32,20 +32,32 @@
     <ClCompile Include="Menu.cpp">
       <Filter>View</Filter>
     </ClCompile>
-    <ClCompile Include="AddRecordView.cpp">
-      <Filter>View</Filter>
-    </ClCompile>
-    <ClCompile Include="PurchaseOrderView.cpp">
-      <Filter>View</Filter>
-    </ClCompile>
-    <ClCompile Include="UpdateRecordView.cpp">
-      <Filter>View</Filter>
-    </ClCompile>
     <ClCompile Include="PurchaseOrder.cpp">
       <Filter>Model</Filter>
     </ClCompile>
     <ClCompile Include="Product.cpp">
       <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="AddRecordView.cpp">
+      <Filter>View\PurchaseOrder</Filter>
+    </ClCompile>
+    <ClCompile Include="PurchaseOrderView.cpp">
+      <Filter>View\PurchaseOrder</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchRecordView.cpp">
+      <Filter>View\PurchaseOrder</Filter>
+    </ClCompile>
+    <ClCompile Include="SortRecordView.cpp">
+      <Filter>View\PurchaseOrder</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateRecordView.cpp">
+      <Filter>View\PurchaseOrder</Filter>
+    </ClCompile>
+    <ClCompile Include="VendorView.cpp">
+      <Filter>View\Vendor</Filter>
+    </ClCompile>
+    <ClCompile Include="DeliveryView.cpp">
+      <Filter>View\Delivery</Filter>
     </ClCompile>
     <ClCompile Include="PurchaseOrderRepository.cpp">
       <Filter>Repository</Filter>
@@ -105,18 +117,38 @@
     <ClInclude Include="PurchaseOrderTable.h">
       <Filter>View\Component</Filter>
     </ClInclude>
-    <ClInclude Include="PurchaseOrderView.h">
-      <Filter>View</Filter>
-    </ClInclude>
-    <ClInclude Include="AddRecordView.h">
-      <Filter>View</Filter>
-    </ClInclude>
-    <ClInclude Include="UpdateRecordView.h">
-      <Filter>View</Filter>
-    </ClInclude>
     <ClInclude Include="PurchaseOrder.h">
       <Filter>Model</Filter>
     </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="AddRecordView.h">
+      <Filter>View\PurchaseOrder</Filter>
+    </ClInclude>
+    <ClInclude Include="PurchaseOrderView.h">
+      <Filter>View\PurchaseOrder</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchRecordView.h">
+      <Filter>View\PurchaseOrder</Filter>
+    </ClInclude>
+    <ClInclude Include="SortRecordView.h">
+      <Filter>View\PurchaseOrder</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateRecordView.h">
+      <Filter>View\PurchaseOrder</Filter>
+    </ClInclude>
+    <ClInclude Include="VendorView.h">
+      <Filter>View\Vendor</Filter>
+    </ClInclude>
+    <ClInclude Include="VendorTable.h">
+      <Filter>View\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="DeliveryView.h">
+      <Filter>View\Delivery</Filter>
+    </ClInclude>
+    <ClInclude Include="DeliveryTable.h">
+      <Filter>View\Component</Filter>
     <ClInclude Include="Product.h">
       <Filter>Model</Filter>
     </ClInclude>
@@ -157,6 +189,15 @@
     </Filter>
     <Filter Include="View\Component">
       <UniqueIdentifier>{3b68e939-060c-4339-b793-c12aea927248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\PurchaseOrder">
+      <UniqueIdentifier>{4ebd9640-f97e-486e-959c-a897c5e88de3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\Vendor">
+      <UniqueIdentifier>{5732522e-a701-458c-895b-00239cc95955}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\Delivery">
+      <UniqueIdentifier>{bd4d7e99-dfb1-460e-be77-b90c2b585b6a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
