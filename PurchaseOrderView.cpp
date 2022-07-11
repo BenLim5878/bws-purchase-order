@@ -6,12 +6,18 @@
 #include "SortRecordView.h"
 #include <iostream>
 #include "Menu.h"
+#include "Header.h"
+#include "Time.h"
 
 using namespace std;
 
 void View::PurchaseOrderView::show()
 {
     system("CLS");
+    ViewHeader::Header head;
+    head.display();
+    displayTime::Time dtime;
+    dtime.show();
     ViewComponent::PurchaseOrderTable poTable;
     poTable.show();
 

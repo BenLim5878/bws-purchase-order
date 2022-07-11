@@ -29,7 +29,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -144,6 +144,7 @@
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="BWS Purchase Order.cpp" />
+    <ClCompile Include="DataAccess.cpp" />
     <ClCompile Include="DeliveryView.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Helper.cpp" />
@@ -166,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddRecordView.h" />
+    <ClInclude Include="DataAccess.h" />
     <ClInclude Include="DeliveryTable.h" />
     <ClInclude Include="DeliveryView.h" />
     <ClInclude Include="Header.h" />

@@ -19,15 +19,18 @@ void View::Menu::show()
     head.display();
     displayTime::Time dtime;
     dtime.show();
-    cout << "\n=================== MENU ===================" << endl;
+
+    std::cout << "\n=================== MENU ===================" << endl;
+    std::cout << "" << endl;
     do {
-        cout << "1-Purchase Order" << endl;
-        cout << "2-Vendor" << endl;
-        cout << "3-Report" << endl;
-        cout << "4-Delivery Order" << endl;
-        cout << "5-Logout" << endl;
-        cout << "6-Exit Program" << endl;
-        cout << "********************************************" << endl;
+        std::cout << "1-Purchase Order" << endl;
+        std:: cout << "2-Vendor" << endl;
+        std::cout << "3-Report" << endl;
+        std::cout << "4-Delivery Order" << endl;
+        std::cout << "5-Logout" << endl;
+        std::cout << "6-Exit Program" << endl;
+        std::cout << "" << endl;
+        std::cout << "============================================" << endl;
 
         cout << "Select Option >>" << endl;
         cin >> selection;

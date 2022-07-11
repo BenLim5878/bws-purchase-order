@@ -3,6 +3,8 @@
 #include "VendorView.h"
 #include "VendorTable.h"
 #include "Menu.h"
+#include "Header.h"
+#include "Time.h"
 
 using namespace std;
 int vDecision;
@@ -11,9 +13,12 @@ string vDecision2;
 void View::VendorView::show()
 {
     system("CLS");
+    ViewHeader::Header head;
+    head.display();
+    displayTime::Time dtime;
+    dtime.show();
     ViewComponent::VendorTable vTable;
     vTable.show();
-
     std::cout << "0-Back to Menu" << endl;
     std::cout << "Please enter the Vendor ID to view the vendor details:" << endl;
     int vendorID;
