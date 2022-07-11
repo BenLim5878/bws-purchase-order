@@ -21,9 +21,11 @@ public:
 	void insertCategory(ProductCategory productCategory);
 	Product* getProduct(std::string categoryName, int nthChild);
 	Product* getProduct(int categoryID, int nthChild);
+	Product* getProduct(int productID);
 	ProductCategory* getProductCategory(std::string categoryName);
 	ProductCategory* getProductCategory(int categoryID);
 	void deleteProduct(Product* product);
+	void deleteProduct(int productID);
 public:
 	int getTotalCategory();
 	int getTotalItem();

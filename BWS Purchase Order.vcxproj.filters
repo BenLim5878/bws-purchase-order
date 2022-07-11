@@ -69,6 +69,9 @@
       <Filter>Repository</Filter>
     </ClCompile>
     <ClCompile Include="Config.cpp" />
+    <ClCompile Include="DataAccess.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
@@ -167,12 +170,6 @@
     </ClInclude>
     <ClInclude Include="ProductRepository.h">
       <Filter>Repository</Filter>
-    </ClInclude>
-    <ClInclude Include="Header.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Time.h">
-      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

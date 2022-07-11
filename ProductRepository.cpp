@@ -36,7 +36,7 @@ void ProductRepository::loadData()
 		// Product Discount Rate
 		temp.productDiscountRate = std::stoll(record.at(8));
 		// Product Status
-		temp.productDiscountRate = static_cast<ProductStatus>(std::stoi(record.at(8)));
+		temp.productStatus = static_cast<ProductStatus>(std::stoi(record.at(8)));
 		
 		// Insert into tree
 		insertProduct(temp);
@@ -98,6 +98,19 @@ Product* ProductRepository::getProduct(int categoryID, int nthChild)
 	}
 }
 
+Product* ProductRepository::getProduct(int productID)
+{
+	for (int i = 0; i < getTotalCategory(); i++) {
+		CategoryNode* categoryNode = static_cast<CategoryNode*>(this->productCategoryTree->root->getChild(i));
+		for (int j = 0; j < getTotalItemByCategory(categoryNode->data.categoryID); j++) {
+			ProductNode* productNode = static_cast<ProductNode*>(categoryNode->getChild(j));
+			if (productNode->data.getProductID() == productID) {
+				return &productNode->data;
+			}
+		}
+	}
+}
+
 ProductCategory* ProductRepository::getProductCategory(std::string categoryName)
 {
 	for (int i = 0; i < getTotalCategory(); i++) {
@@ -131,6 +144,14 @@ void ProductRepository::deleteProduct(Product* product)
 				}
 			}
 		}
+	}
+}
+
+void ProductRepository::deleteProduct(int productID)
+{
+	Product* product = getProduct(productID);
+	if (product) {
+		deleteProduct(product);
 	}
 }
 
