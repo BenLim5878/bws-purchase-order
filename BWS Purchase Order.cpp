@@ -3,20 +3,23 @@
 
 #include <string>
 #include <iostream>
-#include "Tree.h"
-#include "ProductRepository.h"
+#include "DataAccess.h"
 
 using namespace std;
 
+DataAccess* DataAccess::instance = 0;
+
 int main()
 {
-	ProductRepository* repos = new ProductRepository("Product.txt");
-	Product* sample =  repos->getProduct(0, 0);
-	repos->deleteProduct(sample);
-	int total = repos->getTotalItem();
-	Product* haha = repos->getProduct(0,0);
+	PririorityQueue<PurchaseOrder>* t = DataAccess::getInstance()->purchaseOrderRepository->purchaseOrder;
 
 
-	delete repos;
+
 	cout << "fasdf";
 }
+
+
+// Add & Complete payment repos
+// Add & Complete vendor repos
+// Complete po repos
+// Add & Complete delivery repos

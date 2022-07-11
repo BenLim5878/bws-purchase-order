@@ -69,6 +69,9 @@
       <Filter>Repository</Filter>
     </ClCompile>
     <ClCompile Include="Config.cpp" />
+    <ClCompile Include="DataAccess.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
@@ -149,6 +152,7 @@
     </ClInclude>
     <ClInclude Include="DeliveryTable.h">
       <Filter>View\Component</Filter>
+    </ClInclude>
     <ClInclude Include="Product.h">
       <Filter>Model</Filter>
     </ClInclude>
@@ -165,6 +169,9 @@
       <Filter>Data Structure</Filter>
     </ClInclude>
     <ClInclude Include="ProductRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="DataAccess.h">
       <Filter>Repository</Filter>
     </ClInclude>
   </ItemGroup>

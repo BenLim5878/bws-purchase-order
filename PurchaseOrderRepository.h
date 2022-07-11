@@ -10,6 +10,8 @@ class PurchaseOrderRepository:public IRepository
 private:
 	virtual void loadData();
 private:
+	LinkedList<ProductOrderDescription>* processProductOrderString(std::string products, std::string quantity);
+private:
 	std::string fileLocation;
 	TextDataReader* dataReader;
 public:
