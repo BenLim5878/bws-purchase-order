@@ -21,6 +21,5 @@ int main()
 	delete repos;
 	cout << "fasdf";
 
-	View::Menu menu;
-	menu.show();
+
 }
