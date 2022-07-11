@@ -1,16 +1,25 @@
 #include "Menu.h"
 #include <iostream>
+#include <Windows.h>
 #include "PurchaseOrderView.h"
 #include "VendorView.h"
 #include "DeliveryView.h"
+#include "Header.h"
+#include "Time.h"
 
 using namespace std;
+
 
 void View::Menu::show()
 {
     int selection;
-    cout << "\n=================== MENU ===================" << endl;
+
     system("CLS");
+    ViewHeader::Header head;
+    head.display();
+    displayTime::Time dtime;
+    dtime.show();
+    cout << "\n=================== MENU ===================" << endl;
     do {
         cout << "1-Purchase Order" << endl;
         cout << "2-Vendor" << endl;
@@ -23,7 +32,6 @@ void View::Menu::show()
         cout << "Select Option >>" << endl;
         cin >> selection;
         processInput(selection);
-
 
     } while (selection < 1 && selection > 5);
 }
@@ -50,3 +58,4 @@ void View::Menu::processInput(int selection) {
         break;
     }
 }
+
