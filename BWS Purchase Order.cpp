@@ -5,6 +5,7 @@
 #include <iostream>
 #include "Tree.h"
 #include "ProductRepository.h"
+#include "Menu.h"
 
 using namespace std;
 
@@ -19,4 +20,7 @@ int main()
 
 	delete repos;
 	cout << "fasdf";
+
+	View::Menu menu;
+	menu.show();
 }

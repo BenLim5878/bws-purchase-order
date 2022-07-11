@@ -1,5 +1,6 @@
 #pragma once
 #include "PriorityQueue.h"
+#include "PurchaseOrderRepository.h"
 #include <iomanip>
 #include <iostream>
 
@@ -37,6 +38,11 @@ namespace ViewComponent {
                 << endl;
             std::cout << "=============================================================================" << endl;
 		}
+
+    public:
+        void showData() {
+            PurchaseOrderRepository("PurchaseOrder.txt");
+        }
 	};
 }
 

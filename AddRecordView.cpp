@@ -33,19 +33,6 @@ void View::AddRecordView::show()
             cin >> oid;
         }
     }
-    //do {
-    //    std::cout << "Please Enter the Order ID: " << endl;
-    //    cin >> oid;
-    //    if (oid == 0) {
-    //        std::cout << "Are you sure you want to exit? (Y/N): " << endl;
-    //        cin >> decision;
-    //    }
-    //    else {
-    //        exit;
-    //    }
-    //}while (decision != "Y");{
-    //    return;
-    //}
 
     std::cout << "Please Enter the Product Name: " << endl;
     string pname;
