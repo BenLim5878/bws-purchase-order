@@ -5,6 +5,7 @@
 #include "LinkedList.h"
 #include "Payment.h"
 #include "ProductOrderDescription.h"
+#include "Vendor.h"
 
 enum OrderStatus {
 	Sent,
@@ -23,6 +24,7 @@ public:
 	OrderStatus orderStatus;
 	LinkedList<ProductOrderDescription>* orderedProducts = nullptr;
 	Payment* paymentRecord;
+	Vendor* vendor;
 public:
 	int getPOID();
 	void setPOID(int id);

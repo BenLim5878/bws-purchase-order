@@ -4,6 +4,19 @@
 #include "TextDataReader.h"
 #include "PriorityQueue.h"
 #include "PurchaseOrder.h"
+#include <memory>
+
+enum PurchaseOrderArrangement {
+	Ascending,
+	Decending
+};
+
+enum PurchaseOrderPriority {
+	TotalPrice,
+	Latest,
+	TotalItem
+};
+
 
 class PurchaseOrderRepository:public IRepository
 {
@@ -14,8 +27,18 @@ private:
 private:
 	std::string fileLocation;
 	TextDataReader* dataReader;
+	PurchaseOrderPriority sortCriteria;
+	PurchaseOrderArrangement arrangement;
 public:
 	PririorityQueue<PurchaseOrder>* purchaseOrder;
+public:
+	PurchaseOrder* getPurchaseOrder(int purchaseOrderID);
+	void addPurchaseOrder(PurchaseOrder purchaseOrder);
+	void deletePurchaseOrder(int purchaseOrderID);
+	void sort(PurchaseOrderPriority criteria, PurchaseOrderArrangement arrangement);
+private:
+	int getNewPurchaseOrderID();
+	long calculatePriority(PurchaseOrder purchaseOrder);
 public:
 	PurchaseOrderRepository(std::string fileLocation);
 	~PurchaseOrderRepository();

@@ -150,6 +150,7 @@
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Payment.cpp" />
+    <ClCompile Include="PaymentRepository.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="ProductRepository.cpp" />
     <ClCompile Include="PurchaseOrder.cpp" />
@@ -163,6 +164,8 @@
     <ClCompile Include="UpdateRecordView.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UserRepository.cpp" />
+    <ClCompile Include="Vendor.cpp" />
+    <ClCompile Include="VendorRepository.cpp" />
     <ClCompile Include="VendorView.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +175,7 @@
     <ClInclude Include="DeliveryView.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Payment.h" />
+    <ClInclude Include="PaymentRepository.h" />
     <ClInclude Include="PriorityClass.h" />
     <ClInclude Include="Administrator.h" />
     <ClInclude Include="Auth.h" />
@@ -197,13 +201,17 @@
     <ClInclude Include="SalesOrderExecutive.h" />
     <ClInclude Include="TextDataReader.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="Vendor.h" />
+    <ClInclude Include="VendorRepository.h" />
     <ClInclude Include="VendorTable.h" />
     <ClInclude Include="VendorView.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Payment.txt" />
     <Text Include="Product.txt" />
     <Text Include="PurchaseOrder.txt" />
     <Text Include="User.txt" />
+    <Text Include="Vendor.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

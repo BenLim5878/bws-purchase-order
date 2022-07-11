@@ -72,6 +72,15 @@
     <ClCompile Include="DataAccess.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
+    <ClCompile Include="PaymentRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="Vendor.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="VendorRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
@@ -152,7 +161,7 @@
     </ClInclude>
     <ClInclude Include="DeliveryTable.h">
       <Filter>View\Component</Filter>
-	</ClInclude>
+    </ClInclude>
     <ClInclude Include="Product.h">
       <Filter>Model</Filter>
     </ClInclude>
@@ -172,6 +181,15 @@
       <Filter>Repository</Filter>
     </ClInclude>
     <ClInclude Include="DataAccess.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="Vendor.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="VendorRepository.h">
       <Filter>Repository</Filter>
     </ClInclude>
   </ItemGroup>
@@ -215,6 +233,12 @@
       <Filter>Data</Filter>
     </Text>
     <Text Include="Product.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="Payment.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="Vendor.txt">
       <Filter>Data</Filter>
     </Text>
   </ItemGroup>

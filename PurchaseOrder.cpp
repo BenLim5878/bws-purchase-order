@@ -2,11 +2,12 @@
 
 int PurchaseOrder::getPOID()
 {
-    return 0;
+    return this->poID;
 }
 
 void PurchaseOrder::setPOID(int id)
 {
+    this->poID = id;
 }
 
 PurchaseOrder::PurchaseOrder():orderedProducts(new LinkedList<ProductOrderDescription>()) {
