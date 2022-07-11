@@ -152,7 +152,7 @@
     </ClInclude>
     <ClInclude Include="DeliveryTable.h">
       <Filter>View\Component</Filter>
-    </ClInclude>
+	</ClInclude>
     <ClInclude Include="Product.h">
       <Filter>Model</Filter>
     </ClInclude>
