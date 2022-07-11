@@ -168,6 +168,7 @@
     <ClInclude Include="AddRecordView.h" />
     <ClInclude Include="DeliveryTable.h" />
     <ClInclude Include="DeliveryView.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Payment.h" />
     <ClInclude Include="PriorityClass.h" />
@@ -187,6 +188,7 @@
     <ClInclude Include="SearchRecordView.h" />
     <ClInclude Include="SortRecordView.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Time.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="UpdateRecordView.h" />
     <ClInclude Include="UserRepository.h" />

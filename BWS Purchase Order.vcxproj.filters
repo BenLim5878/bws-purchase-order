@@ -149,7 +149,7 @@
     </ClInclude>
     <ClInclude Include="DeliveryTable.h">
       <Filter>View\Component</Filter>
-	</ClInclude>
+    </ClInclude>
     <ClInclude Include="Product.h">
       <Filter>Model</Filter>
     </ClInclude>
@@ -167,6 +167,12 @@
     </ClInclude>
     <ClInclude Include="ProductRepository.h">
       <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +205,9 @@
     </Filter>
     <Filter Include="View\Delivery">
       <UniqueIdentifier>{bd4d7e99-dfb1-460e-be77-b90c2b585b6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{196959bf-f2c4-45fe-a3f5-170b9b1fa987}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

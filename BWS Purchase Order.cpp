@@ -6,11 +6,13 @@
 #include "Tree.h"
 #include "ProductRepository.h"
 #include "Menu.h"
+#include "Header.h"
 
 using namespace std;
 
 int main()
 {
+
 	ProductRepository* repos = new ProductRepository("Product.txt");
 	Product* sample =  repos->getProduct(0, 0);
 	repos->deleteProduct(sample);
@@ -21,5 +23,6 @@ int main()
 	delete repos;
 	cout << "fasdf";
 
-
+	View::Menu menu;
+	menu.show();
 }
