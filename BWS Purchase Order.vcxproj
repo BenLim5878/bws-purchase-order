@@ -145,6 +145,8 @@
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="BWS Purchase Order.cpp" />
     <ClCompile Include="DataAccess.cpp" />
+    <ClCompile Include="Delivery.cpp" />
+    <ClCompile Include="DeliveryRepository.cpp" />
     <ClCompile Include="DeliveryView.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Helper.cpp" />
@@ -159,6 +161,7 @@
     <ClCompile Include="SalesOrderExecutive.cpp" />
     <ClCompile Include="PurchaseOrderView.cpp" />
     <ClCompile Include="SearchRecordView.cpp" />
+    <ClCompile Include="Session.cpp" />
     <ClCompile Include="SortRecordView.cpp" />
     <ClCompile Include="TextDataReader.cpp" />
     <ClCompile Include="UpdateRecordView.cpp" />
@@ -171,6 +174,8 @@
   <ItemGroup>
     <ClInclude Include="AddRecordView.h" />
     <ClInclude Include="DataAccess.h" />
+    <ClInclude Include="Delivery.h" />
+    <ClInclude Include="DeliveryRepository.h" />
     <ClInclude Include="DeliveryTable.h" />
     <ClInclude Include="DeliveryView.h" />
     <ClInclude Include="Header.h" />
@@ -192,6 +197,7 @@
     <ClInclude Include="PurchaseOrderTable.h" />
     <ClInclude Include="PurchaseOrderView.h" />
     <ClInclude Include="SearchRecordView.h" />
+    <ClInclude Include="Session.h" />
     <ClInclude Include="SortRecordView.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Time.h" />
@@ -209,6 +215,7 @@
     <ClInclude Include="VendorView.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Delivery.txt" />
     <Text Include="Payment.txt" />
     <Text Include="Product.txt" />
     <Text Include="PurchaseOrder.txt" />

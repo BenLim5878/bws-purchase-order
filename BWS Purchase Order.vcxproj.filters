@@ -81,6 +81,15 @@
     <ClCompile Include="VendorRepository.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
+    <ClCompile Include="Delivery.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="DeliveryRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="Session.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
@@ -192,6 +201,17 @@
     <ClInclude Include="VendorRepository.h">
       <Filter>Repository</Filter>
     </ClInclude>
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="Delivery.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="DeliveryRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="Session.h">
+      <Filter>Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Model">
@@ -242,6 +262,9 @@
       <Filter>Data</Filter>
     </Text>
     <Text Include="Vendor.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="Delivery.txt">
       <Filter>Data</Filter>
     </Text>
   </ItemGroup>

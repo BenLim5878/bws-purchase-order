@@ -8,26 +8,25 @@
 #include "Menu.h"
 #include "DataAccess.h"
 #include "ProductRepository.h"
-#include "Helper.h"
+#include "Session.h"
+#include "Auth.h"
 
 using namespace std;
 
 DataAccess* DataAccess::instance = 0;
+Session* Session::instance = 0;
 
 int main()
 {
-	ProductRepository* repos = new ProductRepository("Product.txt");
-	Product* sample =  repos->getProduct(0, 0);
-	repos->deleteProduct(sample);
-	int total = repos->getTotalItem();
-	Product* haha = repos->getProduct(0,0);
+	AuthInputForm form;
+	form.emailAddress = "limzhengwei1002@gmail.com";
+	form.password = "abc12345";
 
-	DataAccess::getInstance()->purchaseOrderRepository->sort(PurchaseOrderPriority::TotalItem, PurchaseOrderArrangement::Decending);
-	PririorityQueue<PurchaseOrder>* t = DataAccess::getInstance()->purchaseOrderRepository->purchaseOrder;
-	cout << "fads";
+	Auth auth;
+	auth.authenticateUser(form);
+	Session* session = Session::getInstance();
+	Session::getInstance()->deleteSession();
+	auth.authenticateUser(form);
 
+	return 0;
 }
-
-// Complete po repos
-// Calculate the amount of product in stock in product repos
-// Add & Complete delivery repos

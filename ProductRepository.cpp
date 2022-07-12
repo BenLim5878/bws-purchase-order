@@ -1,6 +1,7 @@
 #include "ProductRepository.h"
 #include "Config.h"
 #include "VendorRepository.h"
+#include "DataAccess.h"
 //ProductID, (0)
 //ProductCategoryID, (1)
 //ProductBrandName, (2)
@@ -159,6 +160,23 @@ void ProductRepository::deleteProduct(int productID)
 	if (product) {
 		deleteProduct(product);
 	}
+}
+
+int ProductRepository::getProductStockAmount(int productID)
+{
+	int total = 0;
+	Product* tarr = getProduct(productID);
+	PurchaseOrderRepository* repos = DataAccess::getInstance()->purchaseOrderRepository;
+	for (int i = 0; i < repos->purchaseOrder->length; i++) {
+		PriorityClass<PurchaseOrder>* po = repos->purchaseOrder->get(i);
+		for (int j = 0; j < po->content.orderedProducts->length; j++) {
+			ProductOrderDescription* desc = po->content.orderedProducts->get(j);
+			if (desc->product->getProductID() == productID) {
+				total += desc->quantity;
+			}
+		}
+	}
+	return total;
 }
 
 int ProductRepository::getTotalCategory()

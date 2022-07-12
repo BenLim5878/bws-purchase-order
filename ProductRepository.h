@@ -26,6 +26,7 @@ public:
 	ProductCategory* getProductCategory(int categoryID);
 	void deleteProduct(Product* product);
 	void deleteProduct(int productID);
+	int getProductStockAmount(int productID);
 public:
 	int getTotalCategory();
 	int getTotalItem();

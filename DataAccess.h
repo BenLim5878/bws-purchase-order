@@ -4,6 +4,7 @@
 #include "UserRepository.h"
 #include "PaymentRepository.h"
 #include "VendorRepository.h"
+#include "DeliveryRepository.h"
 
 class DataAccess {
 public:
@@ -12,6 +13,7 @@ public:
 	UserRepository* userRepository;
 	PaymentRepository* paymentRepository;
 	VendorRepository* vendorRepository;
+	DeliveryRepository* deliveryRepository;
 public:
 	static DataAccess* getInstance();
 private:

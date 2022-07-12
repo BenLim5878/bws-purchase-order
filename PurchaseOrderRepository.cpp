@@ -97,7 +97,9 @@ void PurchaseOrderRepository::addPurchaseOrder(PurchaseOrder purchaseOrder)
 {
 	PriorityClass<PurchaseOrder> temp;
 	temp.priority = calculatePriority(purchaseOrder);
-	purchaseOrder.setPOID(getNewPurchaseOrderID());
+	if (!purchaseOrder.getPOID()) {
+		purchaseOrder.setPOID(getNewPurchaseOrderID());
+	}
 	temp.content = purchaseOrder;
 	this->purchaseOrder->enqueue(temp);
 }
@@ -129,6 +131,13 @@ void PurchaseOrderRepository::sort(PurchaseOrderPriority criteria, PurchaseOrder
 	}
 	delete this->purchaseOrder;
 	this->purchaseOrder = temp;
+}
+
+void PurchaseOrderRepository::updatePurchaseOrder(PurchaseOrder* purchaseOrder)
+{
+	PurchaseOrder* temp = new PurchaseOrder(*purchaseOrder);
+	deletePurchaseOrder(purchaseOrder->getPOID());
+	addPurchaseOrder(*temp);
 }
 
 int PurchaseOrderRepository::getNewPurchaseOrderID()

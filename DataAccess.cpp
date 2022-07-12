@@ -14,4 +14,5 @@ DataAccess::DataAccess() {
 	this->userRepository = new UserRepository("User.txt");
 	this->paymentRepository = new PaymentRepository("Payment.txt");
 	this->vendorRepository = new VendorRepository("Vendor.txt");
+	this->deliveryRepository = new DeliveryRepository("Delivery.txt");
 }

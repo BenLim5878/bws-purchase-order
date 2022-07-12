@@ -36,6 +36,7 @@ public:
 	void addPurchaseOrder(PurchaseOrder purchaseOrder);
 	void deletePurchaseOrder(int purchaseOrderID);
 	void sort(PurchaseOrderPriority criteria, PurchaseOrderArrangement arrangement);
+	void updatePurchaseOrder(PurchaseOrder* purchaseOrder);
 private:
 	int getNewPurchaseOrderID();
 	long calculatePriority(PurchaseOrder purchaseOrder);
