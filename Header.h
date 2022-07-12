@@ -12,11 +12,12 @@ namespace ViewHeader {
 			HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 			SetConsoleTextAttribute(h, 9); 
 			std::cout << "" <<endl;
-			std::cout << " *     *      **                         *          ****   *         *  ***  !! " << endl;
-			std::cout << " *     *      **                         *          *   *   *       *  *     !! " << endl;
-			std::cout << " *  *  * ***  **  **** **** ***** ***  ***** ****   * ****   *  *  *    ***  !! " << endl;
-			std::cout << "  * * *  **   **  *    *  * * * * **     *   *  *   *   *     * * *        * !!" << endl;
-			std::cout << "   * *   ***  *** **** **** * * * ***    *   ****    ****     *   *    ***    @ " << endl;
+			std::cout << " *     *       **                          *          ****   *         *  ***   *** " << endl;
+			std::cout << " *     *       **                          *          *   *   *       *  *      *** " << endl;
+			std::cout << " *  *  * ****  **  **** **** ***** ****  ***** ****   * ****   *  *  *    ***   ***" << endl;
+			std::cout << "  * * *  ***   **  *    *  * * * * ***     *   *  *   *   *     * * *        *  ***" << endl;
+			std::cout << "   * *   ****  *** **** **** * * * ****    *   ****    ****     *   *    ***     @ " << endl;
+
 
 			SetConsoleTextAttribute(h, 7);
 			
