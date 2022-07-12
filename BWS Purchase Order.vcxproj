@@ -191,6 +191,7 @@
     <ClInclude Include="PurchaseOrderRepository.h" />
     <ClInclude Include="PurchaseOrderTable.h" />
     <ClInclude Include="PurchaseOrderView.h" />
+    <ClInclude Include="QuickSort.h" />
     <ClInclude Include="SearchRecordView.h" />
     <ClInclude Include="SortRecordView.h" />
     <ClInclude Include="Stack.h" />

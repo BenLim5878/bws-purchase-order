@@ -2,108 +2,156 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="BWS Purchase Order.cpp" />
-    <ClCompile Include="Administrator.cpp">
-      <Filter>Model</Filter>
-    </ClCompile>
-    <ClCompile Include="Auth.cpp">
-      <Filter>Model</Filter>
-    </ClCompile>
+    <ClCompile Include="DataAccess.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="TextDataReader.cpp" />
     <ClCompile Include="BubbleSort.cpp">
       <Filter>Algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="Helper.cpp">
-      <Filter>Model</Filter>
     </ClCompile>
     <ClCompile Include="QuickSort.cpp">
       <Filter>Algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="SalesOrderExecutive.cpp">
-      <Filter>Model</Filter>
+    <ClCompile Include="AddRecordView.cpp">
+      <Filter>View</Filter>
     </ClCompile>
-    <ClCompile Include="UserRepository.cpp">
-      <Filter>Repository</Filter>
-    </ClCompile>
-    <ClCompile Include="User.cpp">
-      <Filter>Model</Filter>
-    </ClCompile>
-    <ClCompile Include="TextDataReader.cpp">
-      <Filter>Model</Filter>
+    <ClCompile Include="DeliveryView.cpp">
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>View</Filter>
     </ClCompile>
-    <ClCompile Include="PurchaseOrder.cpp">
-      <Filter>Model</Filter>
-    </ClCompile>
-    <ClCompile Include="Product.cpp">
-      <Filter>Model</Filter>
-    </ClCompile>
-    <ClCompile Include="AddRecordView.cpp">
-      <Filter>View\PurchaseOrder</Filter>
-    </ClCompile>
     <ClCompile Include="PurchaseOrderView.cpp">
-      <Filter>View\PurchaseOrder</Filter>
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="SearchRecordView.cpp">
-      <Filter>View\PurchaseOrder</Filter>
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="SortRecordView.cpp">
-      <Filter>View\PurchaseOrder</Filter>
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="UpdateRecordView.cpp">
-      <Filter>View\PurchaseOrder</Filter>
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="VendorView.cpp">
-      <Filter>View\Vendor</Filter>
+      <Filter>View</Filter>
     </ClCompile>
-    <ClCompile Include="DeliveryView.cpp">
-      <Filter>View\Delivery</Filter>
+    <ClCompile Include="Administrator.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="PurchaseOrderRepository.cpp">
-      <Filter>Repository</Filter>
+    <ClCompile Include="Auth.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Payment.cpp">
-      <Filter>Model</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="ProductRepository.cpp">
-      <Filter>Repository</Filter>
+    <ClCompile Include="Product.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Config.cpp" />
-    <ClCompile Include="DataAccess.cpp">
-      <Filter>Repository</Filter>
+    <ClCompile Include="PurchaseOrder.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SalesOrderExecutive.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Vendor.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="PaymentRepository.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
-    <ClCompile Include="Vendor.cpp">
-      <Filter>Model</Filter>
+    <ClCompile Include="ProductRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="PurchaseOrderRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="UserRepository.cpp">
+      <Filter>Repository</Filter>
     </ClCompile>
     <ClCompile Include="VendorRepository.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataAccess.h" />
     <ClInclude Include="Config.h" />
-    <ClInclude Include="Administrator.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="Auth.h">
-      <Filter>Model</Filter>
-    </ClInclude>
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="TextDataReader.h" />
     <ClInclude Include="BubbleSort.h">
       <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="AddRecordView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="DeliveryView.h">
+      <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>View</Filter>
     </ClInclude>
-    <ClInclude Include="Helper.h">
-      <Filter>Model</Filter>
+    <ClInclude Include="PurchaseOrderView.h">
+      <Filter>View</Filter>
     </ClInclude>
-    <ClInclude Include="IRepository.h">
-      <Filter>Repository</Filter>
+    <ClInclude Include="SearchRecordView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="SortRecordView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateRecordView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="PurchaseOrderTable.h">
+      <Filter>View\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="VendorTable.h">
+      <Filter>View\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="DeliveryTable.h">
+      <Filter>View\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="VendorView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="LinkedList.h">
-      <Filter>Data Structure</Filter>
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="QuickSort.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Administrator.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Auth.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Payment.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="PurchaseOrder.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="SalesOrderExecutive.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Vendor.h">
+      <Filter>Class</Filter>
     </ClInclude>
     <ClInclude Include="PriorityClass.h">
       <Filter>Data Structure</Filter>
@@ -111,137 +159,78 @@
     <ClInclude Include="PriorityQueue.h">
       <Filter>Data Structure</Filter>
     </ClInclude>
-    <ClInclude Include="SalesOrderExecutive.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="UserRepository.h">
-      <Filter>Repository</Filter>
-    </ClInclude>
-    <ClInclude Include="User.h">
-      <Filter>Model</Filter>
-    </ClInclude>
     <ClInclude Include="Stack.h">
       <Filter>Data Structure</Filter>
-    </ClInclude>
-    <ClInclude Include="TextDataReader.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="PurchaseOrderTable.h">
-      <Filter>View\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="PurchaseOrder.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="Product.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="AddRecordView.h">
-      <Filter>View\PurchaseOrder</Filter>
-    </ClInclude>
-    <ClInclude Include="PurchaseOrderView.h">
-      <Filter>View\PurchaseOrder</Filter>
-    </ClInclude>
-    <ClInclude Include="SearchRecordView.h">
-      <Filter>View\PurchaseOrder</Filter>
-    </ClInclude>
-    <ClInclude Include="SortRecordView.h">
-      <Filter>View\PurchaseOrder</Filter>
-    </ClInclude>
-    <ClInclude Include="UpdateRecordView.h">
-      <Filter>View\PurchaseOrder</Filter>
-    </ClInclude>
-    <ClInclude Include="VendorView.h">
-      <Filter>View\Vendor</Filter>
-    </ClInclude>
-    <ClInclude Include="VendorTable.h">
-      <Filter>View\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="DeliveryView.h">
-      <Filter>View\Delivery</Filter>
-    </ClInclude>
-    <ClInclude Include="DeliveryTable.h">
-      <Filter>View\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Product.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="PurchaseOrderRepository.h">
-      <Filter>Repository</Filter>
-    </ClInclude>
-    <ClInclude Include="Payment.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="ProductOrderDescription.h">
-      <Filter>Model</Filter>
     </ClInclude>
     <ClInclude Include="Tree.h">
       <Filter>Data Structure</Filter>
     </ClInclude>
+    <ClInclude Include="IRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
     <ClInclude Include="ProductRepository.h">
       <Filter>Repository</Filter>
     </ClInclude>
-<<<<<<<<< Temporary merge branch 1
-    <ClInclude Include="DataAccess.h">
+    <ClInclude Include="PurchaseOrderRepository.h">
       <Filter>Repository</Filter>
-=========
-    <ClInclude Include="Header.h">
-      <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Time.h">
-      <Filter>Header</Filter>
->>>>>>>>> Temporary merge branch 2
+    <ClInclude Include="UserRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="VendorRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductOrderDescription.h">
+      <Filter>Class</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Model">
-      <UniqueIdentifier>{7a041ae5-acc1-4ce7-b6d2-2b9b1f1bfc37}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Repository">
-      <UniqueIdentifier>{b21ae61c-e31f-41a9-94e5-ce2c5b6de3f8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Data Structure">
-      <UniqueIdentifier>{9936efef-7753-4898-acaf-e21d49b19d09}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Algorithm">
-      <UniqueIdentifier>{af0ada89-9ddb-432d-bbd5-cdcfee2f9785}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="View">
-      <UniqueIdentifier>{74768f44-728a-4bd2-a028-ff1735830be1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Data">
-      <UniqueIdentifier>{32dfba1e-a6f6-4e96-b7c6-6b07720f38db}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="View\Component">
-      <UniqueIdentifier>{3b68e939-060c-4339-b793-c12aea927248}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="View\PurchaseOrder">
-      <UniqueIdentifier>{4ebd9640-f97e-486e-959c-a897c5e88de3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="View\Vendor">
-      <UniqueIdentifier>{5732522e-a701-458c-895b-00239cc95955}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="View\Delivery">
-      <UniqueIdentifier>{bd4d7e99-dfb1-460e-be77-b90c2b585b6a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header">
-      <UniqueIdentifier>{196959bf-f2c4-45fe-a3f5-170b9b1fa987}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="User.txt">
-      <Filter>Data</Filter>
-    </Text>
-    <Text Include="PurchaseOrder.txt">
-      <Filter>Data</Filter>
-    </Text>
     <Text Include="Product.txt">
       <Filter>Data</Filter>
     </Text>
     <Text Include="Payment.txt">
       <Filter>Data</Filter>
     </Text>
+    <Text Include="User.txt">
+      <Filter>Data</Filter>
+    </Text>
     <Text Include="Vendor.txt">
       <Filter>Data</Filter>
     </Text>
+    <Text Include="PurchaseOrder.txt">
+      <Filter>Data</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Algorithm">
+      <UniqueIdentifier>{2da7d5d7-3cad-433d-b945-1d0e364f4ba8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{f09585ec-18f5-455e-8d95-3c94e0dde5a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\Model">
+      <UniqueIdentifier>{b909cb94-cf89-4627-b01c-ab8801dc876e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{c2307b4e-f8c4-466b-a9ae-f3505593b68a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{764d05be-c15b-455e-8624-04678858ac55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class">
+      <UniqueIdentifier>{6db6c493-b868-48c8-875a-dee4cde17b74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{b9b980bb-276f-419d-8428-41988bf56137}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Structure">
+      <UniqueIdentifier>{585eb400-37c8-44f9-9622-178e7a4a8deb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Repository">
+      <UniqueIdentifier>{74aba1b3-34c4-4566-8a27-1b4e157eab25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

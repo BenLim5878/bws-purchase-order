@@ -8,7 +8,6 @@
 #include "DataAccess.h"
 #include "Menu.h"
 #include "Header.h"
->>>>>>>>> Temporary merge branch 2
 
 using namespace std;
 
@@ -21,7 +20,6 @@ int main()
 	repos->deleteProduct(sample);
 	int total = repos->getTotalItem();
 	Product* haha = repos->getProduct(0,0);
->>>>>>>>> Temporary merge branch 2
 
 
 	cout << "fasdf";
