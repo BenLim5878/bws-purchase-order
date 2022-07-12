@@ -1,5 +1,6 @@
 #include "Helper.h"
 #include <Windows.h>
+#include <ctime>
 
 void hidecursor() {
     HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -18,7 +19,7 @@ tm stringToTime(std::string timeString) {
 	std::string minute = timeString.substr(14, 2);
 	std::string second = timeString.substr(17, 2);
 
-	tm.tm_year = std::stoi(year);
+	tm.tm_year = std::stoi(year) - 1900;
 	tm.tm_mon = std::stoi(month) - 1;
 	tm.tm_mday = std::stoi(day);
 	tm.tm_hour = std::stoi(hour);
@@ -26,4 +27,12 @@ tm stringToTime(std::string timeString) {
 	tm.tm_sec = std::stoi(second);
 
 	return tm;
+}
+
+int getCurrentYear()
+{
+	time_t currentTime= std::time(0);
+	tm now;
+	localtime_s(&now,&currentTime);
+	return now.tm_year + 1900;
 }

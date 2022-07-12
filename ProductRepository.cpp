@@ -1,5 +1,6 @@
 #include "ProductRepository.h"
 #include "Config.h"
+#include "VendorRepository.h"
 //ProductID, (0)
 //ProductCategoryID, (1)
 //ProductBrandName, (2)
@@ -9,7 +10,8 @@
 //ProductQuantityPerUnit, (6)
 //ProductStockUnit, (7)
 //ProductDiscountRate, (8)
-//ProductStatus(9)
+//ProductStatus(9),
+//ProductVendorID(10)
 
 void ProductRepository::loadData()
 {
@@ -36,7 +38,11 @@ void ProductRepository::loadData()
 		// Product Discount Rate
 		temp.productDiscountRate = std::stoll(record.at(8));
 		// Product Status
-		temp.productStatus = static_cast<ProductStatus>(std::stoi(record.at(8)));
+		temp.productStatus = static_cast<ProductStatus>(std::stoi(record.at(9)));
+		// Product Vendor
+		VendorRepository repos("Vendor.txt");
+		Vendor* tVendor =  repos.getVendor(std::stoi(record.at(10)));
+		temp.productVendor = tVendor;
 		
 		// Insert into tree
 		insertProduct(temp);

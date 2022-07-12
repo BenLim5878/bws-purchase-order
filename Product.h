@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Vendor.h"
 
 class ProductCategory {
 public:
@@ -35,6 +36,7 @@ public:
 	int productStockUnit;
 	int productQuantityPerUnit;
 	ProductStatus productStatus;
+	Vendor* productVendor;
 public:
 	Product();
 	~Product();

@@ -72,6 +72,15 @@
     <ClCompile Include="DataAccess.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
+    <ClCompile Include="PaymentRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="Vendor.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="VendorRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
@@ -171,6 +180,17 @@
     <ClInclude Include="ProductRepository.h">
       <Filter>Repository</Filter>
     </ClInclude>
+<<<<<<<<< Temporary merge branch 1
+    <ClInclude Include="DataAccess.h">
+      <Filter>Repository</Filter>
+=========
+    <ClInclude Include="Header.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header</Filter>
+>>>>>>>>> Temporary merge branch 2
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Model">
@@ -215,6 +235,12 @@
       <Filter>Data</Filter>
     </Text>
     <Text Include="Product.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="Payment.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="Vendor.txt">
       <Filter>Data</Filter>
     </Text>
   </ItemGroup>

@@ -1,4 +1,6 @@
 #pragma once
+#include <stddef.h>
+#include <cstddef>
 
 template <typename T> class SinglyNode{
 public:
@@ -166,8 +168,7 @@ T LinkedList<T>::remove(T* data)
 					break;
 				}
 				else {
-					T t = 0;
-					return t;
+					return tarr->data;
 				}
 			}
 		}
