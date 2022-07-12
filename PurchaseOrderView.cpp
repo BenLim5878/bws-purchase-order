@@ -21,6 +21,52 @@ void View::PurchaseOrderView::show()
     ViewComponent::PurchaseOrderTable poTable;
     poTable.show();
 
+    //if (myFile.is_open()) {
+    //    string line;
+    //    getline(myFile, line);
+    //    while (!myFile.eof())
+    //    {
+
+    //        getline(myFile, OrderID, ';');
+    //        getline(myFile, ProductName, ';');
+    //        getline(myFile, Date, ';');
+    //        getline(myFile, Qty, ';');
+    //        getline(myFile, Price, ';');
+    //        getline(myFile, PaymentMethod, ';');
+    //        getline(myFile, Status);
+
+    //        i += 1;
+
+    //        for (int i = 0; i < 1; i++)
+    //        {
+    //            cout
+    //                << left
+    //                << setw(11)
+    //                << OrderID
+    //                << left
+    //                << setw(15)
+    //                << ProductName
+    //                << left
+    //                << setw(12)
+    //                << Date
+    //                << left
+    //                << setw(5)
+    //                << Qty
+    //                << left
+    //                << setw(8)
+    //                << Price
+    //                << left
+    //                << setw(18)
+    //                << PaymentMethod
+    //                << left
+    //                << setw(10)
+    //                << Status
+    //                << endl;
+    //        }
+    //    }
+    //    myFile.close();
+    //}
+    //else std::cout << "Unable to open file";
 
     int option;
     do {
@@ -34,6 +80,7 @@ void View::PurchaseOrderView::show()
         cout << "=============================================================================" << endl;
 
         std::cout << "Select Option >>" << endl;
+
         cin >> option;
         processInput(option);
     } while (option != 5);
