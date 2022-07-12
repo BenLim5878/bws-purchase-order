@@ -38,11 +38,6 @@ namespace ViewComponent {
                 << endl;
             std::cout << "=============================================================================" << endl;
 		}
-
-    public:
-        void showData() {
-            PurchaseOrderRepository("PurchaseOrder.txt");
-        }
 	};
 }
 

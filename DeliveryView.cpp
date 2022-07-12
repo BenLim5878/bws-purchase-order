@@ -2,6 +2,8 @@
 #include "Menu.h"
 #include "DeliveryView.h"
 #include "DeliveryTable.h"
+#include "Header.h"
+#include "Time.h"
 
 using namespace std;
 int dDecision;
@@ -10,6 +12,10 @@ string dDecision2;
 void View::DeliveryView::show()
 {
     system("CLS");
+    ViewHeader::Header head;
+    head.display();
+    displayTime::Time dtime;
+    dtime.show();
     ViewComponent::DeliveryTable dTable;
     dTable.show();
 

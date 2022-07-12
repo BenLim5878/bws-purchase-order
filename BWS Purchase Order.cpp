@@ -5,11 +5,9 @@
 #include <iostream>
 #include "Tree.h"
 #include "ProductRepository.h"
-#include "Menu.h"
 #include "DataAccess.h"
-#include "ProductRepository.h"
-#include "Session.h"
-#include "Auth.h"
+#include "Menu.h"
+#include "Header.h"
 
 using namespace std;
 
@@ -22,11 +20,12 @@ int main()
 	form.emailAddress = "limzhengwei1002@gmail.com";
 	form.password = "abc12345";
 
-	Auth auth;
-	auth.authenticateUser(form);
-	Session* session = Session::getInstance();
-	Session::getInstance()->deleteSession();
-	auth.authenticateUser(form);
+
+	cout << "fasdf";
+
+	View::Menu menu;
+	menu.show();
 
 	return 0;
 }
+

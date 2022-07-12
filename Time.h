@@ -9,13 +9,12 @@ namespace displayTime {
 	class Time {
 	public:
 		void show() {
-
-            
-            cout << "The current date is: ";
+            std::cout << "" << endl;
+            std::cout << "The current date is: ";
             system("date/t");
-            cout << "The current time is: ";
+            std::cout << "The current time is: ";
             system("time/t");
-            cout << endl;
+            std::cout << endl;
 		}
 	};
 }

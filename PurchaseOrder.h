@@ -11,7 +11,7 @@ enum OrderStatus {
 	Sent,
 	Processing,
 	Delivering,
-	Completed
+	Complete
 };
 
 class PurchaseOrder

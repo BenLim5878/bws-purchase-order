@@ -1,14 +1,19 @@
 #include <iostream>
 #include "AddRecordView.h"
 #include "PurchaseOrderTable.h"
-
+#include "Header.h"
+#include "Time.h"
 using namespace std;
 
 void View::AddRecordView::show()
 {
     system("CLS");
     cin.ignore();
-
+    system("CLS");
+    ViewHeader::Header head;
+    head.display();
+    displayTime::Time dtime;
+    dtime.show();
     // Show the Purchase Order Table
     ViewComponent::PurchaseOrderTable poTable;
     poTable.show();
