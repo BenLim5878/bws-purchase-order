@@ -2,9 +2,9 @@
 #include <string>
 
 enum PaymentMethod {
-	BankTransfer,
+	CreditCard,
 	Check,
-	CreditCard
+	BankTransfer
 };
 
 class Payment
@@ -16,6 +16,7 @@ public:
 	float paymentAmount;
 	std::string paymentDescription;
 	tm createdAt;
+	static std::string paymentMethodToString(PaymentMethod paymentMethod);
 public:
 	int getPaymentID();
 	void setPaymentID(int id);

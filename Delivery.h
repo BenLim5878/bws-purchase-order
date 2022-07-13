@@ -16,6 +16,7 @@ public:
 	PurchaseOrder* purchaseOrder;
 	Vendor* vendor;
 	tm createdAt;
+	static std::string deliveryStatusToString(DeliveryStatus deliveryStatus);
 public:
 	int getDeliveryID();
 	void setDeliveryID(int deliveryID);

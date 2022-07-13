@@ -14,7 +14,10 @@ enum PurchaseOrderArrangement {
 enum PurchaseOrderPriority {
 	TotalPrice,
 	Latest,
-	TotalItem
+	TotalItem,
+	ID,
+	Status,
+	PayMethod
 };
 
 

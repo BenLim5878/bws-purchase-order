@@ -23,11 +23,12 @@ public:
 	double totalPrice;
 	OrderStatus orderStatus;
 	LinkedList<ProductOrderDescription>* orderedProducts = nullptr;
-	Payment* paymentRecord;
+	Payment paymentRecord;
 	Vendor* vendor;
 public:
 	int getPOID();
 	void setPOID(int id);
+	static std::string orderStatusToString(OrderStatus orderStatus);
 public:
 	PurchaseOrder();
 	~PurchaseOrder();

@@ -49,7 +49,6 @@ void PurchaseOrderRepository::loadData()
 {
 	for (std::list<std::string>::iterator i = this->dataReader->context->begin(); i != this->dataReader->context->end(); ++i) {
 		std::vector<std::string> record = this->dataReader->splitDelimeter(*i);
-
 		PurchaseOrder temp;
 		// Purchase Order ID
 		temp.setPOID(std::stoi(record.at(0)));
@@ -63,7 +62,7 @@ void PurchaseOrderRepository::loadData()
 		temp.totalPrice = std::stoll(record.at(4));
 		// Purchase Order Payment ID
 		PaymentRepository paymentRepos("Payment.txt");
-		temp.paymentRecord = paymentRepos.getPayment(std::stoi(record.at(5)));
+		temp.paymentRecord= *paymentRepos.getPayment(std::stoi(record.at(5)));
 		// Purchase Order Status
 		temp.orderStatus = static_cast<OrderStatus>(std::stoi(record.at(6)));
 		// Purchase Order Vendor
@@ -77,7 +76,7 @@ void PurchaseOrderRepository::loadData()
 		priorityClass.priority = calculatePriority(temp);
 
 		// Push Priority Class to Priority Queue
-		PriorityClass<PurchaseOrder>* res =  this->purchaseOrder->enqueue(priorityClass);
+		this->purchaseOrder->enqueue(priorityClass);
 	}
 }
 
@@ -190,6 +189,36 @@ long PurchaseOrderRepository::calculatePriority(PurchaseOrder purchaseOrder)
 		else {
 			return -mktime(&purchaseOrder.timeCreated);
 
+			break;
+		}
+	}
+	case PurchaseOrderPriority::ID:
+	{
+		if (this->arrangement == PurchaseOrderArrangement::Ascending) {
+			return std::numeric_limits<int>::max() - 1 - purchaseOrder.getPOID();
+		}
+		else {
+			return purchaseOrder.getPOID();
+			break;
+		}
+	}
+	case PurchaseOrderPriority::Status:
+	{
+		if (this->arrangement == PurchaseOrderArrangement::Ascending) {
+			return purchaseOrder.orderStatus;
+		}
+		else {
+			return std::numeric_limits<int>::max() - 1 - purchaseOrder.orderStatus;
+			break;
+		}
+	}
+	case PurchaseOrderPriority::PayMethod:
+	{
+		if (this->arrangement == PurchaseOrderArrangement::Ascending) {
+			return purchaseOrder.paymentRecord.paymentMethod;
+		}
+		else {
+			return std::numeric_limits<int>::max() - 1 - purchaseOrder.paymentRecord.paymentMethod;
 			break;
 		}
 	}

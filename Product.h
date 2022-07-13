@@ -43,5 +43,6 @@ public:
 public:
 	int getProductID();
 	void setProductID(int id);
+	static std::string productStatusToString(ProductStatus productStatus);
 };
 

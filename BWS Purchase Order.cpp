@@ -4,10 +4,11 @@
 #include <string>
 #include <iostream>
 #include "Tree.h"
-#include "ProductRepository.h"
 #include "DataAccess.h"
 #include "Menu.h"
 #include "Header.h"
+#include "Session.h"
+#include "Menu.h"
 
 using namespace std;
 
@@ -16,15 +17,9 @@ Session* Session::instance = 0;
 
 int main()
 {
-	AuthInputForm form;
-	form.emailAddress = "limzhengwei1002@gmail.com";
-	form.password = "abc12345";
-
-
-	cout << "fasdf";
-
 	View::Menu menu;
 	menu.show();
+
 
 	return 0;
 }

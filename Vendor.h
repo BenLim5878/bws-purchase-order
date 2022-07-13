@@ -18,5 +18,6 @@ public:
 public:
 	int getVendorID();
 	void setVendorID(int id);
+	static std::string vendorStatusToString(VendorStatus vendorStatus);
 };
 

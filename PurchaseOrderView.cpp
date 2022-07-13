@@ -8,6 +8,7 @@
 #include "Menu.h"
 #include "Header.h"
 #include "Time.h"
+#include "DataAccess.h"
 
 using namespace std;
 
@@ -20,53 +21,48 @@ void View::PurchaseOrderView::show()
     dtime.show();
     ViewComponent::PurchaseOrderTable poTable;
     poTable.show();
+    auto po = DataAccess::getInstance()->purchaseOrderRepository;
+    po->sort(PurchaseOrderPriority::PayMethod, PurchaseOrderArrangement::Decending);
+    auto data = po->purchaseOrder;
 
-    //if (myFile.is_open()) {
-    //    string line;
-    //    getline(myFile, line);
-    //    while (!myFile.eof())
-    //    {
+  
 
-    //        getline(myFile, OrderID, ';');
-    //        getline(myFile, ProductName, ';');
-    //        getline(myFile, Date, ';');
-    //        getline(myFile, Qty, ';');
-    //        getline(myFile, Price, ';');
-    //        getline(myFile, PaymentMethod, ';');
-    //        getline(myFile, Status);
 
-    //        i += 1;
-
-    //        for (int i = 0; i < 1; i++)
-    //        {
-    //            cout
-    //                << left
-    //                << setw(11)
-    //                << OrderID
-    //                << left
-    //                << setw(15)
-    //                << ProductName
-    //                << left
-    //                << setw(12)
-    //                << Date
-    //                << left
-    //                << setw(5)
-    //                << Qty
-    //                << left
-    //                << setw(8)
-    //                << Price
-    //                << left
-    //                << setw(18)
-    //                << PaymentMethod
-    //                << left
-    //                << setw(10)
-    //                << Status
-    //                << endl;
-    //        }
-    //    }
-    //    myFile.close();
-    //}
-    //else std::cout << "Unable to open file";
+    for (int i = 0; i < data->length; i++)
+    {
+        auto record = data->get(i)->content;
+        cout
+            << left
+            << setw(11)
+            << record.getPOID()
+            << left
+            << setw(1);
+        for (int j = 0; j < record.orderedProducts->length; j++) {
+            cout
+                << record.orderedProducts->get(j)->quantity << " " << record.orderedProducts->get(j)->product->productName << ",";
+            if (j == record.orderedProducts->length - 1) {
+                cout
+                    << record.orderedProducts->get(j)->quantity << " " << record.orderedProducts->get(j)->product->productName<< setw(16) << " ";
+            }
+        }
+        cout
+            << left
+            << setw(16)
+            << std::put_time(&record.timeCreated, "%Y-%m-%d.%H:%M:%S")
+            << left
+            << setw(5)
+            << record.orderedProducts->get(0)->quantity
+            << left
+            << setw(8)
+            << record.totalPrice
+            << left
+            << setw(18)
+            << Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
+            << left
+            << setw(10)
+            << PurchaseOrder::orderStatusToString(record.orderStatus)
+            << endl;
+    }
 
     int option;
     do {

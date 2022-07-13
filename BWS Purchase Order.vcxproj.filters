@@ -2,10 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="BWS Purchase Order.cpp" />
-    <ClCompile Include="DataAccess.cpp" />
     <ClCompile Include="Config.cpp" />
-    <ClCompile Include="Helper.cpp" />
-    <ClCompile Include="TextDataReader.cpp" />
     <ClCompile Include="BubbleSort.cpp">
       <Filter>Algorithm</Filter>
     </ClCompile>
@@ -75,21 +72,27 @@
     <ClCompile Include="VendorRepository.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
-    <ClCompile Include="Delivery.cpp">
-      <Filter>Model</Filter>
-    </ClCompile>
     <ClCompile Include="DeliveryRepository.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
+    <ClCompile Include="DataAccess.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="Delivery.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
     <ClCompile Include="Session.cpp">
-      <Filter>Model</Filter>
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TextDataReader.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DataAccess.h" />
     <ClInclude Include="Config.h" />
-    <ClInclude Include="Helper.h" />
-    <ClInclude Include="TextDataReader.h" />
     <ClInclude Include="BubbleSort.h">
       <Filter>Algorithm</Filter>
     </ClInclude>
@@ -131,9 +134,6 @@
     </ClInclude>
     <ClInclude Include="Time.h">
       <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="LinkedList.h">
-      <Filter>Algorithm</Filter>
     </ClInclude>
     <ClInclude Include="QuickSort.h">
       <Filter>Algorithm</Filter>
@@ -197,14 +197,26 @@
     </ClInclude>
     <ClInclude Include="Header.h" />
     <ClInclude Include="Time.h" />
-    <ClInclude Include="Delivery.h">
-      <Filter>Model</Filter>
-    </ClInclude>
     <ClInclude Include="DeliveryRepository.h">
       <Filter>Repository</Filter>
     </ClInclude>
+    <ClInclude Include="DataAccess.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="Delivery.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Class</Filter>
+    </ClInclude>
     <ClInclude Include="Session.h">
-      <Filter>Model</Filter>
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="TextDataReader.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>Data Structure</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
