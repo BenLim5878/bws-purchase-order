@@ -7,25 +7,26 @@
 using namespace std;
 
 namespace ViewComponent {
+
 	class PurchaseOrderTable
 	{
 	public:
 		void show() {
             
-            cout << "=============================================================================" << endl;
+            cout << "========================================================================================" << endl;
             cout
                 << left
-                << setw(11)
-                << " OrderID"
+                << setw(10)
+                << "OrderID"
                 << left
                 << setw(15)
                 << "ProductName"
+                << setw(6)
                 << left
-                << setw(12)
-                << "Date"
-                << left
-                << setw(5)
                 << "Qty"
+                << left
+                << setw(22)
+                << "Time Created"
                 << left
                 << setw(8)
                 << "Price"
@@ -36,7 +37,7 @@ namespace ViewComponent {
                 << setw(10)
                 << "Status"
                 << endl;
-            std::cout << "=============================================================================" << endl;
+            std::cout << "========================================================================================" << endl;
 		}
 	};
 }
