@@ -19,59 +19,14 @@ void View::PurchaseOrderView::show()
     head.display();
     displayTime::Time dtime;
     dtime.show();
-    ViewComponent::PurchaseOrderTable poTable;
-    poTable.show();
+
     auto po = DataAccess::getInstance()->purchaseOrderRepository;
-    po->sort(PurchaseOrderPriority::PayMethod, PurchaseOrderArrangement::Decending);
+    po->sort(PurchaseOrderPriority::ID, PurchaseOrderArrangement::Ascending);
     auto data = po->purchaseOrder;
 
-  
-    int max_product_string_length = 0;
-
-    for (int i = 0; i < data->length; i++)
-    {
-        auto record = data->get(i)->content;
-        int totalProducts = record.orderedProducts->length;
-        for (int j = 0; j < totalProducts; j++) {
-            cout
-                << left
-                << setw(3)
-                << ""
-                << left
-                << setw(7);
-            if (j == 0) {
-                cout <<
-                    record.getPOID();
-            }
-            else {
-                cout
-                    << "";
-            }
-            cout
-                << left
-                << setw(16)
-                << record.orderedProducts->get(j)->product->productName
-                << left
-                << setw(5)
-                << record.orderedProducts->get(j)->quantity
-                << left
-                << setw(22)
-                << std::put_time(&record.timeCreated, "%Y-%m-%d.%H:%M:%S")
-                << left
-                << setw(3)
-                << ""
-                << left
-                << setw(8)
-                << left
-                << setw(18)
-                << Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
-                << left
-                << setw(10)
-                << PurchaseOrder::orderStatusToString(record.orderStatus)
-                << endl;
-        }
-
-    }
+    ViewComponent::PurchaseOrderTable poTable(data);
+    poTable.show();
+     
 
     int option;
     do {
@@ -96,22 +51,27 @@ void View::PurchaseOrderView::processInput(int option) {
     case 1:
         AddRecordView addRecordView;
         addRecordView.show();
+        return;
         break;
     case 2:
         UpdateRecordView updateRecordView;
         updateRecordView.show();
+        return;
         break;
     case 3: 
         SearchRecordView searchRecordView;
         searchRecordView.show();
+        return;
         break;
     case 4: 
         SortRecordView sortRecordView;
         sortRecordView.show();
+        return;
         break;
     case 5:
         Menu menu;
         menu.show();
+        return;
         break;
     }
 }

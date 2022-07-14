@@ -3,6 +3,7 @@
 #include "PurchaseOrderTable.h"
 #include "Header.h"
 #include "Time.h"
+#include "DataAccess.h"
 using namespace std;
 
 void View::AddRecordView::show()
@@ -15,7 +16,7 @@ void View::AddRecordView::show()
     displayTime::Time dtime;
     dtime.show();
     // Show the Purchase Order Table
-    ViewComponent::PurchaseOrderTable poTable;
+    ViewComponent::PurchaseOrderTable poTable(DataAccess::getInstance()->purchaseOrderRepository->purchaseOrder);
     poTable.show();
 
     std::cout << "" << endl;
