@@ -22,7 +22,7 @@ void View::LoginView::show()
 
         std::cout << "\n=================== LOGIN MENU ===================" << endl;
         if (failureAttempt > 0) {
-            std::cout << "Incorrect credentials. Please retype your credentials!: \n" << endl;
+            std::cout << "Incorrect credentials. Please retype your credentials: \n" << endl;
         }
         else {
             std::cout << "Please enter your credentials: \n" << endl;

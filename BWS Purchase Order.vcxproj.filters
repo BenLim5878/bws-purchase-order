@@ -94,6 +94,9 @@
     <ClCompile Include="LoginView.cpp">
       <Filter>View</Filter>
     </ClCompile>
+    <ClCompile Include="StockInventoryReportView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
     <ClCompile Include="ReportMenuView.cpp">
       <Filter>View</Filter>
     </ClCompile>
@@ -224,6 +227,12 @@
     </ClInclude>
     <ClInclude Include="LinkedList.h">
       <Filter>Data Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="StockInventoryReportView.h">
+      <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="LoginView.h">
       <Filter>View</Filter>

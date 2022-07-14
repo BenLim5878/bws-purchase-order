@@ -9,7 +9,7 @@
 #include "Header.h"
 #include "Session.h"
 #include "Menu.h"
-#include "LoginView.h"
+#include "StockInventoryReportView.h"
 
 using namespace std;
 
@@ -18,8 +18,8 @@ Session* Session::instance = 0;
 
 int main()
 {
-	View::LoginView loginView;
-	loginView.show();
+	View::StockInventoryReportView reportView;
+	reportView.show();
 
 }
 

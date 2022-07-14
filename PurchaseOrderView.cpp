@@ -25,6 +25,8 @@ void View::PurchaseOrderView::show()
     po->sort(PurchaseOrderPriority::PayMethod, PurchaseOrderArrangement::Decending);
     auto data = po->purchaseOrder;
 
+  
+    int max_product_string_length = 0;
 
     for (int i = 0; i < data->length; i++)
     {
