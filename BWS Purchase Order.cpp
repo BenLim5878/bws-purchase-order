@@ -19,7 +19,7 @@ Session* Session::instance = 0;
 
 int main()
 {
-	View::StockInventoryReportView view;
+	View::LoginView view;
 	view.show();
 
 }
