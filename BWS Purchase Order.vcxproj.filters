@@ -90,6 +90,7 @@
     <ClCompile Include="TextDataReader.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="POTable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />

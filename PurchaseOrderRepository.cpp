@@ -27,11 +27,11 @@ LinkedList<ProductOrderDescription>* PurchaseOrderRepository::processProductOrde
 	LinkedList<ProductOrderDescription>* temp = new LinkedList<ProductOrderDescription>();
 
 	ProductRepository* repos = new ProductRepository("Product.txt");
-	while (std::getline(productStream, segment, ',')) {
+	while (std::getline(productStream, segment, ';')) {
 		Product* product = repos->getProduct(std::stoi(segment));
 		productContext.push_back(product);
 	}
-	while (std::getline(quantityStream, segment, ',')) {
+	while (std::getline(quantityStream, segment, ';')) {
 		int quantity = std::stoi(segment);
 		quantityContext.push_back(quantity);
 	}
