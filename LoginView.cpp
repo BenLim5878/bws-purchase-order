@@ -39,6 +39,7 @@ void View::LoginView::show()
         if (result.isSuccessful) {
             Menu menu;
             menu.show();
+            return;
         }
         else {
             failureAttempt++;
