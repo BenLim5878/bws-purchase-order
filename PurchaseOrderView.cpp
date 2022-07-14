@@ -31,15 +31,23 @@ void View::PurchaseOrderView::show()
     for (int i = 0; i < data->length; i++)
     {
         auto record = data->get(i)->content;
-
-        for (int j = 0; j < record.orderedProducts->length; j++) {
+        int totalProducts = record.orderedProducts->length;
+        for (int j = 0; j < totalProducts; j++) {
             cout
                 << left
                 << setw(3)
                 << ""
                 << left
-                << setw(7)
-                << record.getPOID()
+                << setw(7);
+            if (j == 0) {
+                cout <<
+                    record.getPOID();
+            }
+            else {
+                cout
+                    << "";
+            }
+            cout
                 << left
                 << setw(16)
                 << record.orderedProducts->get(j)->product->productName
@@ -54,7 +62,6 @@ void View::PurchaseOrderView::show()
                 << ""
                 << left
                 << setw(8)
-                << record.totalPrice
                 << left
                 << setw(18)
                 << Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
@@ -62,37 +69,6 @@ void View::PurchaseOrderView::show()
                 << setw(10)
                 << PurchaseOrder::orderStatusToString(record.orderStatus)
                 << endl;
-            if (j == record.orderedProducts->length - 1) {
-                cout
-                    << left
-                    << setw(3)
-                    << ""
-                    << left
-                    << setw(7)
-                    << ""
-                    << left
-                    << setw(16)
-                    << record.orderedProducts->get(j)->product->productName
-                    << left
-                    << setw(5)
-                    << record.orderedProducts->get(j)->quantity
-                    << left
-                    << setw(22)
-                    << put_time(&record.timeCreated, "%Y-%m-%d.%H:%M:%S")
-                    << left
-                    << setw(3)
-                    << ""
-                    << left
-                    << setw(8)
-                    << record.totalPrice
-                    << left
-                    << setw(18)
-                    << Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
-                    << left
-                    << setw(10)
-                    << PurchaseOrder::orderStatusToString(record.orderStatus)
-                    << endl;
-            }
         }
 
     }

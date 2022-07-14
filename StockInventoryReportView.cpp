@@ -15,15 +15,22 @@ void View::StockInventoryReportView::show()
     displayTime::Time dtime;
     dtime.show();
 
+    float totalInventoryCost = 0;
+    int  totalStockAmount = 0;
+    int totalStockCategory = 0;
+
     auto productRepos = DataAccess::getInstance()->productRepository;
     for (int i = 0; i < productRepos->getTotalCategory(); i++) {
         auto productCategory = productRepos->getProductCategory(i);
+        totalStockCategory++;
         cout <<
             productCategory->categoryTitle
             << endl;
         for (int j = 0; j < productRepos->getTotalItemByCategory(i); j++) {
             auto product = productRepos->getProduct(i, j);
             int stockAmount = productRepos->getProductStockAmount(product->getProductID());
+            totalStockAmount += stockAmount;
+            totalInventoryCost += (stockAmount * product->productPricePerUnit);
             cout
                 << product->getProductID()
                 << endl
@@ -43,4 +50,7 @@ void View::StockInventoryReportView::show()
                 << endl;
         }
     }
+    cout << "Current Inventory Cost : RM " << totalInventoryCost << endl;
+    cout << "Total Stock Amount: " << totalStockAmount << endl;
+    cout << "Total Product Category: " << totalStockCategory << endl;
 }
