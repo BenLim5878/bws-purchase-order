@@ -1,10 +1,12 @@
 #pragma once
-class SalesOrderExecutive
+#include "User.h"
+class SalesOrderExecutive : public User
 {
 private:
-	int executivesID;
+	int executiveID;
 public:
 	int getExecutiveID();
 	void setExecutiveID(int executiveID);
+	int menu();
 };
 

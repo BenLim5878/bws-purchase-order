@@ -9,5 +9,6 @@ private:
 public:
 	int getAdminID();
 	void setAdminID(int adminID);
+
 };
 

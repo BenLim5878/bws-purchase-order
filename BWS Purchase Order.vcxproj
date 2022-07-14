@@ -139,18 +139,50 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddRecordView.cpp" />
     <ClCompile Include="Administrator.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="BWS Purchase Order.cpp" />
+    <ClCompile Include="DataAccess.cpp" />
+    <ClCompile Include="Delivery.cpp" />
+    <ClCompile Include="DeliveryRepository.cpp" />
+    <ClCompile Include="DeliveryView.cpp" />
+    <ClCompile Include="Config.cpp" />
     <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Payment.cpp" />
+    <ClCompile Include="PaymentRepository.cpp" />
+    <ClCompile Include="POTable.cpp" />
+    <ClCompile Include="Product.cpp" />
+    <ClCompile Include="ProductRepository.cpp" />
+    <ClCompile Include="PurchaseOrder.cpp" />
+    <ClCompile Include="PurchaseOrderRepository.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="SalesOrderExecutive.cpp" />
+    <ClCompile Include="PurchaseOrderView.cpp" />
+    <ClCompile Include="SearchRecordView.cpp" />
+    <ClCompile Include="Session.cpp" />
+    <ClCompile Include="SortRecordView.cpp" />
     <ClCompile Include="TextDataReader.cpp" />
+    <ClCompile Include="UpdateRecordView.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UserRepository.cpp" />
+    <ClCompile Include="Vendor.cpp" />
+    <ClCompile Include="VendorRepository.cpp" />
+    <ClCompile Include="VendorView.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddRecordView.h" />
+    <ClInclude Include="DataAccess.h" />
+    <ClInclude Include="Delivery.h" />
+    <ClInclude Include="DeliveryRepository.h" />
+    <ClInclude Include="DeliveryTable.h" />
+    <ClInclude Include="DeliveryView.h" />
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Payment.h" />
+    <ClInclude Include="PaymentRepository.h" />
     <ClInclude Include="PriorityClass.h" />
     <ClInclude Include="Administrator.h" />
     <ClInclude Include="Auth.h" />
@@ -158,16 +190,39 @@
     <ClInclude Include="Config.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="PriorityQueue.h" />
+    <ClInclude Include="Product.h" />
+    <ClInclude Include="ProductOrderDescription.h" />
+    <ClInclude Include="ProductRepository.h" />
+    <ClInclude Include="PurchaseOrder.h" />
+    <ClInclude Include="PurchaseOrderRepository.h" />
+    <ClInclude Include="PurchaseOrderTable.h" />
+    <ClInclude Include="PurchaseOrderView.h" />
+    <ClInclude Include="QuickSort.h" />
+    <ClInclude Include="SearchRecordView.h" />
+    <ClInclude Include="Session.h" />
+    <ClInclude Include="SortRecordView.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="UpdateRecordView.h" />
     <ClInclude Include="UserRepository.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="IRepository.h" />
     <ClInclude Include="SalesOrderExecutive.h" />
     <ClInclude Include="TextDataReader.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="Vendor.h" />
+    <ClInclude Include="VendorRepository.h" />
+    <ClInclude Include="VendorTable.h" />
+    <ClInclude Include="VendorView.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Delivery.txt" />
+    <Text Include="Payment.txt" />
+    <Text Include="Product.txt" />
+    <Text Include="PurchaseOrder.txt" />
     <Text Include="User.txt" />
+    <Text Include="Vendor.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
