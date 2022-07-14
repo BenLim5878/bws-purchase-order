@@ -9,6 +9,7 @@
 #include "Header.h"
 #include "Session.h"
 #include "Menu.h"
+#include "LoginView.h"
 
 using namespace std;
 
@@ -17,10 +18,8 @@ Session* Session::instance = 0;
 
 int main()
 {
-	View::Menu menu;
-	menu.show();
+	View::LoginView loginView;
+	loginView.show();
 
-
-	return 0;
 }
 
