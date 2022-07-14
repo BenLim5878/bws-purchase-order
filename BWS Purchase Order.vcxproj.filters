@@ -91,6 +91,7 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="POTable.cpp" />
+    <ClCompile Include="LoginView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
@@ -219,6 +220,7 @@
     <ClInclude Include="LinkedList.h">
       <Filter>Data Structure</Filter>
     </ClInclude>
+    <ClInclude Include="LoginView.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Product.txt">
