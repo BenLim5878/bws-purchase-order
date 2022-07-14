@@ -29,7 +29,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -165,6 +165,7 @@
     <ClCompile Include="SearchRecordView.cpp" />
     <ClCompile Include="Session.cpp" />
     <ClCompile Include="SortRecordView.cpp" />
+    <ClCompile Include="StockInventoryReportView.cpp" />
     <ClCompile Include="TextDataReader.cpp" />
     <ClCompile Include="UpdateRecordView.cpp" />
     <ClCompile Include="User.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="Session.h" />
     <ClInclude Include="SortRecordView.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="StockInventoryReportView.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="UpdateRecordView.h" />
