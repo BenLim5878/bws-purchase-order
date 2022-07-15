@@ -16,7 +16,7 @@ using namespace std;
 void View::Menu::show()
 {
     int selection;
-
+    cin.clear();
     system("CLS");
     ViewHeader::Header head;
     head.display();
@@ -47,10 +47,11 @@ void View::Menu::show()
         }
 
         cout << "Select Option >>" << endl;
+        cin.ignore();
         cin >> selection;
         processInput(selection);
 
-    } while (selection < 1 && selection > 5);
+    } while (selection < 1 || selection > 5);
 }
 
 void View::Menu::processInput(int selection) {

@@ -16,3 +16,15 @@ std::string User::getPwd() {
 void User::setPwd(std::string pwd) {
 	this->pwd = pwd;
 }
+
+std::string User::userRoleToString(UserRole role)
+{
+	switch (role) {
+	case UserRole::Admin:
+		return "Admin";
+	case UserRole::SOE:
+		return "Sales Order Executive";
+	default:
+		return "Admin";
+	}
+}

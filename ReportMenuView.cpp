@@ -3,13 +3,15 @@
 #include <Windows.h>
 #include "Header.h"
 #include "Time.h"
+#include "StockInventoryReportView.h"
+#include "UserReportView.h"
+#include "DataAccess.h"
 
 using namespace std;
 
 void View::ReportMenuView::show()
 {
-    int selection = 0;
-
+    cin.clear();
     system("CLS");
     ViewHeader::Header head;
     head.display();
@@ -25,12 +27,20 @@ void View::ReportMenuView::show()
     std::cout << "" << endl;
     std::cout << "============================================" << endl;
 
+    int selection;
+    cin.ignore();
+    cin >> selection;
+
     switch (selection) {
     case 1:
-        //Stock Inventory Report();
+        StockInventoryReportView sView;
+        sView.show();
+        return;
         break;
     case 2:
-        //User Record();
+        UserReportView view;
+        view.show();
+        return;
         break;
     case 3:
         //Purchase Order Summary();

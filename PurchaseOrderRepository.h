@@ -4,6 +4,7 @@
 #include "TextDataReader.h"
 #include "PriorityQueue.h"
 #include "PurchaseOrder.h"
+#include "CategoryOrderDescription.h"
 #include <memory>
 
 enum PurchaseOrderArrangement {
@@ -18,6 +19,20 @@ enum PurchaseOrderPriority {
 	ID,
 	Status,
 	PayMethod
+};
+
+struct SummaryData {
+public:
+	float totalAmount = 0;
+	int totalPOPlaced = 0;
+	int totalIncomingStock = 0;
+	LinkedList<ProductOrderDescription>* orderedProductQuantity;
+	LinkedList<CategoryOrderDescription>* orderedCategoryQuantity;
+public:
+	~SummaryData() {
+		delete this->orderedCategoryQuantity;
+		delete this->orderedProductQuantity;
+	}
 };
 
 
@@ -40,6 +55,8 @@ public:
 	void deletePurchaseOrder(int purchaseOrderID);
 	void sort(PurchaseOrderPriority criteria, PurchaseOrderArrangement arrangement);
 	void updatePurchaseOrder(PurchaseOrder* purchaseOrder);
+public:
+	static std::unique_ptr<SummaryData> showSummary(PririorityQueue<PurchaseOrder>* poData);
 private:
 	int getNewPurchaseOrderID();
 	long calculatePriority(PurchaseOrder purchaseOrder);
