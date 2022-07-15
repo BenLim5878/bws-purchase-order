@@ -160,6 +160,7 @@
     <ClCompile Include="PurchaseOrder.cpp" />
     <ClCompile Include="PurchaseOrderRepository.cpp" />
     <ClCompile Include="QuickSort.cpp" />
+    <ClCompile Include="ReportMenuView.cpp" />
     <ClCompile Include="SalesOrderExecutive.cpp" />
     <ClCompile Include="PurchaseOrderView.cpp" />
     <ClCompile Include="SearchRecordView.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="PurchaseOrderTable.h" />
     <ClInclude Include="PurchaseOrderView.h" />
     <ClInclude Include="QuickSort.h" />
+    <ClInclude Include="ReportMenuView.h" />
     <ClInclude Include="SearchRecordView.h" />
     <ClInclude Include="Session.h" />
     <ClInclude Include="SortRecordView.h" />
