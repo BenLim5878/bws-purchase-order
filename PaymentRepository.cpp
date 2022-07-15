@@ -35,10 +35,11 @@ Payment* PaymentRepository::getPayment(int paymentID)
 	return nullptr;
 }
 
-void PaymentRepository::addPayment(Payment payment)
+Payment* PaymentRepository::addPayment(Payment payment)
 {
 	payment.setPaymentID(getNewPaymentID());
 	this->payments->push(payment);
+	return &payment;
 }
 
 Payment PaymentRepository::deletePayment(int paymentID)

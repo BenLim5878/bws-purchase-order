@@ -9,6 +9,7 @@
 #include "Header.h"
 #include "Time.h"
 #include "DataAccess.h"
+#include "poData.h"
 
 using namespace std;
 
@@ -21,7 +22,9 @@ void View::PurchaseOrderView::show()
     dtime.show();
     ViewComponent::PurchaseOrderTable poTable;
     poTable.show();
-    auto po = DataAccess::getInstance()->purchaseOrderRepository;
+    poData::Data dTable;
+    dTable.show();
+ /*   auto po = DataAccess::getInstance()->purchaseOrderRepository;
     po->sort(PurchaseOrderPriority::PayMethod, PurchaseOrderArrangement::Decending);
     auto data = po->purchaseOrder;
 
@@ -93,7 +96,7 @@ void View::PurchaseOrderView::show()
             }
         }
 
-    }
+    }*/
 
     int option;
     do {

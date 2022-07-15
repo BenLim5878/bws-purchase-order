@@ -183,6 +183,7 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Payment.h" />
     <ClInclude Include="PaymentRepository.h" />
+    <ClInclude Include="poData.h" />
     <ClInclude Include="PriorityClass.h" />
     <ClInclude Include="Administrator.h" />
     <ClInclude Include="Auth.h" />
