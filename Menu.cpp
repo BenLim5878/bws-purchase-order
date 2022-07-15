@@ -8,6 +8,7 @@
 #include "Time.h"
 #include "Session.h"
 #include "LoginView.h"
+#include "ReportMenuView.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ using namespace std;
 void View::Menu::show()
 {
     int selection;
-
+    cin.clear();
     system("CLS");
     ViewHeader::Header head;
     head.display();
@@ -46,10 +47,11 @@ void View::Menu::show()
         }
 
         cout << "Select Option >>" << endl;
+        cin.ignore();
         cin >> selection;
         processInput(selection);
 
-    } while (selection < 1 && selection > 5);
+    } while (selection < 1 || selection > 5);
 }
 
 void View::Menu::processInput(int selection) {
@@ -59,22 +61,28 @@ void View::Menu::processInput(int selection) {
         case 1:
             PurchaseOrderView poView;
             poView.show();
+            return;
             break;
         case 2:
             VendorView venView;
             venView.show();
+            return;
             break;
         case 3:
-            //Report();
+            ReportMenuView reportmenuView;
+            reportmenuView.show();
+            return;
             break;
         case 4:
             DeliveryView dView;
             dView.show();
+            return;
             break;
         case 5:
             Session::getInstance()->deleteSession();
             LoginView view;
             view.show();
+            return;
             break;
         case 6:
             system("CLS");
@@ -87,19 +95,23 @@ void View::Menu::processInput(int selection) {
         case 1:
             PurchaseOrderView poView;
             poView.show();
+            return;
             break;
         case 2:
             VendorView venView;
             venView.show();
+            return;
             break;
         case 3:
             DeliveryView dView;
             dView.show();
+            return;
             break;
         case 4:
             Session::getInstance()->deleteSession();
             LoginView view;
             view.show();
+            return;
             break;
         case 5:
             system("CLS");

@@ -5,6 +5,6 @@ struct ProductOrderDescription
 {
 public:
 	Product* product;
-	int quantity;
+	int quantity = 0;
 };
 
