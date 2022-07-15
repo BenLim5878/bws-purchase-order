@@ -20,6 +20,12 @@ enum PurchaseOrderPriority {
 	PayMethod
 };
 
+enum ReportPeriod {
+	Daily,
+	Monthly,
+	Annually
+};
+
 
 class PurchaseOrderRepository:public IRepository
 {
@@ -39,6 +45,7 @@ public:
 	void addPurchaseOrder(PurchaseOrder purchaseOrder);
 	void deletePurchaseOrder(int purchaseOrderID);
 	void sort(PurchaseOrderPriority criteria, PurchaseOrderArrangement arrangement);
+	std::unique_ptr<PririorityQueue<PurchaseOrder>> getPurchaseOrderByPeriod(ReportPeriod reportPeriod);
 	void updatePurchaseOrder(PurchaseOrder* purchaseOrder);
 private:
 	int getNewPurchaseOrderID();

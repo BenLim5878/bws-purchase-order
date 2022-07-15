@@ -123,6 +123,37 @@ void PurchaseOrderRepository::sort(PurchaseOrderPriority criteria, PurchaseOrder
 	this->purchaseOrder = temp;
 }
 
+std::unique_ptr<PririorityQueue<PurchaseOrder>> PurchaseOrderRepository::getPurchaseOrderByPeriod(ReportPeriod reportPeriod)
+{
+	std::unique_ptr<PririorityQueue<PurchaseOrder>> out(new PririorityQueue<PurchaseOrder>);
+	time_t time = std::time(0);
+
+	for (int i = 0; i < this->purchaseOrder->length; i++) {
+		auto po = this->purchaseOrder->get(i);
+		tm timeTM = po->content.timeCreated;
+		switch (reportPeriod)
+		{
+		case Daily:
+			if (difftime(time, mktime(&timeTM)) <= 86400) {
+				out->enqueue(*po);
+			}
+			break;
+		case Monthly:
+			if (difftime(time, mktime(&timeTM)) <= 2.628e+6) {
+				out->enqueue(*po);
+			}
+			break;
+		case Annually:
+			if (difftime(time, mktime(&timeTM)) <= 3.154e+7) {
+				out->enqueue(*po);
+			}
+			break;
+		default:
+			break;
+		}
+	}
+}
+
 void PurchaseOrderRepository::updatePurchaseOrder(PurchaseOrder* purchaseOrder)
 {
 	PurchaseOrder* temp = new PurchaseOrder(*purchaseOrder);
