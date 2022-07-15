@@ -152,6 +152,8 @@ std::unique_ptr<PririorityQueue<PurchaseOrder>> PurchaseOrderRepository::getPurc
 			break;
 		}
 	}
+
+	return out;
 }
 
 void PurchaseOrderRepository::updatePurchaseOrder(PurchaseOrder* purchaseOrder)
