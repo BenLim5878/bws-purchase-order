@@ -27,16 +27,14 @@ void choice(PurchaseOrder* temp, Payment* tempPayment) {
 void View::AddRecordView::show()
 {
 	system("CLS");
-	std::cin.ignore();
 	ViewHeader::Header head;
 	head.display();
 	displayTime::Time dtime;
 	dtime.show();
+
 	// Show the Purchase Order Table
-	ViewComponent::PurchaseOrderTable poTable;
+	ViewComponent::PurchaseOrderTable poTable(DataAccess::getInstance()->purchaseOrderRepository->purchaseOrder);
 	poTable.show();
-	poData::Data dTable;
-	dTable.show();
 
 	auto po = DataAccess::getInstance()->purchaseOrderRepository;
 	auto data = po->purchaseOrder;
@@ -260,8 +258,7 @@ void View::AddRecordView::show()
 	// Please input the amount of items you want to order
 	int orderedAmount = -1;
 	std::cout << "Please enter the amount of items you want to order: ";
-	int amt;
-	std::cin >> amt;
+	std::cin >> orderedAmount;
 	ProductOrderDescription orderDescription;
 	orderDescription.product = tarrProduct;
 	orderDescription.quantity = orderedAmount;
@@ -284,7 +281,10 @@ void View::AddRecordView::show()
 		tempPayment.paymentAmount = totalOrderedPrice;
 		break;
 	case 2:
-		
+		temp.orderStatus = OrderStatus::Sent;
+		temp.totalPrice = totalOrderedPrice;
+		tempPayment.paymentAmount = totalOrderedPrice;
+		View::AddRecordView::show();
 		break;
 
 	}

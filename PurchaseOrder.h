@@ -6,6 +6,7 @@
 #include "Payment.h"
 #include "ProductOrderDescription.h"
 #include "Vendor.h"
+#include "PriorityQueue.h"
 
 enum OrderStatus {
 	Sent,
@@ -26,9 +27,12 @@ public:
 	Payment paymentRecord;
 	Vendor* vendor;
 public:
+	PririorityQueue<PurchaseOrder>* purchaseOrder;
+public:
 	int getPOID();
 	void setPOID(int id);
 	static std::string orderStatusToString(OrderStatus orderStatus);
+
 public:
 	PurchaseOrder();
 	~PurchaseOrder();
