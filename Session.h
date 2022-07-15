@@ -9,8 +9,9 @@ enum LoggedStatus {
 
 class Session
 {
-private:
+public:
 	User* loggedUser;
+private:
 	LoggedStatus loggedStatus;
 	time_t timeLogged;
 public:

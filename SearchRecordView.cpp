@@ -17,7 +17,7 @@ void View::SearchRecordView::show()
 	displayTime::Time dtime;
 	dtime.show();
 	// Show the Purchase Order Table
-	ViewComponent::PurchaseOrderTable poTable;
+	ViewComponent::PurchaseOrderTable poTable(DataAccess::getInstance()->purchaseOrderRepository->purchaseOrder);
 	poTable.show();
 	poData::Data dTable;
 	dTable.show();

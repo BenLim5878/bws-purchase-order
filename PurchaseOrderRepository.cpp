@@ -6,7 +6,6 @@
 #include "DataAccess.h"
 #include "PaymentRepository.h"
 #include "VendorRepository.h"
-#include <vector>
 #include <algorithm>
 
 //OrderID, (0)
@@ -21,24 +20,16 @@
 LinkedList<ProductOrderDescription>* PurchaseOrderRepository::processProductOrderString(std::string products, std::string quantity) {
 	std::stringstream productStream(products);
 	std::stringstream quantityStream(quantity);
-	std::vector<Product*> productContext;
-	std::vector<int> quantityContext;
-	std::string segment;
+	std::string segment1, segment2;
 	LinkedList<ProductOrderDescription>* temp = new LinkedList<ProductOrderDescription>();
 
 	ProductRepository* repos = new ProductRepository("Product.txt");
-	while (std::getline(productStream, segment, ';')) {
-		Product* product = repos->getProduct(std::stoi(segment));
-		productContext.push_back(product);
-	}
-	while (std::getline(quantityStream, segment, ';')) {
-		int quantity = std::stoi(segment);
-		quantityContext.push_back(quantity);
-	}
-	for (int i = 0; i < productContext.size(); i++) {
+	while (std::getline(productStream, segment1, ',') && std::getline(quantityStream, segment2, ',')) {
+		Product* product = repos->getProduct(std::stoi(segment1));
+		int quantity = std::stoi(segment2);
 		ProductOrderDescription t;
-		t.product = productContext.at(i);
-		t.quantity = quantityContext.at(i);
+		t.product = product;
+		t.quantity = quantity;
 		temp->push(t);
 	}
 	delete repos;

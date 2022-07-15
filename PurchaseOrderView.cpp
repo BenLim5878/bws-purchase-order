@@ -20,83 +20,14 @@ void View::PurchaseOrderView::show()
     head.display();
     displayTime::Time dtime;
     dtime.show();
-    ViewComponent::PurchaseOrderTable poTable;
-    poTable.show();
-    poData::Data dTable;
-    dTable.show();
- /*   auto po = DataAccess::getInstance()->purchaseOrderRepository;
-    po->sort(PurchaseOrderPriority::PayMethod, PurchaseOrderArrangement::Decending);
+
+    auto po = DataAccess::getInstance()->purchaseOrderRepository;
+    po->sort(PurchaseOrderPriority::ID, PurchaseOrderArrangement::Ascending);
     auto data = po->purchaseOrder;
 
-
-    for (int i = 0; i < data->length; i++)
-    {
-        auto record = data->get(i)->content;
-
-        for (int j = 0; j < record.orderedProducts->length; j++) {
-            cout
-                << left
-                << setw(3)
-                << ""
-                << left
-                << setw(7)
-                << record.getPOID()
-                << left
-                << setw(16)
-                << record.orderedProducts->get(j)->product->productName
-                << left
-                << setw(5)
-                << record.orderedProducts->get(j)->quantity
-                << left
-                << setw(22)
-                << std::put_time(&record.timeCreated, "%Y-%m-%d.%H:%M:%S")
-                << left
-                << setw(3)
-                << ""
-                << left
-                << setw(8)
-                << record.totalPrice
-                << left
-                << setw(18)
-                << Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
-                << left
-                << setw(10)
-                << PurchaseOrder::orderStatusToString(record.orderStatus)
-                << endl;
-            if (j == record.orderedProducts->length - 1) {
-                cout
-                    << left
-                    << setw(3)
-                    << ""
-                    << left
-                    << setw(7)
-                    << ""
-                    << left
-                    << setw(16)
-                    << record.orderedProducts->get(j)->product->productName
-                    << left
-                    << setw(5)
-                    << record.orderedProducts->get(j)->quantity
-                    << left
-                    << setw(22)
-                    << put_time(&record.timeCreated, "%Y-%m-%d.%H:%M:%S")
-                    << left
-                    << setw(3)
-                    << ""
-                    << left
-                    << setw(8)
-                    << record.totalPrice
-                    << left
-                    << setw(18)
-                    << Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
-                    << left
-                    << setw(10)
-                    << PurchaseOrder::orderStatusToString(record.orderStatus)
-                    << endl;
-            }
-        }
-
-    }*/
+    ViewComponent::PurchaseOrderTable poTable(data);
+    poTable.show();
+     
 
     int option;
     do {
@@ -121,22 +52,27 @@ void View::PurchaseOrderView::processInput(int option) {
     case 1:
         AddRecordView addRecordView;
         addRecordView.show();
+        return;
         break;
     case 2:
         UpdateRecordView updateRecordView;
         updateRecordView.show();
+        return;
         break;
     case 3: 
         SearchRecordView searchRecordView;
         searchRecordView.show();
+        return;
         break;
     case 4: 
         SortRecordView sortRecordView;
         sortRecordView.show();
+        return;
         break;
     case 5:
         Menu menu;
         menu.show();
+        return;
         break;
     }
 }
