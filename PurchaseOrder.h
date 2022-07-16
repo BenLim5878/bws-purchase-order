@@ -27,8 +27,6 @@ public:
 	Payment paymentRecord;
 	Vendor* vendor;
 public:
-	PririorityQueue<PurchaseOrder>* purchaseOrder;
-public:
 	int getPOID();
 	void setPOID(int id);
 	static std::string orderStatusToString(OrderStatus orderStatus);

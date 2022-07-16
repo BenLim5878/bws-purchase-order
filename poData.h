@@ -64,7 +64,7 @@ namespace poData {
                             << record.orderedProducts->get(j)->quantity
                             << left
                             << setw(22)
-                            << put_time(&record.timeCreated, "%Y-%m-%d.%H:%M:%S")
+                            << std::put_time(&record.timeCreated, "%Y-%m-%d.%H:%M:%S")
                             << left
                             << setw(3)
                             << ""
