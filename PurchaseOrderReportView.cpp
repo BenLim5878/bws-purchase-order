@@ -25,9 +25,9 @@ void View::PurchaseOrderReportView::show()
     ViewComponent::PurchaseOrderTable poTable(poRepos->purchaseOrder);
     poTable.show();
     
-    cout << "==================" << endl;
+    cout << "======================" << endl;
     cout << "Purchase Order Summary" << endl;
-    cout << "==================" << endl;
+    cout << "======================" << endl;
 
     cout << "Total Amount: " << summa->totalAmount << endl;
     cout << "Total Pourchase Order Placed: " << summa->totalPOPlaced << endl;

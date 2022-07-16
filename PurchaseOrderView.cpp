@@ -22,7 +22,6 @@ void View::PurchaseOrderView::show()
     dtime.show();
 
     auto po = DataAccess::getInstance()->purchaseOrderRepository;
-    po->sort(PurchaseOrderPriority::ID, PurchaseOrderArrangement::Ascending);
     auto data = po->purchaseOrder;
 
     ViewComponent::PurchaseOrderTable poTable(data);

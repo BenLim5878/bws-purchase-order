@@ -23,7 +23,7 @@ void View::SearchRecordView::show()
 	poTable.show();
     std::cout << "" << endl;
 	std::cout << "B-Back" << endl;
-	std::cout << "Press Any Letter or Number to Proceed to Add Purchase Record" << endl;
+	std::cout << "Press Any Letter or Number to Proceed to Searc for Purchase Order Record" << endl;
     std::cout << "Enter: " << endl;
     string back;
     cin >> back;
