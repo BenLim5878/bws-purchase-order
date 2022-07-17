@@ -25,7 +25,7 @@ namespace ViewComponent {
                 }
             }
 
-                cout << "===========================================================================================================================================" << endl;
+                cout << "==================================================================================================================================================" << endl;
                 cout
                     << left
                     << setw(15)
@@ -52,7 +52,7 @@ namespace ViewComponent {
                     << setw(20)
                     << "Vendor"
                     << endl;
-                std::cout << "===========================================================================================================================================" << endl;
+                std::cout << "==================================================================================================================================================" << endl;
 
                 int totalStockCategory = 0, totalStockAmount = 0;
                 float totalInventoryCost = 0;
@@ -102,13 +102,13 @@ namespace ViewComponent {
                     }
                     cout << endl;
                 }
-                std::cout << "==================" << endl;
-                cout << "Inventory Summary" << endl;
-                std::cout << "==================" << endl;
+                std::cout << "=================================" << endl;
+                std::cout << "Inventory Summary" << endl;
+                std::cout << "=================================" << endl;
 
-                cout << "Current Inventory Cost : RM " << totalInventoryCost << endl;
-                cout << "Total Stock Amount: " << totalStockAmount << endl;
-                cout << "Total Product Category: " << totalStockCategory << endl;
+                std::cout << "Current Inventory Cost : RM " << totalInventoryCost << endl;
+                std::cout << "Total Stock Amount: " << totalStockAmount << endl;
+                std::cout << "Total Product Category: " << totalStockCategory << endl;
             }
         };
 

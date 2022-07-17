@@ -39,7 +39,7 @@ void View::PurchaseOrderView::show()
         cout << "" << endl;
         cout << "=============================================================================" << endl;
 
-        std::cout << "Select Option >>" << endl;
+        std::cout << "Select Option >> ";
 
         cin >> option;
         processInput(option);
