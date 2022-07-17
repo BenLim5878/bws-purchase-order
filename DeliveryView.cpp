@@ -4,6 +4,7 @@
 #include "DeliveryTable.h"
 #include "Header.h"
 #include "Time.h"
+#include "DataAccess.h"
 
 using namespace std;
 int dDecision;
@@ -16,24 +17,25 @@ void View::DeliveryView::show()
     head.display();
     displayTime::Time dtime;
     dtime.show();
-    ViewComponent::DeliveryTable dTable;
+    //show the Delivery Table
+    ViewComponent::DeliveryTable dTable(DataAccess::getInstance()->deliveryRepository->deliveries);
     dTable.show();
 
-    std::cout << "0-Back to Menu" << endl;
-    std::cout << "Please enter the Delivery ID to view the delivery details:" << endl;
-    int deliveryID;
-    cin >> deliveryID;
-
-    if (dDecision == 0) {
+    std::cout << "" << endl;
+    std::cout << "B-Back to Menu" << endl;
+    std::cout << "Enter: ";
+    string vDecision;
+    string vDecision2;
+    cin >> vDecision;
+    if (vDecision == "B") {
         std::cout << "Are you sure you want to exit? (Y/N): " << endl;
-        cin >> dDecision2;
-        if (dDecision2 == "Y") {
+        cin >> vDecision2;
+        if (vDecision2 == "Y") {
             View::Menu menu;
             menu.show();
         }
         else {
-            std::cout << "Please enter the Delivery ID to view the delivery details:" << endl;
-            cin >> deliveryID;
+            View::DeliveryView::show();
         }
     }
 }

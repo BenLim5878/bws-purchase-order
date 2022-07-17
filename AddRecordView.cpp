@@ -72,7 +72,7 @@ void View::AddRecordView::show()
 	for (int i = 0; i < vdata->length; i++)
 	{
 		auto vrec = vdata->get(i);
-		std::cout << " " << vrec->getVendorID() << " | " << vrec->vendorName << " | " << vrec->vendorDescription << " | " << vrec->vendorStatus << endl;
+		std::cout << " " << vrec->getVendorID() << " | " << vrec->vendorName << " | " << vrec->vendorDescription << " | " << Vendor::vendorStatusToString(vrec->vendorStatus) << endl;
 	}
 	std::cout << "Vendor ID: ";
 	std::cin >> vendorID;
@@ -84,7 +84,7 @@ void View::AddRecordView::show()
 	for (int i = 0; i < productList->length; i++)
 	{
 		auto product = productList->get(i);
-		std::cout << " " << product->getProductID() << " | " << product->productName << " | " << product->productBrand << " | " << product->productDescription << " | " << product->productPricePerUnit << " | " << product->productQuantityPerUnit << " | " << product->productStatus << endl;
+		std::cout << " " << product->getProductID() << " | " << product->productName << " | " << product->productBrand << " | " << product->productDescription << " | " << product->productPricePerUnit << " | " << product->productQuantityPerUnit << " | " << Product::productStatusToString(product->productStatus) << endl;
 	}
 
 	int productID = -1;
@@ -135,11 +135,11 @@ void View::AddRecordView::show()
 
 	DataAccess::getInstance()->purchaseOrderRepository->addPurchaseOrder(temp);
 
+	std::cout << " " << endl;
 	std::cout << "Added Successfully!" << endl;
-	std::cout << "0-Back" << endl;
+	std::cout << " " << endl;
+	std::cout << "B-Back" << endl;
+	std::cout << "Enter: ";
 	std::cin >> back;
-	if (back == "0") {
-		return;
-	}
 }
 
