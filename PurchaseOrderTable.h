@@ -28,11 +28,17 @@ namespace ViewComponent {
                 }
             }
 
-            cout << "========================================================================================================" << endl;
+            cout << "============================================================================================================================" << endl;
             cout
                 << left
                 << setw(10)
                 << "OrderID"
+                << left
+                << setw(10)
+                << "VendorID"
+                << left
+                << setw(11)
+                << "ProductID"
                 << left
                 << setw(2+ max_product_string_space)
                 << "ProductName"
@@ -52,7 +58,7 @@ namespace ViewComponent {
                 << setw(10)
                 << "Status"
                 << endl;
-            std::cout << "========================================================================================================" << endl;
+            std::cout << "============================================================================================================================" << endl;
 
             for (int i = 0; i < this->data->length; i++)
             {
@@ -73,7 +79,13 @@ namespace ViewComponent {
                         cout
                             << "";
                     }
-                    cout
+                    std::cout //Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
+                        << left
+                        << setw(10)
+                        << record.orderedProducts->get(j)->product->productVendor->getVendorID()
+                        << left
+                        << setw(11)
+                        << record.orderedProducts->get(j)->product->getProductID()
                         << left
                         << setw(3 + max_product_string_space)
                         << record.orderedProducts->get(j)->product->productName

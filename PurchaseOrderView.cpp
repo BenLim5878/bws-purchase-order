@@ -24,7 +24,7 @@ void View::PurchaseOrderView::show()
     auto po = DataAccess::getInstance()->purchaseOrderRepository;
     auto data = po->purchaseOrder;
 
-    ViewComponent::PurchaseOrderTable poTable(data);
+    ViewComponent::PurchaseOrderTable poTable(DataAccess::getInstance()->purchaseOrderRepository->purchaseOrder);
     poTable.show();
      
 
