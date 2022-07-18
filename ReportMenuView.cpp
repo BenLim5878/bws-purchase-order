@@ -7,6 +7,7 @@
 #include "UserReportView.h"
 #include "DataAccess.h"
 #include "Menu.h"
+#include "PurchaseOrderReportView.h"
 
 using namespace std;
 
@@ -32,8 +33,15 @@ void View::ReportMenuView::show()
     std::cout << "Select Option >> ";
 
     int selection;
-    cin.ignore();
     cin >> selection;
+    cin.ignore();
+
+    ReportConfig config;
+    config.purchaseOrderArrangement = PurchaseOrderArrangement::Ascending;
+    config.purchaseOrderPriority = PurchaseOrderPriority::ID;
+    config.reportPeriod = ReportPeriod::All;
+    PurchaseOrderReportView pView(config);
+
 
     switch (selection) {
     case 1:
@@ -47,8 +55,11 @@ void View::ReportMenuView::show()
         return;
         break;
     case 3:
-        //Purchase Order Summary();
+    {
+        pView.show();
+        return;
         break;
+    }
     case 4:
         Menu menu;
         menu.show();

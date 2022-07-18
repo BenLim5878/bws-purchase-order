@@ -5,7 +5,6 @@ namespace View {
 	{
 	public:
 		void show();
-		void processInput(int selection);
 	};
 }
 

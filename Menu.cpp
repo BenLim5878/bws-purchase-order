@@ -47,8 +47,8 @@ void View::Menu::show()
         }
 
         cout << "Select Option >> ";
-        cin.ignore();
         cin >> selection;
+        cin.ignore();
         processInput(selection);
 
     } while (selection < 1 || selection > 5);

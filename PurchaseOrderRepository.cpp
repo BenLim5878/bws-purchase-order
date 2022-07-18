@@ -152,6 +152,7 @@ std::unique_ptr<PririorityQueue<PurchaseOrder>> PurchaseOrderRepository::getPurc
 			}
 			break;
 		default:
+			out->enqueue(*po);
 			break;
 		}
 	}
@@ -258,10 +259,10 @@ long PurchaseOrderRepository::calculatePriority(PurchaseOrder purchaseOrder)
 			totalItem += orderDesc->quantity;
 		}
 		if (this->arrangement == PurchaseOrderArrangement::Ascending) {
-			return totalItem;
+			return -totalItem + std::numeric_limits<int>::max();
 		}
 		else {
-			return -totalItem + std::numeric_limits<int>::max();
+			return totalItem;
 		}
 		break;
 	}
@@ -280,6 +281,7 @@ long PurchaseOrderRepository::calculatePriority(PurchaseOrder purchaseOrder)
 	{
 		if (this->arrangement == PurchaseOrderArrangement::Ascending) {
 			return std::numeric_limits<int>::max() - 1 - purchaseOrder.getPOID();
+			break;
 		}
 		else {
 			return purchaseOrder.getPOID();

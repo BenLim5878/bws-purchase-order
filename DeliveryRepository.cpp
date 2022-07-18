@@ -22,7 +22,7 @@ void DeliveryRepository::loadData()
 		temp.deliveryStatus = static_cast<DeliveryStatus>(std::stoi(record.at(1)));
 		// Delivery Purchase Order
 		PurchaseOrderRepository poRepos("PurchaseOrder.txt");
-		temp.purchaseOrder = poRepos.getPurchaseOrder(std::stoi(record.at(2)));
+		temp.purchaseOrder = *poRepos.getPurchaseOrder(std::stoi(record.at(2)));
 		// Delivery Vendor
 		VendorRepository vendorRepos("Vendor.txt");
 		temp.vendor = vendorRepos.getVendor(std::stoi(record.at(3)));

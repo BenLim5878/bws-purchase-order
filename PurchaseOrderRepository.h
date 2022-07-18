@@ -13,12 +13,19 @@ enum PurchaseOrderArrangement {
 };
 
 enum PurchaseOrderPriority {
-	TotalPrice,
-	Latest,
-	TotalItem,
 	ID,
+	Latest,
+	PayMethod,
 	Status,
-	PayMethod
+	TotalItem,
+	TotalPrice
+};
+
+enum ReportPeriod {
+	All,
+	Daily,
+	Monthly,
+	Annually,
 };
 
 struct SummaryData {
@@ -34,13 +41,6 @@ public:
 		delete this->orderedProductQuantity;
 	}
 };
-
-enum ReportPeriod {
-	Daily,
-	Monthly,
-	Annually
-};
-
 
 class PurchaseOrderRepository:public IRepository
 {

@@ -13,7 +13,7 @@ private:
 	int deliveryID;
 public:
 	DeliveryStatus deliveryStatus;
-	PurchaseOrder* purchaseOrder;
+	PurchaseOrder purchaseOrder;
 	Vendor* vendor;
 	tm createdAt;
 	static std::string deliveryStatusToString(DeliveryStatus deliveryStatus);

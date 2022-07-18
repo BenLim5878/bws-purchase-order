@@ -19,9 +19,9 @@ namespace ViewComponent {
 
             int max_product_string_space = 0;
             for (int i = 0; i < this->data->length; i++) {
-                auto record = this->data->get(i);
-                for (int j = 0; j < record->purchaseOrder->orderedProducts->length; j++) {
-                    int stringLen = record->purchaseOrder->orderedProducts->get(j)->product->productName.length();
+                auto record = this->data->top(i+1);
+                for (int j = 0; j < record->purchaseOrder.orderedProducts->length; j++) {
+                    int stringLen = record->purchaseOrder.orderedProducts->get(j)->product->productName.length();
                     if (max_product_string_space < stringLen) {
                         max_product_string_space = stringLen;
                     }
@@ -53,7 +53,7 @@ namespace ViewComponent {
             for (int i = 0; i < this->data->length; i++)
             {
                 auto record = this->data->get(i);
-                int totalProducts = record->purchaseOrder->orderedProducts->length;
+                int totalProducts = record->purchaseOrder.orderedProducts->length;
                 for (int j = 0; j < totalProducts; j++) {
                     cout
                         << left
@@ -72,10 +72,10 @@ namespace ViewComponent {
                     cout
                         << left
                         << setw(3 + max_product_string_space)
-                        << record->purchaseOrder->orderedProducts->get(j)->product->productName
+                        << record->purchaseOrder.orderedProducts->get(j)->product->productName
                         << left
                         << setw(10)
-                        << record->purchaseOrder->getPOID()
+                        << record->purchaseOrder.getPOID()
                         << left
                         << setw(22)
                         << std::put_time(&record->createdAt, "%Y-%m-%d.%H:%M:%S")
