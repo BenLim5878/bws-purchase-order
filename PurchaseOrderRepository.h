@@ -60,10 +60,10 @@ public:
 	void addPurchaseOrder(PurchaseOrder purchaseOrder);
 	void deletePurchaseOrder(int purchaseOrderID);
 	void sort(PurchaseOrderPriority criteria, PurchaseOrderArrangement arrangement);
-	std::unique_ptr<PririorityQueue<PurchaseOrder>> getPurchaseOrderByPeriod(ReportPeriod reportPeriod);
 	void updatePurchaseOrder(PurchaseOrder* purchaseOrder);
 public:
 	static std::unique_ptr<SummaryData> showSummary(PririorityQueue<PurchaseOrder>* poData);
+	static std::unique_ptr<PririorityQueue<PurchaseOrder>> getPurchaseOrderByPeriod(PririorityQueue<PurchaseOrder>* poData ,ReportPeriod reportPeriod);
 private:
 	int getNewPurchaseOrderID();
 	long calculatePriority(PurchaseOrder purchaseOrder);

@@ -10,6 +10,7 @@
 #include "Session.h"
 #include "Menu.h"
 #include "PurchaseOrderReportView.h"
+#include "StockInventoryReportView.h"
 
 using namespace std;
 
@@ -18,10 +19,10 @@ Session* Session::instance = 0;
 
 int main()
 {
-	View::PurchaseOrderReportView view;
+	View::StockInventoryReportView view;
 	view.show();
 
 
-	//auto poRepos = DataAccess::getInstance()->purchaseOrderRepository->getPurchaseOrderByPeriod();
+	return 0;
 }
 
