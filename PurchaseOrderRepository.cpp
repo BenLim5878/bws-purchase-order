@@ -163,6 +163,63 @@ void PurchaseOrderRepository::updatePurchaseOrder(PurchaseOrder* purchaseOrder)
 	addPurchaseOrder(*temp);
 }
 
+std::unique_ptr<SummaryData> PurchaseOrderRepository::showSummary(PririorityQueue<PurchaseOrder>* poData)
+{
+	std::unique_ptr<SummaryData> summaryData(new SummaryData());
+
+	summaryData->orderedCategoryQuantity = new LinkedList<CategoryOrderDescription>();
+	summaryData->orderedProductQuantity= new LinkedList<ProductOrderDescription>();
+
+	auto productRepos = DataAccess::getInstance()->productRepository;
+
+	for (int i = 0; i < productRepos->getTotalCategory(); i++) {
+		CategoryNode* categoryNode = static_cast<CategoryNode*>(productRepos->productCategoryTree->root->getChild(i));
+		CategoryOrderDescription categoryOrderDescription;
+		categoryOrderDescription.productCategory = &categoryNode->data;
+		summaryData->orderedCategoryQuantity->push(categoryOrderDescription);
+		
+		for (int j = 0; j < productRepos->getTotalItemByCategory(i); j++) {
+			ProductNode* productNode = static_cast<ProductNode*>(categoryNode->getChild(j));
+			ProductOrderDescription productOrderDescription;
+			productOrderDescription.product = &productNode->data;
+			summaryData->orderedProductQuantity->push(productOrderDescription);
+		}
+	}
+
+	for (int i = 0; i < poData->length; i++) {
+		summaryData->totalPOPlaced++;
+		PriorityClass<PurchaseOrder>* po = poData->get(i);
+		for (int j = 0; j < po->content.orderedProducts->length; j++) {
+			ProductOrderDescription* poDesc =  po->content.orderedProducts->get(j);
+			summaryData->totalAmount += (poDesc->product->productPricePerUnit * poDesc->quantity);
+			summaryData->totalIncomingStock += poDesc->quantity;
+		}
+	}
+
+	for (int i = 0; i < poData->length; i++) {
+		PriorityClass<PurchaseOrder>* po = poData->get(i);
+		for (int j = 0; j < po->content.orderedProducts->length; j++) {
+			ProductOrderDescription* poDesc = po->content.orderedProducts->get(j);
+			for (int x = 0; x < summaryData->orderedCategoryQuantity->length; x++) {
+				auto productCategory = summaryData->orderedCategoryQuantity->get(x);
+				if (productCategory->productCategory->categoryID == poDesc->product->productCategory->categoryID) {
+					productCategory->totalPrice += (poDesc->product->productPricePerUnit * poDesc->quantity);
+					productCategory->totalQuantity += poDesc->quantity;
+				}
+			}
+
+			for (int z = 0; z < summaryData->orderedProductQuantity->length; z++) {
+				if (summaryData->orderedProductQuantity->get(z)->product->getProductID() == poDesc->product->getProductID()) {
+					summaryData->orderedProductQuantity->get(z)->quantity += poDesc->quantity;
+				}
+
+			}
+		}
+	}
+
+	return summaryData;
+}
+
 int PurchaseOrderRepository::getNewPurchaseOrderID()
 {
 	if (this->purchaseOrder->length == 0) {
