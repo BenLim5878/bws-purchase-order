@@ -22,9 +22,22 @@ void View::UserReportView::show()
     ViewComponent::UserTable tableView(DataAccess::getInstance()->userRepository->users);
     tableView.show();
 
-    cout << endl << endl << "Type any key to return to the report menu. " << endl;
-    int t;
-    cin >> t;
-    ReportMenuView view;
-    view.show();
+    std::cout << "" << endl;
+    std::cout << "B-Back to Menu" << endl;
+    std::cout << "Enter: ";
+    string vDecision;
+    string vDecision2;
+    cin >> vDecision;
+    if (vDecision == "B") {
+        std::cout << "Are you sure you want to exit? (Y/N): " << endl;
+        cin >> vDecision2;
+        if (vDecision2 == "Y") {
+            ReportMenuView view;
+            view.show();
+        }
+        else {
+            View::UserReportView::show();
+        }
+    }
+
 }

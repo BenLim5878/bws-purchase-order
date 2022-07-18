@@ -16,7 +16,7 @@ public:
 	LinkedList<Payment>* payments;
 public:
 	Payment* getPayment(int paymentID);
-	void addPayment(Payment payment);
+	Payment* addPayment(Payment payment);
 	Payment deletePayment(int paymentID);
 private:
 	int getNewPaymentID();

@@ -21,15 +21,15 @@ void View::PurchaseOrderReportView::show()
 
     auto summa = PurchaseOrderRepository::showSummary(poRepos->purchaseOrder);
 
-    // cout
-    cout << "============================" << endl;
-    cout << "Purchase Order Summary" << endl;
-    cout << "============================" << endl;
-
-    cout << "Total Amount: " << summa->totalAmount << endl;
-    cout << "Total Pourchase Order Placed: " << summa->totalPOPlaced << endl;
-    cout << "Total Incoming Stock: " << summa->totalIncomingStock << endl <<endl;
 
     ViewComponent::PurchaseOrderTable poTable(poRepos->purchaseOrder);
     poTable.show();
+    
+    cout << "======================" << endl;
+    cout << "Purchase Order Summary" << endl;
+    cout << "======================" << endl;
+
+    cout << "Total Amount: " << summa->totalAmount << endl;
+    cout << "Total Pourchase Order Placed: " << summa->totalPOPlaced << endl;
+    cout << "Total Incoming Stock: " << summa->totalIncomingStock << endl;
 }

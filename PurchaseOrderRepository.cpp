@@ -71,6 +71,7 @@ void PurchaseOrderRepository::loadData()
 	}
 }
 
+
 PurchaseOrder* PurchaseOrderRepository::getPurchaseOrder(int purchaseOrderID)
 {
 	PriorityClass<PurchaseOrder>* t = nullptr;

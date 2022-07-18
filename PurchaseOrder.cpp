@@ -38,3 +38,5 @@ PurchaseOrder::PurchaseOrder():orderedProducts(new LinkedList<ProductOrderDescri
 PurchaseOrder::~PurchaseOrder() {
 }
 
+
+

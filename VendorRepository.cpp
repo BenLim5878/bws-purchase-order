@@ -59,7 +59,7 @@ std::unique_ptr<LinkedList<Product>> VendorRepository::getProductByVendor(int ve
 		ProductCategory* cat = productRepo->getProductCategory(i);
 		for (int j = 0; j < productRepo->getTotalItemByCategory(cat->categoryTitle); j++) {
 			Product* temp = productRepo->getProduct(cat->categoryID, j);
-			if (temp->getProductID() == vendorID) {
+			if (temp->productVendor->getVendorID() == vendorID) {
 				productPointer.get()->push(*temp);
 			}
 		}

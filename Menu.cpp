@@ -46,7 +46,7 @@ void View::Menu::show()
             std::cout << "============================================" << endl;
         }
 
-        cout << "Select Option >>" << endl;
+        cout << "Select Option >> ";
         cin.ignore();
         cin >> selection;
         processInput(selection);

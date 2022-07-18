@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "LinkedList.h"
 
 enum VendorStatus {
 	Active,

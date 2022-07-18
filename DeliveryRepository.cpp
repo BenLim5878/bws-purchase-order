@@ -37,7 +37,7 @@ Delivery* DeliveryRepository::getDelivery(int deliveryID)
 {
 	Delivery* t = nullptr;
 	for (int i = 0; i < this->deliveries->length; i++) {
-		t = this->deliveries->top(i+1);
+		t = this->deliveries->top(i + 1);
 		if (t->getDeliveryID() == deliveryID) {
 			return t;
 		}
@@ -63,13 +63,13 @@ int DeliveryRepository::getNewDeliveryID()
 	}
 	std::vector<int> ids;
 	for (int i = 0; i < this->deliveries->length; i++) {
-		ids.push_back(this->deliveries->top(i+1)->getDeliveryID());
+		ids.push_back(this->deliveries->top(i + 1)->getDeliveryID());
 	}
 	int max = *std::max_element(ids.begin(), ids.end());
 	return  max + 1;
 }
 
-DeliveryRepository::DeliveryRepository(std::string fileLocation):deliveries(new Stack<Delivery>())
+DeliveryRepository::DeliveryRepository(std::string fileLocation) :deliveries(new Stack<Delivery>())
 {
 	this->dataReader = new TextDataReader(fileLocation);
 	this->dataReader->readFile();

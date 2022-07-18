@@ -6,6 +6,7 @@
 #include "StockInventoryReportView.h"
 #include "UserReportView.h"
 #include "DataAccess.h"
+#include "Menu.h"
 
 using namespace std;
 
@@ -24,8 +25,11 @@ void View::ReportMenuView::show()
     std::cout << "1-Stock Inventory Report" << endl;
     std::cout << "2-User Record" << endl;
     std::cout << "3-Purchase Order Summary" << endl;
+    std::cout << "4-Back to Main Menu" << endl;
     std::cout << "" << endl;
     std::cout << "============================================" << endl;
+
+    std::cout << "Select Option >> ";
 
     int selection;
     cin.ignore();
@@ -44,6 +48,11 @@ void View::ReportMenuView::show()
         break;
     case 3:
         //Purchase Order Summary();
+        break;
+    case 4:
+        Menu menu;
+        menu.show();
+        return;
         break;
     }
 }

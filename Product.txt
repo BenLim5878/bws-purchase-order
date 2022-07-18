@@ -1,5 +1,5 @@
 0;0;Asus;Asus Laptop; Laptop Made By Asus;1500;1;3;0;0;2
 1;0;Lenovo;Lenovo Laptop; Laptop Made By Lenovo;1300;1;5;0.25;0;1
-2;0;HP;HP Laptop; Laptop Made By HP;2500;1;0;0;1;0
+2;0;HP;HPLaptop; Laptop Made By HP;2500;1;0;0;1;0
 3;0;Acer;Acer Laptop; Laptop Made By Acer;500;1;0;0;1;0
 4;1;KitchenWare;Premium spoon (Mediumsized); Premium spoon Made By Kitchenware;500;1;0;0;1;0

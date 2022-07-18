@@ -18,13 +18,37 @@ void View::SortRecordView::show()
 	// Show the Purchase Order Table
 	ViewComponent::PurchaseOrderTable poTable(DataAccess::getInstance()->purchaseOrderRepository->purchaseOrder);
 	poTable.show();
+	std::cout << "" << endl;
+	std::cout << "B-Back" << endl;
+	std::cout << "Press Any Letter or Number to Proceed to Select Sorting Selection" << endl;
+	std::cout << "Enter: " << endl;
+	string back;
+	cin >> back;
+	if (back == "B") {
+		std::cout << "Are you sure you want to exit? (Y/N): " << endl;
+		string decision;;
+		std::cin >> decision;
+		if (decision == "Y") {
+			return;
+		}
+	}
+
+	auto sortpo = DataAccess::getInstance()->purchaseOrderRepository;
+	auto data = sortpo->purchaseOrder;
 
 	cout << "" << endl;
-	cout << "0-Back" << endl;
 	cout << "Please select how to want to sort the Order Record:" << endl;
 	cout << "1-Ascending" << endl;
 	cout << "2-Descending" << endl;
+	cout << "Enter: ";
 	int option;
 	cin >> option;
-	system("CLS");
+	switch (option) {
+	case 1:
+		sortpo->sort(PurchaseOrderPriority::ID, PurchaseOrderArrangement::Ascending);
+		break;
+	case 2: 
+		sortpo->sort(PurchaseOrderPriority::ID, PurchaseOrderArrangement::Decending);
+		break;
+	}
 }
