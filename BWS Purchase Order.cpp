@@ -15,16 +15,22 @@ Session* Session::instance = 0;
 
 int main()
 {
+    // Set window size
+    HANDLE hOut;
+    SMALL_RECT DisplayArea = { 0, 0, 0, 0 };
+    //set x and y to whatever ye' want
+    int x = 160;
+    int y = 40;
+
+    hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    DisplayArea.Right = x;
+    DisplayArea.Bottom = y;
+
+    SetConsoleWindowInfo(hOut, TRUE, &DisplayArea);
+
 	View::LoginView view;
 	view.show();
-	
-	// Set window size
-	HWND console = GetConsoleWindow();
-	RECT r;
-	r.left = 156;
-	r.bottom = 156+40;
-	r.right = 156 + 160;
-	r.top = 156;
+
 
 
 	return 0;
