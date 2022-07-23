@@ -1,14 +1,8 @@
+#define NOMINMAX
 #include "Helper.h"
-#include <Windows.h>
 #include <ctime>
-
-void hidecursor() {
-    HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
-    CONSOLE_CURSOR_INFO info;
-    info.dwSize = 100;
-    info.bVisible = FALSE;
-    SetConsoleCursorInfo(consoleHandle, &info);
-}
+#include <iostream>
+#include <limits>
 
 tm stringToTime(std::string timeString) {
 	tm tm;
@@ -35,4 +29,22 @@ int getCurrentYear()
 	tm now;
 	localtime_s(&now,&currentTime);
 	return now.tm_year + 1900;
+}
+
+void cleanBuffer() {
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+int promptNumericInput() {
+	int option;
+	std::cin >> option;
+	std::cin.ignore();
+	if (std::cin.fail()) {
+		cleanBuffer();
+		return -1;
+	}
+	else {
+		return option;
+	}
 }

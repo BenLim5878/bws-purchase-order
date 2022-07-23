@@ -4,51 +4,57 @@
 #include "Header.h"
 #include "Time.h"
 #include "DataAccess.h"
+#include "PurchaseOrderView.h"
 
 using namespace std;
 
 void View::SortRecordView::show()
 {
 	system("CLS");
-	cin.ignore();
 	ViewHeader::Header head;
 	head.display();
 	displayTime::Time dtime;
 	dtime.show();
-	// Show the Purchase Order Table
-	ViewComponent::PurchaseOrderTable poTable(DataAccess::getInstance()->purchaseOrderRepository->purchaseOrder);
-	poTable.show();
-	std::cout << "" << endl;
-	std::cout << "B-Back" << endl;
-	std::cout << "Press Any Letter or Number to Proceed to Select Sorting Selection" << endl;
-	std::cout << "Enter: " << endl;
-	string back;
-	cin >> back;
-	if (back == "B") {
-		std::cout << "Are you sure you want to exit? (Y/N): " << endl;
-		string decision;;
-		std::cin >> decision;
-		if (decision == "Y") {
-			return;
-		}
-	}
 
-	auto sortpo = DataAccess::getInstance()->purchaseOrderRepository;
-	auto data = sortpo->purchaseOrder;
+    PurchaseOrderPriority priority = PurchaseOrderPriority::ID;
+    PurchaseOrderArrangement arrangement = PurchaseOrderArrangement::Ascending;
 
-	cout << "" << endl;
-	cout << "Please select how to want to sort the Order Record:" << endl;
-	cout << "1-Ascending" << endl;
-	cout << "2-Descending" << endl;
-	cout << "Enter: ";
-	int option;
-	cin >> option;
-	switch (option) {
-	case 1:
-		sortpo->sort(PurchaseOrderPriority::ID, PurchaseOrderArrangement::Ascending);
-		break;
-	case 2: 
-		sortpo->sort(PurchaseOrderPriority::ID, PurchaseOrderArrangement::Decending);
-		break;
-	}
+
+    cout
+        << "================================================"
+        << endl
+        << "Please select criteria you wish to sort: "
+        << endl << endl
+        << "1- ID (Default)" << endl
+        << "2- Latest" << endl
+        << "3- Payment Method" << endl
+        << "4- Status" << endl
+        << "5- Total Item" << endl
+        << "6- Total Price" << endl << endl
+        << "Select Option >> ";
+    string input;
+    cin >> input;
+    if (input.length() == 1) {
+        priority = static_cast<PurchaseOrderPriority>(stoi(input) - 1);
+    }
+
+    cout
+        << endl
+        << "================================================"
+        << endl
+        << "Please select order you wish to view: "
+        << endl << endl
+        << "1- Ascending (Default)" << endl
+        << "2- Descending" << endl << endl
+        << "Select Option >> ";
+    string input2;
+    cin >> input2;
+    string selection2;
+    if (input2.length() == 1) {
+        arrangement = static_cast<PurchaseOrderArrangement>(stoi(input2) - 1);
+    }
+    DataAccess::getInstance()->purchaseOrderRepository->sort(priority, arrangement);
+    PurchaseOrderView view;
+    view.show();
+    return;
 }

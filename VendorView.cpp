@@ -35,7 +35,10 @@ void View::VendorView::show()
             menu.show();
         }
         else {
-            View::VendorView::show();
+            show();
         }
+    }
+    else {
+        show();
     }
 }

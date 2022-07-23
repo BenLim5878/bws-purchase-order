@@ -25,10 +25,11 @@ public:
 
 template <typename T> class LinkedList
 {
-private:
+public:
 	SinglyNode<T>* head = nullptr;
 private:
 	int search(T* x);
+public:
 	SinglyNode<T>* getNode(int i);
 public:
 	int length = 0;

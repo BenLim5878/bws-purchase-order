@@ -39,5 +39,8 @@ void View::UserReportView::show()
             View::UserReportView::show();
         }
     }
+    else {
+        show();
+    }
 
 }

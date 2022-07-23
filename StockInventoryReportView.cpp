@@ -38,5 +38,8 @@ void View::StockInventoryReportView::show()
             View::StockInventoryReportView::show();
         }
     }
+    else {
+        show();
+    }
 
 }

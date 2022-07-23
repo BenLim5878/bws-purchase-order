@@ -9,6 +9,86 @@
 //Vendor Description, (3)
 //VendorRegisteredDate (4)
 
+// Swap function for quick sort algorithm
+void swap(LinkedList<Vendor>* list, SinglyNode<Vendor>* low, SinglyNode<Vendor>* high) {
+	SinglyNode<Vendor>* prevNode = nullptr;
+	SinglyNode<Vendor>* prevNode2 = nullptr;
+	auto l = list->head;
+	auto r = list->head;
+
+	if (l == nullptr) {
+		return;
+	}
+
+	if (low->data.getVendorID() == high->data.getVendorID()) {
+		return;
+	}
+
+	while (l != nullptr && l->data.getVendorID() != low->data.getVendorID()) {
+		prevNode = l;
+		l = l->next;
+	}
+
+	while (r != nullptr && r->data.getVendorID() != high->data.getVendorID()) {
+		prevNode2 = r;
+		r = r->next;
+	}
+
+	if (l != nullptr && r != nullptr) {
+		if (prevNode != nullptr) {
+			prevNode->next = r;
+		}
+		else {
+			list->head = r;
+		}
+
+		if (prevNode2 != nullptr) {
+			prevNode2->next = l;
+		}
+		else {
+			list->head = l;
+		}
+		auto temp = l->next;
+		l->next = r->next;
+		r->next = temp;
+	}
+	else {
+		return;
+	}
+
+
+}
+
+int partition(LinkedList<Vendor>* list, int low, int high, Vendor* pivot)
+{
+	int i = low;
+	int j = low;
+	while (i <= high) {
+		auto iTime = mktime(&list->get(i)->vendorRegisteredDate);
+		auto pivotTime = mktime(&pivot->vendorRegisteredDate);
+		if (iTime > pivotTime) {
+			i++;
+		}
+		else {
+			swap(list, list->getNode(i), list->getNode(j));
+			i++;
+			j++;
+		}
+	}
+	return j - 1;
+}
+
+// Sort vendor list by date created
+void sort(LinkedList<Vendor>* list, int low, int high)
+{
+	if (low < high) {
+		auto pivot = list->get(high);
+		int pos = partition(list, low, high, pivot);
+		sort(list, low, pos - 1);
+		sort(list, pos + 1, high);
+	}
+}
+
 void VendorRepository::loadData()
 {
 	for (std::list<std::string>::iterator i = this->dataReader->context->begin(); i != this->dataReader->context->end(); ++i) {
@@ -21,6 +101,7 @@ void VendorRepository::loadData()
 		temp.vendorRegisteredDate = stringToTime(record.at(4));
 		this->vendors->push(temp);
 	}
+	sort(this->vendors, 0, this->vendors->length - 1);
 }
 
 Vendor* VendorRepository::getVendor(int vendorID)
@@ -64,6 +145,7 @@ std::unique_ptr<LinkedList<Product>> VendorRepository::getProductByVendor(int ve
 			}
 		}
 	}
+
 	return productPointer;
 }
 

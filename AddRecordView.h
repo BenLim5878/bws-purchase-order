@@ -3,6 +3,6 @@
 namespace View {
 	class AddRecordView {
 	public:
-		void show();
+		void show(bool isInputValid = true);
 	};
 }

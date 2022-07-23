@@ -3,12 +3,6 @@
   <ItemGroup>
     <ClCompile Include="BWS Purchase Order.cpp" />
     <ClCompile Include="Config.cpp" />
-    <ClCompile Include="BubbleSort.cpp">
-      <Filter>Algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="QuickSort.cpp">
-      <Filter>Algorithm</Filter>
-    </ClCompile>
     <ClCompile Include="AddRecordView.cpp">
       <Filter>View</Filter>
     </ClCompile>
@@ -90,7 +84,6 @@
     <ClCompile Include="TextDataReader.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="POTable.cpp" />
     <ClCompile Include="LoginView.cpp">
       <Filter>View</Filter>
     </ClCompile>
@@ -106,12 +99,18 @@
     <ClCompile Include="PurchaseOrderReportView.cpp">
       <Filter>View</Filter>
     </ClCompile>
+    <ClCompile Include="UpdatePurchaseOrderView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateProductView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="VendorProductTable.h">
+      <Filter>View\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
-    <ClInclude Include="BubbleSort.h">
-      <Filter>Algorithm</Filter>
-    </ClInclude>
     <ClInclude Include="AddRecordView.h">
       <Filter>View</Filter>
     </ClInclude>
@@ -150,9 +149,6 @@
     </ClInclude>
     <ClInclude Include="Time.h">
       <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="QuickSort.h">
-      <Filter>Algorithm</Filter>
     </ClInclude>
     <ClInclude Include="Administrator.h">
       <Filter>Class</Filter>
@@ -264,6 +260,12 @@
     <ClInclude Include="CategoryOrderDescription.h">
       <Filter>Class</Filter>
     </ClInclude>
+    <ClInclude Include="UpdatePurchaseOrderView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateProductView.h">
+      <Filter>View</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Product.txt">
@@ -283,9 +285,6 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Algorithm">
-      <UniqueIdentifier>{2da7d5d7-3cad-433d-b945-1d0e364f4ba8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="View">
       <UniqueIdentifier>{f09585ec-18f5-455e-8d95-3c94e0dde5a5}</UniqueIdentifier>
     </Filter>

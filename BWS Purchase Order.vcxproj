@@ -142,7 +142,6 @@
     <ClCompile Include="AddRecordView.cpp" />
     <ClCompile Include="Administrator.cpp" />
     <ClCompile Include="Auth.cpp" />
-    <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="BWS Purchase Order.cpp" />
     <ClCompile Include="DataAccess.cpp" />
     <ClCompile Include="Delivery.cpp" />
@@ -154,13 +153,14 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Payment.cpp" />
     <ClCompile Include="PaymentRepository.cpp" />
-    <ClCompile Include="POTable.cpp" />
+    <ClCompile Include="UpdateProductView.cpp" />
+    <ClCompile Include="UpdatePurchaseOrderView.cpp" />
+    <ClCompile Include="VendorProductTable.h" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="ProductRepository.cpp" />
     <ClCompile Include="PurchaseOrder.cpp" />
     <ClCompile Include="PurchaseOrderReportView.cpp" />
     <ClCompile Include="PurchaseOrderRepository.cpp" />
-    <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="ReportMenuView.cpp" />
     <ClCompile Include="SalesOrderExecutive.cpp" />
     <ClCompile Include="PurchaseOrderView.cpp" />
@@ -194,7 +194,6 @@
     <ClInclude Include="PriorityClass.h" />
     <ClInclude Include="Administrator.h" />
     <ClInclude Include="Auth.h" />
-    <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="PriorityQueue.h" />
@@ -202,12 +201,12 @@
     <ClInclude Include="ProductOrderDescription.h" />
     <ClInclude Include="ProductRepository.h" />
     <ClInclude Include="ProductTable.h" />
+    <ClInclude Include="UpdateProductView.h" />
     <ClInclude Include="PurchaseOrder.h" />
     <ClInclude Include="PurchaseOrderReportView.h" />
     <ClInclude Include="PurchaseOrderRepository.h" />
     <ClInclude Include="PurchaseOrderTable.h" />
     <ClInclude Include="PurchaseOrderView.h" />
-    <ClInclude Include="QuickSort.h" />
     <ClInclude Include="ReportMenuView.h" />
     <ClInclude Include="SearchRecordView.h" />
     <ClInclude Include="Session.h" />
@@ -216,6 +215,7 @@
     <ClInclude Include="StockInventoryReportView.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Tree.h" />
+    <ClInclude Include="UpdatePurchaseOrderView.h" />
     <ClInclude Include="UpdateRecordView.h" />
     <ClInclude Include="UserReportView.h" />
     <ClInclude Include="UserRepository.h" />

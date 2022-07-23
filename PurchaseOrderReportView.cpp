@@ -71,7 +71,7 @@ void View::PurchaseOrderReportView::show()
     std::cout << "Select Option >> ";
 
     std::string input;
-    char selection;
+    char selection = 'f';
     cin >> input;
     cin.ignore();
     if (input.length() != 1) {

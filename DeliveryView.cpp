@@ -35,7 +35,10 @@ void View::DeliveryView::show()
             menu.show();
         }
         else {
-            View::DeliveryView::show();
+            show();
         }
+    }
+    else {
+        show();
     }
 }

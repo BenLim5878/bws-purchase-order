@@ -9,11 +9,12 @@
 #include "Session.h"
 #include "LoginView.h"
 #include "ReportMenuView.h"
+#include "Helper.h"
 
 using namespace std;
 
 
-void View::Menu::show()
+void View::Menu::show(bool isValidInput)
 {
     int selection;
     cin.clear();
@@ -25,33 +26,56 @@ void View::Menu::show()
 
     std::cout << "\n=================== MENU ===================" << endl;
     std::cout << "" << endl;
-    do {
+    if (Session::getInstance()->loggedUser->role == UserRole::Admin) {
+        std::cout << "1-Purchase Order" << endl;
+        std::cout << "2-Vendor" << endl;
+        std::cout << "3-Report" << endl;
+        std::cout << "4-Delivery Order" << endl;
+        std::cout << "5-Logout" << endl;
+        std::cout << "6-Exit Program" << endl;
+        std::cout << "" << endl;
+        std::cout << "============================================" << endl;
+    }
+    else {
+        std::cout << "1-Purchase Order" << endl;
+        std::cout << "2-Vendor" << endl;
+        std::cout << "3-Delivery Order" << endl;
+        std::cout << "4-Logout" << endl;
+        std::cout << "5-Exit Program" << endl;
+        std::cout << "" << endl;
+        std::cout << "============================================" << endl;
+    }
+
+    if (isValidInput) {
+        cout << "Select Option >> ";
+    }
+    else {
+        cout << "Invalid Option. Please try again >> ";
+    }
+
+    selection = promptNumericInput();
+    if (selection < 0) {
+        show(false);
+    }
+    else {
         if (Session::getInstance()->loggedUser->role == UserRole::Admin) {
-            std::cout << "1-Purchase Order" << endl;
-            std::cout << "2-Vendor" << endl;
-            std::cout << "3-Report" << endl;
-            std::cout << "4-Delivery Order" << endl;
-            std::cout << "5-Logout" << endl;
-            std::cout << "6-Exit Program" << endl;
-            std::cout << "" << endl;
-            std::cout << "============================================" << endl;
+            if (selection > 0 && selection < 7) {
+                processInput(selection);
+            }
+            else {
+                show(false);
+            }
         }
         else {
-            std::cout << "1-Purchase Order" << endl;
-            std::cout << "2-Vendor" << endl;
-            std::cout << "3-Delivery Order" << endl;
-            std::cout << "4-Logout" << endl;
-            std::cout << "5-Exit Program" << endl;
-            std::cout << "" << endl;
-            std::cout << "============================================" << endl;
+            if (selection > 0 && selection < 6) {
+                processInput(selection);
+            }
+            else {
+                show(false);
+            }
         }
+    }
 
-        cout << "Select Option >> ";
-        cin >> selection;
-        cin.ignore();
-        processInput(selection);
-
-    } while (selection < 1 || selection > 5);
 }
 
 void View::Menu::processInput(int selection) {

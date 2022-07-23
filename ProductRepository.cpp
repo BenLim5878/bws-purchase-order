@@ -92,6 +92,7 @@ Product* ProductRepository::getProduct(std::string categoryName, int nthChild)
 			return &productNode->data;
 		}
 	}
+	return nullptr;
 }
 
 Product* ProductRepository::getProduct(int categoryID, int nthChild)
@@ -103,6 +104,7 @@ Product* ProductRepository::getProduct(int categoryID, int nthChild)
 			return &productNode->data;
 		}
 	}
+	return nullptr;
 }
 
 Product* ProductRepository::getProduct(int productID)
@@ -116,6 +118,7 @@ Product* ProductRepository::getProduct(int productID)
 			}
 		}
 	}
+	return nullptr;
 }
 
 ProductCategory* ProductRepository::getProductCategory(std::string categoryName)
@@ -126,6 +129,7 @@ ProductCategory* ProductRepository::getProductCategory(std::string categoryName)
 			return &categoryNode->data;
 		}
 	}
+	return nullptr;
 }
 
 ProductCategory* ProductRepository::getProductCategory(int categoryID)
@@ -136,6 +140,7 @@ ProductCategory* ProductRepository::getProductCategory(int categoryID)
 			return &categoryNode->data;
 		}
 	}
+	return nullptr;
 }
 
 void ProductRepository::deleteProduct(Product* product)

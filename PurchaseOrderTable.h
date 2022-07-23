@@ -60,57 +60,63 @@ namespace ViewComponent {
                 << endl;
             std::cout << "============================================================================================================================" << endl;
 
-            for (int i = 0; i < this->data->length; i++)
-            {
-                auto record = this->data->get(i)->content;
-                int totalProducts = record.orderedProducts->length;
-                for (int j = 0; j < totalProducts; j++) {
-                    cout
-                        << left
-                        << setw(3)
-                        << ""
-                        << left
-                        << setw(7);
-                    if (j == 0) {
-                        cout <<
-                            record.getPOID();
-                    }
-                    else {
+            if (this->data->length > 0) {
+                for (int i = 0; i < this->data->length; i++)
+                {
+                    auto record = this->data->get(i)->content;
+                    int totalProducts = record.orderedProducts->length;
+                    for (int j = 0; j < totalProducts; j++) {
                         cout
-                            << "";
+                            << left
+                            << setw(3)
+                            << ""
+                            << left
+                            << setw(7);
+                        if (j == 0) {
+                            cout <<
+                                record.getPOID();
+                        }
+                        else {
+                            cout
+                                << "";
+                        }
+                        std::cout //Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
+                            << left
+                            << setw(10)
+                            << record.orderedProducts->get(j)->product->productVendor->getVendorID()
+                            << left
+                            << setw(11)
+                            << record.orderedProducts->get(j)->product->getProductID()
+                            << left
+                            << setw(3 + max_product_string_space)
+                            << record.orderedProducts->get(j)->product->productName
+                            << left
+                            << setw(5)
+                            << record.orderedProducts->get(j)->quantity
+                            << left
+                            << setw(22)
+                            << std::put_time(&record.timeCreated, "%Y-%m-%d.%H:%M:%S")
+                            << left
+                            << setw(3)
+                            << ""
+                            << left
+                            << setw(8)
+                            << (record.orderedProducts->get(j)->product->productPricePerUnit * record.orderedProducts->get(j)->quantity)
+                            << left
+                            << setw(18)
+                            << Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
+                            << left
+                            << setw(10)
+                            << PurchaseOrder::orderStatusToString(record.orderStatus)
+                            << endl;
                     }
-                    std::cout //Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
-                        << left
-                        << setw(10)
-                        << record.orderedProducts->get(j)->product->productVendor->getVendorID()
-                        << left
-                        << setw(11)
-                        << record.orderedProducts->get(j)->product->getProductID()
-                        << left
-                        << setw(3 + max_product_string_space)
-                        << record.orderedProducts->get(j)->product->productName
-                        << left
-                        << setw(5)
-                        << record.orderedProducts->get(j)->quantity
-                        << left
-                        << setw(22)
-                        << std::put_time(&record.timeCreated, "%Y-%m-%d.%H:%M:%S")
-                        << left
-                        << setw(3)
-                        << ""
-                        << left
-                        << setw(8)
-                        << (record.orderedProducts->get(j)->product->productPricePerUnit * record.orderedProducts->get(j)->quantity)
-                        << left
-                        << setw(18)
-                        << Payment::paymentMethodToString(record.paymentRecord.paymentMethod)
-                        << left
-                        << setw(10)
-                        << PurchaseOrder::orderStatusToString(record.orderStatus)
-                        << endl;
-                }
 
+                }
             }
+            else {
+                cout << "No Purchase Order has been found..." << endl << endl;
+            }
+            cout << "============================================================================================================================" << endl << endl;
 		}
 	};
 }
