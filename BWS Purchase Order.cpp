@@ -3,12 +3,13 @@
 
 #include <string>
 #include <iostream>
-#include "Menu.h"
+#include "PurchaseOrder.h"
 
 using namespace std;
 
 int main()
 {
-	View::Menu menu;
-	menu.show();
+	PurchaseOrder po;
+	po.setPOID(32);
+	cout << "fqsd";
 }
