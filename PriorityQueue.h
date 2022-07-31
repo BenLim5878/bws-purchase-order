@@ -45,10 +45,10 @@ int PririorityQueue<T>::search(int l, int r, PriorityClass<T>* x)
 		return -1;
 	}
 	int mid = (l + r) / 2;
-	if (*get(mid) == *x) {
+	if (get(mid)->priority == x->priority) {
 		return mid;
 	}
-	else if (*x < *get(mid)) {
+	else if (x->priority < get(mid)->priority) {
 		search(l, mid - 1, x);
 	}
 	else {

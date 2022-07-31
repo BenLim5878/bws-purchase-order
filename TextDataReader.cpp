@@ -4,6 +4,7 @@
 #include <ios>
 #include <sstream>
 
+// Referenced file read function from https://www.tutorialspoint.com/how-to-read-a-text-file-with-cplusplus
 void TextDataReader::readFile()
 {
     std::string tline;
@@ -17,7 +18,7 @@ void TextDataReader::readFile()
 	this->context = context;
 }
 
-
+// Referenced split delimiters function from https://www.javatpoint.com/how-to-split-strings-in-cpp#:~:text=i%20%3A%207%20function.-,Use%20std%3A%3Agetline()%20function%20to%20split%20string,the%20header%20file.
 std::vector<std::string> TextDataReader::splitDelimeter(std::string record)
 {
 	std::stringstream trecord(record);

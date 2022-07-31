@@ -10,7 +10,6 @@ char* toChar(std::string text) {
 
 AuthResult Auth::authenticateUser(AuthInputForm form)
 {
-    std::hash<std::string> hash;
     AuthResult res;
     for (int i = 0; i < this->repository->users->length; i++) {
         User* user = this->repository->users->get(i);

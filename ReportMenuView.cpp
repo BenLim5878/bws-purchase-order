@@ -8,6 +8,7 @@
 #include "DataAccess.h"
 #include "Menu.h"
 #include "PurchaseOrderReportView.h"
+#include "Helper.h"
 
 using namespace std;
 
@@ -32,9 +33,12 @@ void View::ReportMenuView::show()
 
     std::cout << "Select Option >> ";
 
-    int selection;
-    cin >> selection;
-    cin.ignore();
+    int selection = promptNumericInput();
+
+    if (selection <= 0 || selection > 4) {
+        show();
+        return;
+    }
 
     ReportConfig config;
     config.purchaseOrderArrangement = PurchaseOrderArrangement::Ascending;

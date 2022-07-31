@@ -230,9 +230,6 @@
     <ClInclude Include="LinkedList.h">
       <Filter>Data Structure</Filter>
     </ClInclude>
-    <ClInclude Include="poData.h">
-      <Filter>View</Filter>
-    </ClInclude>
     <ClInclude Include="LoginView.h">
       <Filter>View</Filter>
     </ClInclude>

@@ -33,13 +33,6 @@ public:
 	float totalAmount = 0;
 	int totalPOPlaced = 0;
 	int totalIncomingStock = 0;
-	LinkedList<ProductOrderDescription>* orderedProductQuantity;
-	LinkedList<CategoryOrderDescription>* orderedCategoryQuantity;
-public:
-	~SummaryData() {
-		delete this->orderedCategoryQuantity;
-		delete this->orderedProductQuantity;
-	}
 };
 
 class PurchaseOrderRepository:public IRepository
