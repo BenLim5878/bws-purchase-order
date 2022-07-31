@@ -1,9 +1,15 @@
 #pragma once
+#include <stddef.h>
+#include <cstddef>
 
 template <typename T> class SinglyNode{
 public:
 	T data;
 	SinglyNode<T>* next;
+public:
+	SinglyNode<T>() {};
+	~SinglyNode<T>() {
+	}
 };
 
 template <typename T> class DoublyNode {
@@ -11,14 +17,19 @@ public:
 	T data;
 	DoublyNode<T>* next;
 	DoublyNode<T>* prev;
+public:
+	DoublyNode<T>() {};
+	~DoublyNode<T>() {
+	}
 };
 
 template <typename T> class LinkedList
 {
-private:
+public:
 	SinglyNode<T>* head = nullptr;
 private:
 	int search(T* x);
+public:
 	SinglyNode<T>* getNode(int i);
 public:
 	int length = 0;
@@ -33,6 +44,7 @@ public:
 	void update(int i, T tarrData);
 public:
 	LinkedList();
+	LinkedList(T* dataList);
 	~LinkedList();
 };
 
@@ -136,7 +148,7 @@ T LinkedList<T>::remove(T* data)
 
 	if (&this->head->data == data) {
 		tarr = this->head;
-		this->head = tarr->next;
+		this->head = this->head->next;
 		this->length--;
 	}
 	else {
@@ -157,8 +169,7 @@ T LinkedList<T>::remove(T* data)
 					break;
 				}
 				else {
-					T t;
-					return t;
+					return tarr->data;
 				}
 			}
 		}
@@ -191,7 +202,7 @@ inline T LinkedList<T>::remove(int i)
 	SinglyNode<T>* tarrNode = getNode(i);
 
 	if (this->length == 0 || !tarrNode){
-		T t;
+		T t = 0;
 		return t;
 	}
 	tarrContent = tarrNode->data;
@@ -241,15 +252,19 @@ LinkedList<T>::LinkedList() {
 }
 
 template<typename T>
+inline LinkedList<T>::LinkedList(T* dataList)
+{
+	int len = sizeof(dataList) / sizeof(dataList[0]);
+	for (int i = 0; i < len; i++) {
+		push(dataList[i]);
+	}
+}
+
+template<typename T>
 LinkedList<T>::~LinkedList()
 {
-	SinglyNode<T>* currNode = this->head;
-	SinglyNode<T>* temp = this->head->next;
-	delete currNode;
-	while (temp) {
-		currNode = temp;
-		temp = currNode->next;
-		delete currNode;
+	if (this->head) {
+		delete this->head;
 	}
 }
 

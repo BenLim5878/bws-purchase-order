@@ -190,6 +190,9 @@ PririorityQueue<T>::PririorityQueue() :length(0)
 template <class T>
 PririorityQueue<T>::~PririorityQueue()
 {
+	if (this->head) {
+		delete this->head;
+	}
 }
 
 

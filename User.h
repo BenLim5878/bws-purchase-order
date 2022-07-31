@@ -24,5 +24,6 @@ public:
 	void setUserID(int userID);
 	std::string getPwd();
 	void setPwd(std::string password);
+	static std::string userRoleToString(UserRole role);
 };
 

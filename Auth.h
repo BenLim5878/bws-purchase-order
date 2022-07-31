@@ -6,7 +6,7 @@
 
 struct AuthResult {
 	bool isSuccessful;
-	User authenticatedUser;
+	User* authenticatedUser;
 	time_t timeAuthenticated = time(0);
 };
 
@@ -19,8 +19,6 @@ class Auth
 {
 public:
 	AuthResult authenticateUser(AuthInputForm form);
-private:
-	unsigned long pwdEncrypt(std::string pwd);
 private: 
 	UserRepository* repository;
 public:

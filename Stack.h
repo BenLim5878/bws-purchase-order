@@ -11,6 +11,7 @@ public:
 	T pop();
 	T* peek();
 	T* top(int i);
+	T* get(int i);
 	void update(int topIndex, T data);
 	void update(T* tarrData, T data);
 private:
@@ -58,6 +59,23 @@ T* Stack<T>::top(int i)
 	int curr = 1;
 	SinglyNode<T>* currentNode = this->root;
 	while (curr <= this->length) {
+		if (curr == target) {
+			return &currentNode->data;
+		}
+		currentNode = currentNode->next;
+		curr++;
+	}
+	return nullptr;
+}
+
+template<typename T>
+T* Stack<T>::get(int i)
+{
+	if (i >= this->length) return nullptr;
+	int target = i;
+	int curr = 0;
+	SinglyNode<T>* currentNode = this->root;
+	while (curr < this->length) {
 		if (curr == target) {
 			return &currentNode->data;
 		}

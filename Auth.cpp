@@ -1,5 +1,6 @@
 #include "Auth.h"
 #include <string.h>
+#include "Session.h"
 
 char* toChar(std::string text) {
     char* cstr = new char[text.length() + 1];
@@ -13,21 +14,18 @@ AuthResult Auth::authenticateUser(AuthInputForm form)
     AuthResult res;
     for (int i = 0; i < this->repository->users->length; i++) {
         User* user = this->repository->users->get(i);
-        unsigned long tarr = hash(form.password);
-        if (form.emailAddress == user->emailAddress && tarr == std::stoul(toChar(user->getPwd()))) {
-            res.authenticatedUser = *user;
+        std::string x = form.password;
+        std::string y = user->getPwd();
+        if (form.emailAddress == user->emailAddress && form.password == user->getPwd()) {
+            res.authenticatedUser = user;
             res.isSuccessful = true;
+            Session::getInstance()->setSession(res);
             return res;
         }
     }
     res.isSuccessful = false;
+    Session::getInstance()->setSession(res);
     return res;
-}
-
-unsigned long Auth::pwdEncrypt(std::string pwd)
-{
-    std::hash<std::string> hash;
-    return hash(pwd);
 }
 
 Auth::Auth(): repository(new UserRepository("User.txt"))

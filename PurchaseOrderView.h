@@ -3,7 +3,7 @@
 namespace View {
 	class PurchaseOrderView {
 	public:
-        void show();
+        void show(bool isValidInput = true);
 		void processInput(int option);
 	};
 }
